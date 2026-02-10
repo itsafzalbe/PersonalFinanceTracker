@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}Transaction Statistics - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="display-6"><i class="bi bi-bar-chart"></i> Transaction Statistics</h1>
+        <p class="text-muted">Analyze your financial data</p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'transactions:transaction_list' %}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Back to Transactions
+        </a>
+    </div>
+</div>
+
+<!-- Period Selector -->
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="btn-group" role="group">
+            <a href="?period=today" class="btn {% if period == 'today' %}btn-primary{% else %}btn-outline-primary{% endif %}">Today</a>
+            <a href="?period=week" class="btn {% if period == 'week' %}btn-primary{% else %}btn-outline-primary{% endif %}">This Week</a>
+            <a href="?period=month" class="btn {% if period == 'month' %}btn-primary{% else %}btn-outline-primary{% endif %}">This Month</a>
+            <a href="?period=year" class="btn {% if period == 'year' %}btn-primary{% else %}btn-outline-primary{% endif %}">This Year</a>
+        </div>
+        <span class="ms-3 text-muted">{{ start_date|date:"M d, Y" }} - {{ end_date|date:"M d, Y" }}</span>
+    </div>
+</div>
+
+<!-- Summary Cards -->
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="stats-card green">
+            <div><p class="mb-1 opacity-75">Income</p>
+                <h3>{{ income_total|floatformat:2 }}</h3>
+                <small class="opacity-75">{{ currency }}</small>
+            </div>
+            <i class="bi bi-arrow-down-circle fs-1 opacity-50"></i>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stats-card red">
+            <div><p class="mb-1 opacity-75">Expenses</p>
+                <h3>{{ expense_total|floatformat:2 }}</h3>
+                <small class="opacity-75">{{ currency }}</small>
+            </div>
+            <i class="bi bi-arrow-up-circle fs-1 opacity-50"></i>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stats-card {% if net_balance >= 0 %}blue{% else %}orange{% endif %}">
+            <div><p class="mb-1 opacity-75">Net</p>
+                <h3>{{ net_balance|floatformat:2 }}</h3>
+                <small class="opacity-75">{{ currency }}</small>
+            </div>
+            <i class="bi bi-wallet2 fs-1 opacity-50"></i>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div><p class="mb-1 opacity-75">Transactions</p>
+                <h3>{{ total_count }}</h3>
+                <small class="opacity-75">Total</small>
+            </div>
+            <i class="bi bi-list-ul fs-1 opacity-50"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Top Categories -->
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-white border-0 pt-4">
+                <h5 class="mb-0"><i class="bi bi-arrow-up-circle text-danger"></i> Top Expense Categories</h5>
+            </div>
+            <div class="card-body">
+                {% for cat in top_expense_categories %}
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span><i class="bi {{ cat.category__icon }}"></i> {{ cat.category__name }}</span>
+                        <strong>{{ cat.total|floatformat:2 }} {{ currency }}</strong>
+                    </div>
+                    <div class="progress" style="height: 8px;">
+                        {% widthratio cat.total expense_total 100 as percent %}
+                        <div class="progress-bar bg-danger" style="width: {{ percent }}%"></div>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-muted text-center">No expense data</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-white border-0 pt-4">
+                <h5 class="mb-0"><i class="bi bi-arrow-down-circle text-success"></i> Top Income Categories</h5>
+            </div>
+            <div class="card-body">
+                {% for cat in top_income_categories %}
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span><i class="bi {{ cat.category__icon }}"></i> {{ cat.category__name }}</span>
+                        <strong>{{ cat.total|floatformat:2 }} {{ currency }}</strong>
+                    </div>
+                    <div class="progress" style="height: 8px;">
+                        {% widthratio cat.total income_total 100 as percent %}
+                        <div class="progress-bar bg-success" style="width: {{ percent }}%"></div>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-muted text-center">No income data</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }} - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'transactions:transaction_list' %}">Transactions</a></li>
+                <li class="breadcrumb-item active">{{ title }}</li>
+            </ol>
+        </nav>
+        <h1 class="display-6">
+            <i class="bi bi-plus-circle"></i> {{ title }}
+        </h1>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body p-4">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    
+                    <!-- Type -->
+                    <div class="mb-4">
+                        <label for="{{ form.type.id_for_label }}" class="form-label">
+                            <i class="bi bi-arrow-left-right"></i> Type <span class="text-danger">*</span>
+                        </label>
+                        {{ form.type }}
+                        {% if form.type.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.type.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Title and Amount -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.title.id_for_label }}" class="form-label">
+                                <i class="bi bi-card-text"></i> Title <span class="text-danger">*</span>
+                            </label>
+                            {{ form.title }}
+                            {% if form.title.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.title.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.amount.id_for_label }}" class="form-label">
+                                <i class="bi bi-cash-coin"></i> Amount <span class="text-danger">*</span>
+                            </label>
+                            {{ form.amount }}
+                            {% if form.amount.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.amount.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Card and Category -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.card.id_for_label }}" class="form-label">
+                                <i class="bi bi-credit-card"></i> Card/Wallet <span class="text-danger">*</span>
+                            </label>
+                            {{ form.card }}
+                            {% if form.card.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.card.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.category.id_for_label }}" class="form-label">
+                                <i class="bi bi-tags"></i> Category <span class="text-danger">*</span>
+                            </label>
+                            {{ form.category }}
+                            {% if form.category.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.category.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Date -->
+                    <div class="mb-3">
+                        <label for="{{ form.date.id_for_label }}" class="form-label">
+                            <i class="bi bi-calendar"></i> Date <span class="text-danger">*</span>
+                        </label>
+                        {{ form.date }}
+                        {% if form.date.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.date.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label for="{{ form.description.id_for_label }}" class="form-label">
+                            <i class="bi bi-file-text"></i> Description
+                        </label>
+                        {{ form.description }}
+                        {% if form.description.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.description.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="mb-3">
+                        <label for="{{ form.location.id_for_label }}" class="form-label">
+                            <i class="bi bi-geo-alt"></i> Location
+                        </label>
+                        {{ form.location }}
+                        {% if form.location.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.location.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="bi bi-bookmark"></i> Tags
+                        </label>
+                        <div class="border rounded p-3">
+                            {% load static %}
+                            {% comment %}
+                            Here we would list available tags as checkboxes
+                            For now showing a simple example
+                            {% endcomment %}
+                            <p class="text-muted small mb-2">Select tags for this transaction:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="tags" value="1" id="tag1"
+                                    {% if 1 in current_tags %}checked{% endif %}>
+                                <label class="form-check-label" for="tag1">
+                                    Business
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="tags" value="2" id="tag2"
+                                    {% if 2 in current_tags %}checked{% endif %}>
+                                <label class="form-check-label" for="tag2">
+                                    Personal
+                                </label>
+                            </div>
+                        </div>
+                        <small class="form-text text-muted">
+                            <a href="{% url 'transactions:transaction_tag_list' %}" target="_blank">Manage tags</a>
+                        </small>
+                    </div>
+                    
+                    <!-- Is Recurring -->
+                    <div class="mb-4">
+                        <div class="form-check">
+                            {{ form.is_recurring }}
+                            <label class="form-check-label" for="{{ form.is_recurring.id_for_label }}">
+                                <i class="bi bi-arrow-repeat"></i> This is a recurring transaction
+                            </label>
+                        </div>
+                    </div>
+                    
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors.0 }}
+                        </div>
+                    {% endif %}
+                    
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-check-circle"></i> {{ button_text }}
+                        </button>
+                        <a href="{% url 'transactions:transaction_list' %}" class="btn btn-outline-secondary">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Tips -->
+        <div class="card mt-4 bg-light">
+            <div class="card-body">
+                <h6 class="mb-3"><i class="bi bi-lightbulb"></i> Tips</h6>
+                <ul class="small mb-0">
+                    <li>Choose "Income" for money you receive</li>
+                    <li>Choose "Expense" for money you spend</li>
+                    <li>Select the appropriate card/wallet used</li>
+                    <li>Pick a category that best describes the transaction</li>
+                    <li>Add location and description for better tracking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Auto-select today's date if creating new transaction
+window.addEventListener('DOMContentLoaded', function() {
+    const dateInput = document.querySelector('input[type="date"]');
+    if (dateInput && !dateInput.value) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+    }
+});
+</script>
+{% endblock %}

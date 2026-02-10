@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ card.card_name }} - Finance Tracker{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<div class="row mb-4">
+    <div class="col-md-8">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'cards:cards_list' %}">Cards & Wallets</a></li>
+                <li class="breadcrumb-item active">{{ card.card_name }}</li>
+            </ol>
+        </nav>
+        <h1 class="display-6">
+            {{ card.card_name }}
+            {% if card.is_default %}
+                <span class="badge bg-primary">Default</span>
+            {% endif %}
+        </h1>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'cards:card_edit' card.pk %}" class="btn btn-primary">
+            <i class="bi bi-pencil"></i> Edit Card
+        </a>
+    </div>
+</div>
+
+<!-- Card Information -->
+<div class="row g-4">
+    <!-- Main Card Info -->
+    <div class="col-lg-8">
+        <!-- Card Visual -->
+        <div class="card mb-4 border-0" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <div class="card-body p-4">
+                <div class="d-flex justify-content-between mb-4">
+                    <div>
+                        <p class="mb-1 opacity-75">{{ card.bank_name }}</p>
+                        <h5 class="mb-0">{{ card.card_type.name }}</h5>
+                    </div>
+                    <i class="bi bi-credit-card-2-front" style="font-size: 2.5rem; opacity: 0.5;"></i>
+                </div>
+                
+                <div class="mb-4">
+                    <p class="mb-2 small opacity-75">Card Number</p>
+                    <h4 class="mb-0 letter-spacing">•••• •••• •••• {{ card.card_number_last4 }}</h4>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <p class="mb-1 small opacity-75">Current Balance</p>
+                        <h3 class="mb-0">{{ card.balance|floatformat:2 }} {{ card.currency.code }}</h3>
+                    </div>
+                    <div class="col-6 text-end">
+                        <p class="mb-1 small opacity-75">Status</p>
+                        <h6 class="mb-0">
+                            {% if card.status == 'active' %}
+                                <span class="badge bg-success">Active</span>
+                            {% elif card.status == 'inactive' %}
+                                <span class="badge bg-secondary">Inactive</span>
+                            {% else %}
+                                <span class="badge bg-danger">Blocked</span>
+                            {% endif %}
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- This Month Activity -->
+        <div class="card mb-4">
+            <div class="card-header bg-white border-0 pt-4">
+                <h5 class="mb-0"><i class="bi bi-calendar3"></i> This Month's Activity</h5>
+            </div>
+            <div class="card-body">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="border rounded p-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="bg-success bg-opacity-10 text-success rounded-circle p-2 me-2">
+                                    <i class="bi bi-arrow-down-circle"></i>
+                                </div>
+                                <span class="text-muted">Income</span>
+                            </div>
+                            <h4 class="mb-0 text-success">{{ monthly_income|floatformat:2 }} {{ card.currency.code }}</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded p-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="bg-danger bg-opacity-10 text-danger rounded-circle p-2 me-2">
+                                    <i class="bi bi-arrow-up-circle"></i>
+                                </div>
+                                <span class="text-muted">Expenses</span>
+                            </div>
+                            <h4 class="mb-0 text-danger">{{ monthly_expenses|floatformat:2 }} {{ card.currency.code }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Transactions -->
+        <div class="card">
+            <div class="card-header bg-white border-0 pt-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="bi bi-clock-history"></i> Recent Transactions</h5>
+                    <a href="{% url 'transactions:transaction_list' %}" class="btn btn-sm btn-outline-primary">View All</a>
+                </div>
+            </div>
+            <div class="card-body">
+                {% if recent_transactions %}
+                    <div class="list-group list-group-flush">
+                        {% for transaction in recent_transactions %}
+                            <div class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="me-3">
+                                        {% if transaction.transaction_type == 'income' %}
+                                            <div class="bg-success bg-opacity-10 text-success rounded-circle p-2">
+                                                <i class="bi bi-arrow-down-circle"></i>
+                                            </div>
+                                        {% else %}
+                                            <div class="bg-danger bg-opacity-10 text-danger rounded-circle p-2">
+                                                <i class="bi bi-arrow-up-circle"></i>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">{{ transaction.category.name|default:"Uncategorized" }}</h6>
+                                        <small class="text-muted">{{ transaction.date|date:"M d, Y" }}</small>
+                                    </div>
+                                </div>
+                                <strong class="{% if transaction.transaction_type == 'income' %}text-success{% else %}text-danger{% endif %}">
+                                    {% if transaction.transaction_type == 'income' %}+{% else %}-{% endif %}
+                                    {{ transaction.amount|floatformat:2 }} {{ card.currency.code }}
+                                </strong>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-4">
+                        <i class="bi bi-inbox text-muted" style="font-size: 3rem;"></i>
+                        <p class="text-muted mt-3 mb-0">No transactions yet</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+        <!-- Quick Actions -->
+        <div class="card mb-4">
+            <div class="card-header bg-white border-0 pt-4">
+                <h6 class="mb-0"><i class="bi bi-lightning"></i> Quick Actions</h6>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{% url 'cards:card_update_balance' card.pk %}" class="btn btn-outline-primary">
+                        <i class="bi bi-cash-coin"></i> Update Balance
+                    </a>
+                    <a href="{% url 'transactions:transaction_create' %}?card_id={{ card.pk }}" class="btn btn-outline-success">
+                        <i class="bi bi-plus-circle"></i> Add Transaction
+                    </a>
+                    {% if not card.is_default and card.status == 'active' %}
+                        <form method="post" action="{% url 'cards:card_set_default' card.pk %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-warning w-100">
+                                <i class="bi bi-star"></i> Set as Default
+                            </button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card Details -->
+        <div class="card mb-4">
+            <div class="card-header bg-white border-0 pt-4">
+                <h6 class="mb-0"><i class="bi bi-info-circle"></i> Card Details</h6>
+            </div>
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-sm-5 small text-muted">Card Name</dt>
+                    <dd class="col-sm-7 small">{{ card.card_name }}</dd>
+                    
+                    <dt class="col-sm-5 small text-muted">Bank</dt>
+                    <dd class="col-sm-7 small">{{ card.bank_name }}</dd>
+                    
+                    <dt class="col-sm-5 small text-muted">Card Type</dt>
+                    <dd class="col-sm-7 small">{{ card.card_type.name }}</dd>
+                    
+                    <dt class="col-sm-5 small text-muted">Currency</dt>
+                    <dd class="col-sm-7 small">{{ card.currency.code }} - {{ card.currency.name }}</dd>
+                    
+                    <dt class="col-sm-5 small text-muted">Last 4 Digits</dt>
+                    <dd class="col-sm-7 small">{{ card.card_number_last4 }}</dd>
+                    
+                    <dt class="col-sm-5 small text-muted">Created</dt>
+                    <dd class="col-sm-7 small">{{ card.created_at|date:"M d, Y" }}</dd>
+                    
+                    <dt class="col-sm-5 small text-muted">Default Card</dt>
+                    <dd class="col-sm-7 small">
+                        {% if card.is_default %}
+                            <span class="badge bg-primary">Yes</span>
+                        {% else %}
+                            No
+                        {% endif %}
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        
+        <!-- Change Status -->
+        <div class="card mb-4">
+            <div class="card-header bg-white border-0 pt-4">
+                <h6 class="mb-0"><i class="bi bi-toggle-on"></i> Change Status</h6>
+            </div>
+            <div class="card-body">
+                <form method="post" action="{% url 'cards:card_change_status' card.pk %}">
+                    {% csrf_token %}
+                    <select name="status" class="form-select mb-2" required>
+                        <option value="active" {% if card.status == 'active' %}selected{% endif %}>Active</option>
+                        <option value="inactive" {% if card.status == 'inactive' %}selected{% endif %}>Inactive</option>
+                        <option value="blocked" {% if card.status == 'blocked' %}selected{% endif %}>Blocked</option>
+                    </select>
+                    <button type="submit" class="btn btn-sm btn-primary w-100">
+                        <i class="bi bi-check-circle"></i> Update Status
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Danger Zone -->
+        <div class="card border-danger">
+            <div class="card-header bg-white border-0 pt-4">
+                <h6 class="mb-0 text-danger"><i class="bi bi-exclamation-triangle"></i> Danger Zone</h6>
+            </div>
+            <div class="card-body">
+                <p class="small text-muted mb-2">Permanently delete this card</p>
+                <a href="{% url 'cards:card_delete' card.pk %}" class="btn btn-sm btn-danger w-100">
+                    <i class="bi bi-trash"></i> Delete Card
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .letter-spacing {
+        letter-spacing: 0.2rem;
+    }
+</style>
+{% endblock %}

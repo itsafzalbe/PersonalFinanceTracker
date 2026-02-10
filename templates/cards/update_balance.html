@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Balance - {{ card.card_name }} - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'cards:cards_list' %}">Cards & Wallets</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'cards:card_detail' card.pk %}">{{ card.card_name }}</a></li>
+                <li class="breadcrumb-item active">Update Balance</li>
+            </ol>
+        </nav>
+        <h1 class="display-6">
+            <i class="bi bi-cash-coin"></i> Update Balance
+        </h1>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <!-- Current Card Info -->
+        <div class="card mb-4 border-0" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <h5 class="mb-1">{{ card.card_name }}</h5>
+                    <p class="mb-0 opacity-75">{{ card.bank_name }}</p>
+                </div>
+                <div>
+                    <p class="mb-1 small opacity-75">Current Balance</p>
+                    <h3 class="mb-0">{{ card.balance|floatformat:2 }} {{ card.currency.code }}</h3>
+                </div>
+            </div>
+        </div>
+        
+        {% if success %}
+            <!-- Success Message -->
+            <div class="card mb-4 border-success">
+                <div class="card-body text-center py-4">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+                    <h4 class="mt-3 mb-2">Balance Updated!</h4>
+                    <p class="text-muted mb-3">Your card balance has been successfully updated.</p>
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-6">
+                            <div class="border rounded p-3">
+                                <small class="text-muted d-block mb-1">Old Balance</small>
+                                <h5 class="mb-0">{{ old_balance|floatformat:2 }}</h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="border rounded p-3">
+                                <small class="text-muted d-block mb-1">New Balance</small>
+                                <h5 class="mb-0 text-success">{{ new_balance|floatformat:2 }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert {% if difference >= 0 %}alert-success{% else %}alert-danger{% endif %} mb-4">
+                        <strong>Difference:</strong> 
+                        {% if difference >= 0 %}+{% endif %}{{ difference|floatformat:2 }} {{ card.currency.code }}
+                    </div>
+                    
+                    {% if reason %}
+                        <div class="alert alert-info mb-4">
+                            <strong>Reason:</strong> {{ reason }}
+                        </div>
+                    {% endif %}
+                    
+                    <div class="d-flex gap-2 justify-content-center">
+                        <a href="{% url 'cards:card_detail' card.pk %}" class="btn btn-primary">
+                            <i class="bi bi-eye"></i> View Card
+                        </a>
+                        <a href="{% url 'cards:cards_list' %}" class="btn btn-outline-secondary">
+                            <i class="bi bi-credit-card"></i> All Cards
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <!-- Update Form -->
+            <div class="card">
+                <div class="card-body p-4">
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.new_balance.id_for_label }}" class="form-label">
+                                <i class="bi bi-cash-coin"></i> New Balance <span class="text-danger">*</span>
+                            </label>
+                            {{ form.new_balance }}
+                            {% if form.new_balance.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.new_balance.errors.0 }}
+                                </div>
+                            {% endif %}
+                            <div class="form-text">Enter the new balance for this card</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="{{ form.reason.id_for_label }}" class="form-label">
+                                <i class="bi bi-chat-text"></i> Reason (Optional)
+                            </label>
+                            {{ form.reason }}
+                            {% if form.reason.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.reason.errors.0 }}
+                                </div>
+                            {% endif %}
+                            <div class="form-text">Why are you updating the balance?</div>
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-check-circle"></i> Update Balance
+                            </button>
+                            <a href="{% url 'cards:card_detail' card.pk %}" class="btn btn-outline-secondary">
+                                <i class="bi bi-x-circle"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Warning -->
+            <div class="alert alert-warning mt-4">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <strong>Note:</strong> This will directly update your card balance. Use the transactions feature to properly record income or expenses.
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

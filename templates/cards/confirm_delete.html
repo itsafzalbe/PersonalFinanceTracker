@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Card - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'cards:cards_list' %}">Cards & Wallets</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'cards:card_detail' card.pk %}">{{ card.card_name }}</a></li>
+                <li class="breadcrumb-item active">Delete</li>
+            </ol>
+        </nav>
+        <h1 class="display-6 text-danger">
+            <i class="bi bi-exclamation-triangle"></i> Delete Card
+        </h1>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card border-danger">
+            <div class="card-body p-4">
+                {% if error %}
+                    <!-- Error State -->
+                    <div class="text-center py-4">
+                        <i class="bi bi-x-circle-fill text-danger" style="font-size: 4rem;"></i>
+                        <h4 class="mt-3 mb-2">Cannot Delete Card</h4>
+                        <p class="text-muted mb-4">{{ error }}</p>
+                        <a href="{% url 'cards:card_detail' card.pk %}" class="btn btn-primary">
+                            <i class="bi bi-arrow-left"></i> Go Back
+                        </a>
+                    </div>
+                {% else %}
+                    <!-- Confirmation -->
+                    <div class="text-center mb-4">
+                        <i class="bi bi-exclamation-triangle-fill text-warning" style="font-size: 3rem;"></i>
+                        <h4 class="mt-3 mb-2">Are you sure?</h4>
+                        <p class="text-muted">This action cannot be undone!</p>
+                    </div>
+                    
+                    <!-- Card Preview -->
+                    <div class="card mb-4 bg-light">
+                        <div class="card-body">
+                            <h6 class="mb-2">Card to be deleted:</h6>
+                            <dl class="row mb-0">
+                                <dt class="col-sm-4">Name:</dt>
+                                <dd class="col-sm-8">{{ card.card_name }}</dd>
+                                
+                                <dt class="col-sm-4">Bank:</dt>
+                                <dd class="col-sm-8">{{ card.bank_name }}</dd>
+                                
+                                <dt class="col-sm-4">Balance:</dt>
+                                <dd class="col-sm-8">{{ card.balance|floatformat:2 }} {{ card.currency.code }}</dd>
+                                
+                                <dt class="col-sm-4">Last 4:</dt>
+                                <dd class="col-sm-8">{{ card.card_number_last4 }}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-danger">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <strong>Warning:</strong> Deleting this card will permanently remove it from your account. This action cannot be reversed.
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-danger flex-fill">
+                                <i class="bi bi-trash"></i> Yes, Delete Card
+                            </button>
+                            <a href="{% url 'cards:card_detail' card.pk %}" class="btn btn-outline-secondary flex-fill">
+                                <i class="bi bi-x-circle"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+        
+        {% if not error %}
+            <!-- Alternative Actions -->
+            <div class="card mt-4 bg-light">
+                <div class="card-body">
+                    <h6 class="mb-3"><i class="bi bi-lightbulb"></i> Consider these alternatives:</h6>
+                    <ul class="small mb-0">
+                        <li>Set the card status to <strong>Inactive</strong> instead of deleting</li>
+                        <li>Mark it as <strong>Blocked</strong> if it's lost or stolen</li>
+                        <li>Keep the card for historical transaction records</li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

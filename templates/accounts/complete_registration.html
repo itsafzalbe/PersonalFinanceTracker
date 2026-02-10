@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+
+{% block title %}Complete Registration - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card" style="max-width: 700px;">
+        <div class="card shadow-lg">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <div class="mb-3">
+                        <i class="bi bi-person-plus text-primary" style="font-size: 3rem;"></i>
+                    </div>
+                    <h2 class="card-title">Complete Your Profile</h2>
+                    <p class="text-muted">Just a few more details to get started</p>
+                </div>
+                
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="{{ form.username.id_for_label }}" class="form-label">
+                            <i class="bi bi-at"></i> Username <span class="text-danger">*</span>
+                        </label>
+                        {{ form.username }}
+                        {% if form.username.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.username.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- First Name & Last Name -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.first_name.id_for_label }}" class="form-label">
+                                <i class="bi bi-person"></i> First Name
+                            </label>
+                            {{ form.first_name }}
+                            {% if form.first_name.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.first_name.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.last_name.id_for_label }}" class="form-label">
+                                <i class="bi bi-person"></i> Last Name
+                            </label>
+                            {{ form.last_name }}
+                            {% if form.last_name.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.last_name.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="{{ form.password.id_for_label }}" class="form-label">
+                            <i class="bi bi-lock"></i> Password <span class="text-danger">*</span>
+                        </label>
+                        {{ form.password }}
+                        {% if form.password.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.password.errors.0 }}
+                            </div>
+                        {% endif %}
+                        <div class="form-text">
+                            <i class="bi bi-info-circle"></i> At least 8 characters
+                        </div>
+                    </div>
+                    
+                    <!-- Confirm Password -->
+                    <div class="mb-3">
+                        <label for="{{ form.password_confirm.id_for_label }}" class="form-label">
+                            <i class="bi bi-lock-fill"></i> Confirm Password <span class="text-danger">*</span>
+                        </label>
+                        {{ form.password_confirm }}
+                        {% if form.password_confirm.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.password_confirm.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Phone Number -->
+                    <div class="mb-3">
+                        <label for="{{ form.phone_number.id_for_label }}" class="form-label">
+                            <i class="bi bi-phone"></i> Phone Number
+                        </label>
+                        {{ form.phone_number }}
+                        {% if form.phone_number.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.phone_number.errors.0 }}
+                            </div>
+                        {% endif %}
+                        <div class="form-text">
+                            Format: +998912345678
+                        </div>
+                    </div>
+                    
+                    <!-- Date of Birth -->
+                    <div class="mb-4">
+                        <label for="{{ form.date_of_birth.id_for_label }}" class="form-label">
+                            <i class="bi bi-calendar"></i> Date of Birth
+                        </label>
+                        {{ form.date_of_birth }}
+                        {% if form.date_of_birth.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.date_of_birth.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors.0 }}
+                        </div>
+                    {% endif %}
+                    
+                    <button type="submit" class="btn btn-primary w-100 py-3">
+                        <i class="bi bi-check-circle"></i> Complete Registration
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Username availability check
+const usernameInput = document.querySelector('#{{ form.username.id_for_label }}');
+if (usernameInput) {
+    let timeout = null;
+    usernameInput.addEventListener('input', function() {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            const username = this.value;
+            if (username.length >= 3) {
+                fetch(`{% url 'accounts:check_username' %}?username=${encodeURIComponent(username)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.available) {
+                            this.classList.add('is-invalid');
+                            const feedback = this.parentElement.querySelector('.invalid-feedback') || document.createElement('div');
+                            feedback.className = 'invalid-feedback d-block';
+                            feedback.textContent = 'This username is already taken.';
+                            if (!this.parentElement.querySelector('.invalid-feedback')) {
+                                this.parentElement.appendChild(feedback);
+                            }
+                        } else {
+                            this.classList.remove('is-invalid');
+                            const feedback = this.parentElement.querySelector('.invalid-feedback');
+                            if (feedback && feedback.textContent.includes('already taken')) {
+                                feedback.remove();
+                            }
+                        }
+                    });
+            }
+        }, 500);
+    });
+}
+
+// Password strength indicator
+const passwordInput = document.querySelector('#{{ form.password.id_for_label }}');
+if (passwordInput) {
+    passwordInput.addEventListener('input', function() {
+        const password = this.value;
+        let strength = 0;
+        
+        if (password.length >= 8) strength++;
+        if (password.match(/[a-z]/)) strength++;
+        if (password.match(/[A-Z]/)) strength++;
+        if (password.match(/[0-9]/)) strength++;
+        if (password.match(/[^a-zA-Z0-9]/)) strength++;
+        
+        const strengthText = this.parentElement.querySelector('.password-strength') || document.createElement('div');
+        strengthText.className = 'password-strength form-text';
+        
+        if (password.length > 0) {
+            if (strength < 3) {
+                strengthText.innerHTML = '<i class="bi bi-shield-x text-danger"></i> Weak password';
+            } else if (strength < 4) {
+                strengthText.innerHTML = '<i class="bi bi-shield-check text-warning"></i> Medium password';
+            } else {
+                strengthText.innerHTML = '<i class="bi bi-shield-fill-check text-success"></i> Strong password';
+            }
+            
+            if (!this.parentElement.querySelector('.password-strength')) {
+                const existingText = this.parentElement.querySelector('.form-text');
+                if (existingText) {
+                    existingText.after(strengthText);
+                } else {
+                    this.after(strengthText);
+                }
+            }
+        } else {
+            strengthText.remove();
+        }
+    });
+}
+</script>
+{% endblock %}

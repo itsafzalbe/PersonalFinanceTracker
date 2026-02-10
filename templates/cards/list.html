@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+
+{% block title %}Cards & Wallets - Finance Tracker{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="display-6">
+            <i class="bi bi-credit-card"></i> Cards & Wallets
+        </h1>
+        <p class="text-muted">Manage your payment cards and digital wallets</p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'cards:card_create' %}" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Add New Card
+        </a>
+    </div>
+</div>
+
+<!-- Summary Cards -->
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <p class="mb-1 opacity-75">Total Balance</p>
+                    <h3 class="mb-0">{{ total_balance|floatformat:2 }}</h3>
+                    <small class="opacity-75">{{ user_currency }}</small>
+                </div>
+                <i class="bi bi-wallet2 fs-1 opacity-50"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="stats-card green">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <p class="mb-1 opacity-75">Active Cards</p>
+                    <h3 class="mb-0">{{ active_cards_count }}</h3>
+                    <small class="opacity-75">Cards</small>
+                </div>
+                <i class="bi bi-credit-card fs-1 opacity-50"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="stats-card blue">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <p class="mb-1 opacity-75">Total Cards</p>
+                    <h3 class="mb-0">{{ cards|length }}</h3>
+                    <small class="opacity-75">All cards</small>
+                </div>
+                <i class="bi bi-stack fs-1 opacity-50"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filters and Search -->
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="text" 
+                           name="search" 
+                           class="form-control" 
+                           placeholder="Search by card name, bank, or last 4 digits..."
+                           value="{{ request.GET.search }}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <select name="status" class="form-select">
+                    <option value="">All Statuses</option>
+                    <option value="active" {% if request.GET.status == 'active' %}selected{% endif %}>Active</option>
+                    <option value="inactive" {% if request.GET.status == 'inactive' %}selected{% endif %}>Inactive</option>
+                    <option value="blocked" {% if request.GET.status == 'blocked' %}selected{% endif %}>Blocked</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="bi bi-funnel"></i> Filter
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Cards Grid -->
+{% if cards %}
+    <div class="row g-4">
+        {% for card in cards %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 {% if card.is_default %}border-primary{% endif %} card-hover">
+                    <div class="card-body">
+                        <!-- Card Header -->
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="card-title mb-1">
+                                    {{ card.card_name }}
+                                    {% if card.is_default %}
+                                        <span class="badge bg-primary">Default</span>
+                                    {% endif %}
+                                </h5>
+                                <p class="text-muted small mb-0">
+                                    <i class="bi bi-bank"></i> {{ card.bank_name }}
+                                </p>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="{% url 'cards:card_detail' card.pk %}">
+                                        <i class="bi bi-eye"></i> View Details
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="{% url 'cards:card_edit' card.pk %}">
+                                        <i class="bi bi-pencil"></i> Edit Card
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="{% url 'cards:card_update_balance' card.pk %}">
+                                        <i class="bi bi-cash-coin"></i> Update Balance
+                                    </a></li>
+                                    {% if not card.is_default and card.status == 'active' %}
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li>
+                                            <form method="post" action="{% url 'cards:card_set_default' card.pk %}" class="d-inline">
+                                                {% csrf_token %}
+                                                <button type="submit" class="dropdown-item">
+                                                    <i class="bi bi-star"></i> Set as Default
+                                                </button>
+                                            </form>
+                                        </li>
+                                    {% endif %}
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item text-danger" href="{% url 'cards:card_delete' card.pk %}">
+                                        <i class="bi bi-trash"></i> Delete Card
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Card Type and Number -->
+                        <div class="mb-3">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-credit-card-2-front text-primary"></i>
+                                <span class="badge bg-light text-dark">{{ card.card_type.name }}</span>
+                                <span class="text-muted">•••• {{ card.card_number_last4 }}</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Balance -->
+                        <div class="mb-3">
+                            <small class="text-muted d-block mb-1">Current Balance</small>
+                            <h4 class="mb-0">
+                                {{ card.balance|floatformat:2 }} 
+                                <small class="text-muted">{{ card.currency.code }}</small>
+                            </h4>
+                        </div>
+                        
+                        <!-- Status -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>
+                                {% if card.status == 'active' %}
+                                    <span class="badge bg-success">
+                                        <i class="bi bi-check-circle"></i> Active
+                                    </span>
+                                {% elif card.status == 'inactive' %}
+                                    <span class="badge bg-secondary">
+                                        <i class="bi bi-pause-circle"></i> Inactive
+                                    </span>
+                                {% else %}
+                                    <span class="badge bg-danger">
+                                        <i class="bi bi-x-circle"></i> Blocked
+                                    </span>
+                                {% endif %}
+                            </span>
+                            <a href="{% url 'cards:card_detail' card.pk %}" class="btn btn-sm btn-outline-primary">
+                                View Details <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <!-- Empty State -->
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <i class="bi bi-credit-card text-muted" style="font-size: 4rem;"></i>
+            <h4 class="mt-3 mb-2">No Cards Yet</h4>
+            <p class="text-muted mb-4">
+                {% if request.GET.search or request.GET.status %}
+                    No cards match your filters. Try adjusting your search criteria.
+                {% else %}
+                    Start by adding your first payment card or digital wallet to track your finances.
+                {% endif %}
+            </p>
+            {% if not request.GET.search and not request.GET.status %}
+                <a href="{% url 'cards:card_create' %}" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> Add Your First Card
+                </a>
+            {% else %}
+                <a href="{% url 'cards:cards_list' %}" class="btn btn-outline-secondary">
+                    <i class="bi bi-x-circle"></i> Clear Filters
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+
+<!-- Quick Actions -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h6 class="mb-3"><i class="bi bi-lightning"></i> Quick Actions</h6>
+                <div class="d-flex gap-2 flex-wrap">
+                    <a href="{% url 'cards:currency_convert' %}" class="btn btn-outline-primary btn-sm">
+                        <i class="bi bi-currency-exchange"></i> Convert Currency
+                    </a>
+                    <a href="{% url 'cards:currency_list' %}" class="btn btn-outline-info btn-sm">
+                        <i class="bi bi-cash-stack"></i> View Currencies
+                    </a>
+                    <a href="{% url 'cards:card_types' %}" class="btn btn-outline-secondary btn-sm">
+                        <i class="bi bi-credit-card-2-back"></i> Card Types
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card-hover {
+        transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+    }
+</style>
+{% endblock %}

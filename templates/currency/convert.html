@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block title %}Currency Converter - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'cards:currency_list' %}">Currencies</a></li>
+                <li class="breadcrumb-item active">Convert</li>
+            </ol>
+        </nav>
+        <h1 class="display-6">
+            <i class="bi bi-currency-exchange"></i> Currency Converter
+        </h1>
+        <p class="text-muted">Convert between different currencies</p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body p-4">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    
+                    <!-- Amount -->
+                    <div class="mb-4">
+                        <label for="{{ form.amount.id_for_label }}" class="form-label">
+                            <i class="bi bi-cash"></i> Amount <span class="text-danger">*</span>
+                        </label>
+                        {{ form.amount }}
+                        {% if form.amount.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.amount.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- From Currency -->
+                    <div class="mb-3">
+                        <label for="{{ form.from_currency.id_for_label }}" class="form-label">
+                            <i class="bi bi-arrow-up-circle"></i> From Currency <span class="text-danger">*</span>
+                        </label>
+                        {{ form.from_currency }}
+                        {% if form.from_currency.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.from_currency.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Swap Button -->
+                    <div class="text-center mb-3">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="swapCurrencies()">
+                            <i class="bi bi-arrow-down-up"></i> Swap
+                        </button>
+                    </div>
+                    
+                    <!-- To Currency -->
+                    <div class="mb-4">
+                        <label for="{{ form.to_currency.id_for_label }}" class="form-label">
+                            <i class="bi bi-arrow-down-circle"></i> To Currency <span class="text-danger">*</span>
+                        </label>
+                        {{ form.to_currency }}
+                        {% if form.to_currency.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.to_currency.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors.0 }}
+                        </div>
+                    {% endif %}
+                    
+                    <button type="submit" class="btn btn-primary w-100 py-3">
+                        <i class="bi bi-calculator"></i> Convert
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Result -->
+        {% if result %}
+            <div class="card mt-4 border-success">
+                <div class="card-body p-4">
+                    <h5 class="mb-4 text-center">
+                        <i class="bi bi-check-circle-fill text-success"></i> Conversion Result
+                    </h5>
+                    
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-5">
+                            <div class="text-center p-4 bg-light rounded">
+                                <small class="text-muted d-block mb-2">From</small>
+                                <h2 class="mb-0">{{ result.amount|floatformat:2 }}</h2>
+                                <h5 class="text-muted">{{ result.from_currency.code }}</h5>
+                                <p class="small mb-0">{{ result.from_currency.name }}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-arrow-right text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        
+                        <div class="col-md-5">
+                            <div class="text-center p-4 bg-success bg-opacity-10 rounded border border-success">
+                                <small class="text-muted d-block mb-2">To</small>
+                                <h2 class="mb-0 text-success">{{ result.converted|floatformat:2 }}</h2>
+                                <h5 class="text-muted">{{ result.to_currency.code }}</h5>
+                                <p class="small mb-0">{{ result.to_currency.name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info mb-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>
+                                <i class="bi bi-info-circle"></i>
+                                <strong>Exchange Rate:</strong> 
+                                1 {{ result.from_currency.code }} = {{ result.rate|floatformat:4 }} {{ result.to_currency.code }}
+                            </span>
+                            <small class="text-muted">{{ result.date|date:"M d, Y" }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        
+        <!-- Popular Conversions -->
+        <div class="card mt-4 bg-light">
+            <div class="card-body">
+                <h6 class="mb-3"><i class="bi bi-star"></i> Popular Conversions</h6>
+                <div class="row g-2">
+                    <div class="col-6 col-md-3">
+                        <a href="?from_currency=USD&to_currency=UZS" class="btn btn-sm btn-outline-secondary w-100">
+                            USD → UZS
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a href="?from_currency=EUR&to_currency=UZS" class="btn btn-sm btn-outline-secondary w-100">
+                            EUR → UZS
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a href="?from_currency=UZS&to_currency=USD" class="btn btn-sm btn-outline-secondary w-100">
+                            UZS → USD
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a href="?from_currency=USD&to_currency=EUR" class="btn btn-sm btn-outline-secondary w-100">
+                            USD → EUR
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function swapCurrencies() {
+    const fromSelect = document.querySelector('select[name="from_currency"]');
+    const toSelect = document.querySelector('select[name="to_currency"]');
+    
+    const temp = fromSelect.value;
+    fromSelect.value = toSelect.value;
+    toSelect.value = temp;
+}
+</script>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}Categories - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="display-6"><i class="bi bi-tags"></i> Categories</h1>
+        <p class="text-muted">Organize your transactions</p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'transactions:category_create' %}" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Add Category
+        </a>
+    </div>
+</div>
+
+<!-- Summary Cards -->
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="stats-card"><div><p>Total Categories</p><h3>{{ total_count }}</h3></div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="stats-card green"><div><p>Income Categories</p><h3>{{ income_count }}</h3></div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="stats-card red"><div><p>Expense Categories</p><h3>{{ expense_count }}</h3></div></div>
+    </div>
+</div>
+
+<!-- Filters -->
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-4">
+                <select name="type" class="form-select">
+                    <option value="">All Types</option>
+                    <option value="income" {% if request.GET.type == 'income' %}selected{% endif %}>Income</option>
+                    <option value="expense" {% if request.GET.type == 'expense' %}selected{% endif %}>Expense</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="search" class="form-control" placeholder="Search categories..." value="{{ request.GET.search }}">
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100"><i class="bi bi-funnel"></i> Filter</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Categories Grid -->
+<div class="row g-3">
+    {% for category in categories %}
+    <div class="col-md-6 col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <div class="mb-2">
+                            <span class="badge" style="background-color: {{ category.color }}20; color: {{ category.color }};">
+                                <i class="bi {{ category.icon }}"></i> {{ category.name }}
+                            </span>
+                        </div>
+                        <small class="text-muted">
+                            {% if category.type == 'income' %}Income{% else %}Expense{% endif %}
+                            {% if category.user is None %} • System{% else %} • Custom{% endif %}
+                        </small>
+                    </div>
+                    {% if category.user %}
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="{% url 'transactions:category_edit' category.pk %}"><i class="bi bi-pencil"></i> Edit</a></li>
+                            <li><a class="dropdown-item text-danger" href="{% url 'transactions:category_delete' category.pk %}"><i class="bi bi-trash"></i> Delete</a></li>
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body text-center py-5">
+                <i class="bi bi-inbox text-muted" style="font-size: 4rem;"></i>
+                <h4 class="mt-3">No categories found</h4>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

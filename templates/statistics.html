@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% block title %}Statistics - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-6">
+            <i class="bi bi-bar-chart"></i> Financial Statistics
+        </h1>
+        <p class="text-muted">Your financial overview and insights</p>
+    </div>
+</div>
+
+<!-- Summary Cards -->
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="stats-card">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <p class="mb-1 opacity-75">Total Balance</p>
+                    <h3 class="mb-0">{{ total_balance|floatformat:2 }}</h3>
+                    <small class="opacity-75">{{ currency }}</small>
+                </div>
+                <i class="bi bi-wallet2 fs-1 opacity-50"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="stats-card green">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <p class="mb-1 opacity-75">Monthly Income</p>
+                    <h3 class="mb-0">{{ monthly_income|floatformat:2 }}</h3>
+                    <small class="opacity-75">{{ currency }}</small>
+                </div>
+                <i class="bi bi-arrow-down-circle fs-1 opacity-50"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="stats-card red">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <p class="mb-1 opacity-75">Monthly Expenses</p>
+                    <h3 class="mb-0">{{ monthly_expenses|floatformat:2 }}</h3>
+                    <small class="opacity-75">{{ currency }}</small>
+                </div>
+                <i class="bi bi-arrow-up-circle fs-1 opacity-50"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="stats-card {% if monthly_income > monthly_expenses %}green{% else %}red{% endif %}">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <p class="mb-1 opacity-75">Net Savings</p>
+                    {% with net_savings=monthly_income|add:"-"|add:monthly_expenses %}
+                        <h3 class="mb-0">{{ net_savings|floatformat:2 }}</h3>
+                    {% endwith %}
+                    <small class="opacity-75">{{ currency }}</small>
+                </div>
+                <i class="bi bi-piggy-bank fs-1 opacity-50"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Detailed Statistics -->
+<div class="row g-4">
+    <!-- Account Overview -->
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header bg-white border-0 pt-4">
+                <h5 class="mb-0"><i class="bi bi-info-circle"></i> Account Overview</h5>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="border rounded p-3 text-center">
+                            <i class="bi bi-credit-card text-primary fs-3"></i>
+                            <h4 class="mt-2 mb-0">{{ total_cards }}</h4>
+                            <small class="text-muted">Active Cards</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="border rounded p-3 text-center">
+                            <i class="bi bi-arrow-left-right text-info fs-3"></i>
+                            <h4 class="mt-2 mb-0">{{ total_transactions }}</h4>
+                            <small class="text-muted">Transactions</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="border rounded p-3 text-center">
+                            <i class="bi bi-piggy-bank text-warning fs-3"></i>
+                            <h4 class="mt-2 mb-0">{{ total_budgets }}</h4>
+                            <small class="text-muted">Active Budgets</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="border rounded p-3 text-center">
+                            <i class="bi bi-calendar-check text-success fs-3"></i>
+                            <h4 class="mt-2 mb-0">{{ member_since|timesince }}</h4>
+                            <small class="text-muted">Member Since</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Monthly Comparison -->
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header bg-white border-0 pt-4">
+                <h5 class="mb-0"><i class="bi bi-calendar3"></i> This Month</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">Income</span>
+                        <span class="fw-bold text-success">{{ monthly_income|floatformat:2 }} {{ currency }}</span>
+                    </div>
+                    <div class="progress" style="height: 10px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">Expenses</span>
+                        <span class="fw-bold text-danger">{{ monthly_expenses|floatformat:2 }} {{ currency }}</span>
+                    </div>
+                    <div class="progress" style="height: 10px;">
+                        {% if monthly_income > 0 %}
+                            {% widthratio monthly_expenses monthly_income 100 as expense_percent %}
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: {{ expense_percent }}%"></div>
+                        {% else %}
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"></div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="border-top pt-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Net Balance</span>
+                        {% with net_balance=monthly_income|add:"-"|add:monthly_expenses %}
+                            <h4 class="mb-0 {% if net_balance >= 0 %}text-success{% else %}text-danger{% endif %}">
+                                {{ net_balance|floatformat:2 }} {{ currency }}
+                            </h4>
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Links -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-body text-center py-4">
+                <h5 class="mb-3">Want more detailed insights?</h5>
+                <div class="d-flex gap-2 justify-content-center flex-wrap">
+                    <a href="#" class="btn btn-primary">
+                        <i class="bi bi-graph-up"></i> View Charts
+                    </a>
+                    <a href="#" class="btn btn-success">
+                        <i class="bi bi-download"></i> Export Data
+                    </a>
+                    <a href="{% url 'dashboard:dashboard' %}" class="btn btn-outline-secondary">
+                        <i class="bi bi-house-door"></i> Back to Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .progress {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .progress-bar {
+        transition: width 1s ease;
+    }
+</style>
+{% endblock %}

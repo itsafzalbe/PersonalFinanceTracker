@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }} - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'cards:cards_list' %}">Cards & Wallets</a></li>
+                <li class="breadcrumb-item active">{{ title }}</li>
+            </ol>
+        </nav>
+        <h1 class="display-6">
+            <i class="bi bi-credit-card"></i> {{ title }}
+        </h1>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body p-4">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    
+                    <!-- Card Name -->
+                    <div class="mb-3">
+                        <label for="{{ form.card_name.id_for_label }}" class="form-label">
+                            <i class="bi bi-card-text"></i> Card Name <span class="text-danger">*</span>
+                        </label>
+                        {{ form.card_name }}
+                        {% if form.card_name.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.card_name.errors.0 }}
+                            </div>
+                        {% endif %}
+                        <div class="form-text">Give your card a memorable name (e.g., "My Visa Card", "Savings Wallet")</div>
+                    </div>
+                    
+                    <!-- Bank Name -->
+                    <div class="mb-3">
+                        <label for="{{ form.bank_name.id_for_label }}" class="form-label">
+                            <i class="bi bi-bank"></i> Bank Name <span class="text-danger">*</span>
+                        </label>
+                        {{ form.bank_name }}
+                        {% if form.bank_name.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.bank_name.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Card Type and Currency -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.card_type.id_for_label }}" class="form-label">
+                                <i class="bi bi-credit-card-2-front"></i> Card Type <span class="text-danger">*</span>
+                            </label>
+                            {{ form.card_type }}
+                            {% if form.card_type.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.card_type.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.currency.id_for_label }}" class="form-label">
+                                <i class="bi bi-cash-stack"></i> Currency <span class="text-danger">*</span>
+                            </label>
+                            {{ form.currency }}
+                            {% if form.currency.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.currency.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Balance and Card Number -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.balance.id_for_label }}" class="form-label">
+                                <i class="bi bi-wallet2"></i> Initial Balance <span class="text-danger">*</span>
+                            </label>
+                            {{ form.balance }}
+                            {% if form.balance.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.balance.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.card_number_last4.id_for_label }}" class="form-label">
+                                <i class="bi bi-hash"></i> Last 4 Digits
+                            </label>
+                            {{ form.card_number_last4 }}
+                            {% if form.card_number_last4.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.card_number_last4.errors.0 }}
+                                </div>
+                            {% endif %}
+                            <div class="form-text">Last 4 digits of your card number (for identification)</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Status -->
+                    <div class="mb-4">
+                        <label for="{{ form.status.id_for_label }}" class="form-label">
+                            <i class="bi bi-toggle-on"></i> Status <span class="text-danger">*</span>
+                        </label>
+                        {{ form.status }}
+                        {% if form.status.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.status.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors.0 }}
+                        </div>
+                    {% endif %}
+                    
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-check-circle"></i> {{ button_text }}
+                        </button>
+                        <a href="{% url 'cards:cards_list' %}" class="btn btn-outline-secondary">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Tips -->
+        <div class="card mt-4 bg-light">
+            <div class="card-body">
+                <h6 class="mb-3"><i class="bi bi-lightbulb"></i> Tips</h6>
+                <ul class="small mb-0">
+                    <li>Choose a descriptive name for easy identification</li>
+                    <li>Select the correct currency to avoid conversion issues</li>
+                    <li>Enter your current balance accurately</li>
+                    <li>You can always update the balance later</li>
+                    <li>Set status to "Active" for cards you use regularly</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block title %}Budgets - Finance Tracker{% endblock %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="display-6"><i class="bi bi-piggy-bank"></i> Budgets</h1>
+        <p class="text-muted">Plan and track your spending limits</p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'budgets:budget_create' %}" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Create Budget
+        </a>
+    </div>
+</div>
+
+<!-- Quick Links -->
+<div class="d-flex gap-2 mb-4">
+    <a href="{% url 'budgets:budget_overview' %}" class="btn btn-outline-info btn-sm">
+        <i class="bi bi-graph-up"></i> Overview
+    </a>
+    <a href="{% url 'budgets:budget_active' %}" class="btn btn-outline-success btn-sm">
+        <i class="bi bi-check-circle"></i> Active Only
+    </a>
+    <a href="{% url 'budgets:budget_alerts' %}" class="btn btn-outline-warning btn-sm">
+        <i class="bi bi-exclamation-triangle"></i> Alerts
+    </a>
+    <a href="{% url 'budgets:budget_by_category' %}" class="btn btn-outline-secondary btn-sm">
+        <i class="bi bi-tags"></i> By Category
+    </a>
+</div>
+
+<!-- Filters -->
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-3">
+                <select name="period" class="form-select">
+                    <option value="">All Periods</option>
+                    <option value="weekly" {% if request.GET.period == 'weekly' %}selected{% endif %}>Weekly</option>
+                    <option value="monthly" {% if request.GET.period == 'monthly' %}selected{% endif %}>Monthly</option>
+                    <option value="yearly" {% if request.GET.period == 'yearly' %}selected{% endif %}>Yearly</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select name="is_active" class="form-select">
+                    <option value="">All Status</option>
+                    <option value="true" {% if request.GET.is_active == 'true' %}selected{% endif %}>Active</option>
+                    <option value="false" {% if request.GET.is_active == 'false' %}selected{% endif %}>Inactive</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="search" class="form-control" placeholder="Search budgets..." value="{{ search_query }}">
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100"><i class="bi bi-funnel"></i> Filter</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Budgets List -->
+{% if budgets %}
+<div class="row g-4">
+    {% for budget in budgets %}
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 {% if budget.over_budget %}border-danger{% elif budget.percentage >= budget.alert_threshold %}border-warning{% endif %}">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                        <h5 class="card-title mb-1">{{ budget.name }}</h5>
+                        <small class="text-muted">
+                            <i class="bi {{ budget.category.icon }}"></i> {{ budget.category.name }}
+                        </small>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-light" data-bs-toggle="dropdown">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="{% url 'budgets:budget_detail' budget.pk %}"><i class="bi bi-eye"></i> View</a></li>
+                            <li><a class="dropdown-item" href="{% url 'budgets:budget_update' budget.pk %}"><i class="bi bi-pencil"></i> Edit</a></li>
+                            <li><a class="dropdown-item" href="{% url 'budgets:budget_progress' budget.pk %}"><i class="bi bi-graph-up"></i> Progress</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="{% url 'budgets:budget_delete' budget.pk %}"><i class="bi bi-trash"></i> Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="small">Spent</span>
+                        <strong class="{% if budget.over_budget %}text-danger{% else %}text-primary{% endif %}">
+                            {{ budget.spent|floatformat:0 }} / {{ budget.amount|floatformat:0 }}
+                        </strong>
+                    </div>
+                    <div class="progress" style="height: 10px;">
+                        <div class="progress-bar {% if budget.over_budget %}bg-danger{% elif budget.percentage >= budget.alert_threshold %}bg-warning{% else %}bg-success{% endif %}"
+                             style="width: {% if budget.percentage > 100 %}100{% else %}{{ budget.percentage }}{% endif %}%"></div>
+                    </div>
+                    <small class="text-muted">{{ budget.percentage|floatformat:1 }}% used • {{ budget.remaining|floatformat:0 }} {{ budget.currency.code }} left</small>
+                </div>
+                
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-light text-dark">{{ budget.get_period_display }}</span>
+                    {% if budget.is_active %}
+                        <span class="badge bg-success">Active</span>
+                    {% else %}
+                        <span class="badge bg-secondary">Inactive</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if is_paginated %}
+<nav class="mt-4">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        <li class="page-item active"><span class="page-link">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+        {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+
+{% else %}
+<div class="card">
+    <div class="card-body text-center py-5">
+        <i class="bi bi-piggy-bank text-muted" style="font-size: 4rem;"></i>
+        <h4 class="mt-3">No Budgets Yet</h4>
+        <p class="text-muted mb-4">Start managing your spending by creating your first budget.</p>
+        <a href="{% url 'budgets:budget_create' %}" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Create Your First Budget</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

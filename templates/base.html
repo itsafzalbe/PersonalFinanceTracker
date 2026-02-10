@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Finance Tracker{% endblock %}</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #10b981;
+            --danger-color: #ef4444;
+            --dark-bg: #1e293b;
+            --light-bg: #f8fafc;
+            --shell-bg: #95b8d31f;
+            --shell-border: #e2e8f0;
+            --shell-shadow: rgba(15, 23, 42, 0.22);
+            --content-bg: #f8fafc;
+
+        }
+
+
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--content-bg);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            position: relative;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            z-index: 900;
+            border-radius: 30px;
+            padding-left: 292px;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #334155
+            font-size: 1.5rem;
+        }
+        .navbar::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 260px;
+            right: 16px;
+            height: 1px;
+            background: #00000024;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #0f172a
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            color: #0f172a
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .navbar .container,
+        .navbar .container-fluid {
+            margin-left: 300px; /* sidebar width + spacing */
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #6366f1 100%);
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #059669 100%);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, var(--danger-color) 0%, #dc2626 100%);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .alert {
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.15);
+        }
+
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+
+        .stats-card.green {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .stats-card.blue {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .stats-card.orange {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .stats-card.red {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .auth-container {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .auth-card {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+        }
+                /* ===== PAGE WRAPPER ===== */
+        .with-sidebar main {
+            margin-left: 292px;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 260px;
+            height: 100vh;
+
+            border-radius: 30px;
+
+
+            background: var(--shell-bg);
+            border-right: 1px solid var(--shell-border);
+            box-shadow: 2px 0 10px var(--shell-shadow);
+
+            padding: 24px 18px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            z-index: 1100; /* ABOVE NAVBAR */
+        }
+
+        /* HEADER */
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        /* NAV */
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sidebar-link {
+            text-decoration: none;
+            color: #334155;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: 0.2s ease;
+        }
+
+        .sidebar-link i {
+            margin-right: 10px;
+        }
+
+        .sidebar-link:hover {
+            box-shadow: 0 4px 12px rgba(105, 91, 114, 0.28);
+            color: #0f172a;
+        }
+
+        /* FOOTER */
+        .sidebar-footer {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .member-since {
+            margin-bottom: 14px;
+        }
+
+        .sidebar-logout {
+            width: 100%;
+            border: none;
+            background: #f3f4f6;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .sidebar-logout:hover {
+            background: #e5e7eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(105, 91, 114, 0.4);
+        }
+    </style>
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="{% if user.is_authenticated %}with-sidebar{% endif %}">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-person-circle"></i> {{ user.username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="{% url 'accounts:profile' %}"><i class="bi bi-person"></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'dashboard:statistics' %}"><i class="bi bi-bar-chart"></i> Statistics</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form method="post" action="{% url 'accounts:logout' %}" class="d-inline">
+                                        {% csrf_token %}
+                                        <button type="submit" class="dropdown-item text-danger">
+                                            <i class="bi bi-box-arrow-right"></i> Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'accounts:login' %}">
+                                <i class="bi bi-box-arrow-in-right"></i> Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'accounts:signup' %}">
+                                <i class="bi bi-person-plus"></i> Sign Up
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% if user.is_authenticated %}
+    <!-- PAGE WRAPPER -->
+    <div class="page-wrapper">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <!-- TOP: LOGO + APP NAME -->
+            <div class="sidebar-header">
+                <i class="bi bi-wallet2 fs-3 text-primary"></i>
+                <span class="sidebar-title">Finance Tracker</span>
+            </div>
+
+            <!-- NAV LINKS -->
+            <nav class="sidebar-nav">
+                <a href="{% url 'dashboard:dashboard' %}" class="sidebar-link">
+                    <i class="bi bi-house-door"></i> Dashboard
+                </a>
+                <a href="{% url 'transactions:transaction_list' %}" class="sidebar-link">
+                    <i class="bi bi-arrow-left-right"></i> Transactions
+                </a>
+                <a href="{% url 'cards:cards_list' %}" class="sidebar-link">
+                    <i class="bi bi-credit-card"></i> Cards / Wallets
+                </a>
+                <a href="{% url 'budgets:budget_list' %}" class="sidebar-link">
+                    <i class="bi bi-pie-chart"></i> Budgets
+                </a>
+                <a href="{% url 'dashboard:statistics' %}" class="sidebar-link">
+                    <i class="bi bi-bar-chart"></i> Statistics
+                </a>
+            </nav>
+
+            <!-- BOTTOM -->
+            <div class="sidebar-footer">
+                <div class="member-since">
+                    Member since<br>
+                    <strong>{{ user.date_joined|date:"F Y" }}</strong>
+                </div>
+
+                <form method="post" action="{% url 'accounts:logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="sidebar-logout">
+                        <i class="bi bi-box-arrow-right"></i> Logout
+                    </button>
+                </form>
+            </div>
+
+        </aside>
+    {% endif %}
+
+    <!-- Main Content -->
+    <main>
+        <div class="container mt-4">
+            <!-- Flash Messages -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {% if message.tags == 'success' %}
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                        {% elif message.tags == 'error' or message.tags == 'danger' %}
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        {% elif message.tags == 'warning' %}
+                            <i class="bi bi-exclamation-circle-fill me-2"></i>
+                        {% else %}
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                        {% endif %}
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    </div> 
+
+    {% comment %} <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-wallet2"></i> Finance Tracker</h5>
+                    <p class="text-muted">Manage your finances with ease and confidence.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; {% now "Y" %} Finance Tracker. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer> {% endcomment %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

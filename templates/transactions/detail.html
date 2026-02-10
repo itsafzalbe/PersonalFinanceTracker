@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ transaction.title }} - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'transactions:transaction_list' %}">Transactions</a></li>
+                <li class="breadcrumb-item active">{{ transaction.title }}</li>
+            </ol>
+        </nav>
+        <h1 class="display-6">{{ transaction.title }}</h1>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'transactions:transaction_edit' transaction.pk %}" class="btn btn-primary">
+            <i class="bi bi-pencil"></i> Edit
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <!-- Transaction Card -->
+        <div class="card mb-4">
+            <div class="card-body p-4">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <label class="text-muted small mb-1">Type</label>
+                        <p class="mb-0">
+                            {% if transaction.type == 'income' %}
+                                <span class="badge bg-success"><i class="bi bi-arrow-down-circle"></i> Income</span>
+                            {% else %}
+                                <span class="badge bg-danger"><i class="bi bi-arrow-up-circle"></i> Expense</span>
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-muted small mb-1">Amount</label>
+                        <h3 class="mb-0 {% if transaction.type == 'income' %}text-success{% else %}text-danger{% endif %}">
+                            {% if transaction.type == 'income' %}+{% else %}-{% endif %}
+                            {{ transaction.amount|floatformat:2 }} {{ transaction.card.currency.code }}
+                        </h3>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-muted small mb-1">Category</label>
+                        <p class="mb-0">
+                            <span class="badge" style="background-color: {{ transaction.category.color }}20; color: {{ transaction.category.color }};">
+                                <i class="bi {{ transaction.category.icon }}"></i> {{ transaction.category.name }}
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-muted small mb-1">Card/Wallet</label>
+                        <p class="mb-0">{{ transaction.card.card_name }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-muted small mb-1">Date</label>
+                        <p class="mb-0">{{ transaction.date|date:"F d, Y" }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-muted small mb-1">Created</label>
+                        <p class="mb-0">{{ transaction.created_at|date:"M d, Y g:i A" }}</p>
+                    </div>
+                    {% if transaction.description %}
+                    <div class="col-12">
+                        <label class="text-muted small mb-1">Description</label>
+                        <p class="mb-0">{{ transaction.description }}</p>
+                    </div>
+                    {% endif %}
+                    {% if transaction.location %}
+                    <div class="col-12">
+                        <label class="text-muted small mb-1">Location</label>
+                        <p class="mb-0"><i class="bi bi-geo-alt"></i> {{ transaction.location }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <!-- Quick Actions -->
+        <div class="card mb-4">
+            <div class="card-header bg-white border-0 pt-4">
+                <h6 class="mb-0"><i class="bi bi-lightning"></i> Quick Actions</h6>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{% url 'transactions:transaction_edit' transaction.pk %}" class="btn btn-outline-primary">
+                        <i class="bi bi-pencil"></i> Edit Transaction
+                    </a>
+                    <a href="{% url 'transactions:transaction_delete' transaction.pk %}" class="btn btn-outline-danger">
+                        <i class="bi bi-trash"></i> Delete Transaction
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
