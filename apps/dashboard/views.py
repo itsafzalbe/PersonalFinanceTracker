@@ -20,7 +20,7 @@ def dashboard_view(request):
     
 
     from apps.cards.models import ExchangeRate, Currency
-    user_currency = None
+    user_currency = Currency.objects.get(code=user.default_currency)
     
     total_balance = 0
     cards = Card.objects.filter(user=user, status='active')
@@ -80,15 +80,19 @@ def statistics_view(request):
     
     monthly_income = Transaction.objects.filter(
         user=user,
-        transaction_type='income',
+        type='income',
         date__gte=current_month
-    ).aggregate(total=Sum('amount'))['total'] or 0
-    
+    ).aggregate(
+        total=Sum('amount_in_user_currency')
+    )['total'] or 0
+        
     monthly_expenses = Transaction.objects.filter(
         user=user,
-        transaction_type='expense',
+        type='expense',
         date__gte=current_month
-    ).aggregate(total=Sum('amount'))['total'] or 0
+    ).aggregate(
+        total=Sum('amount_in_user_currency')
+    )['total'] or 0
     
     context = {
         'total_cards': total_cards,
@@ -101,5 +105,5 @@ def statistics_view(request):
         'member_since': user.created_at,
     }
     
-    return render(request, 'accounts/statistics.html', context)
+    return render(request, 'statistics.html', context)
 

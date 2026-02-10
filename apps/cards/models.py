@@ -162,7 +162,7 @@ class Card(models.Model):
     def update_balance(self, amount, transaction_type):
         if transaction_type == 'income':
             self.balance += amount
-        elif transaction_type == 'expenxe':
+        elif transaction_type == 'expense':
             self.balance -= 'amount'
         
         self.save()

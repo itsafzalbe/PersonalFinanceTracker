@@ -21,10 +21,7 @@ class CategoryListView(LoginRequiredMixin, ListView):
     
     def get_queryset(self):
         user = self.request.user
-        qs = Category.objects.filter(
-            Q(user=None) | Q(user=user),
-            is_active=True
-        )
+        qs = Category.objects.filter(Q(user=None) | Q(user=user), is_active=True)
         
         cat_type = self.request.GET.get('type')
         if cat_type in ['income', 'expense']:
@@ -40,10 +37,7 @@ class CategoryListView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         user = self.request.user
 
-        all_categories = Category.objects.filter(
-            Q(user=None) | Q(user=user),
-            is_active=True
-        )
+        all_categories = Category.objects.filter(Q(user=None) | Q(user=user), is_active=True )
         context['income_count'] = all_categories.filter(type='income').count()
         context['expense_count'] = all_categories.filter(type='expense').count()
         context['total_count'] = all_categories.count()

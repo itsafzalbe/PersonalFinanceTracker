@@ -389,9 +389,7 @@ class BudgetToggleActiveView(LoginRequiredMixin, View):
 
 
 class BudgetByCategoryView(LoginRequiredMixin, View):
-    """
-    GET /budgets/by-category/ - Get budgets grouped by category
-    """
+
     template_name = 'budgets/by_category.html'
 
     def get(self, request):

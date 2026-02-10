@@ -4,20 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
-from django.core.mail import send_mail
-from django.conf import settings
-from django.utils import timezone
-from django.db.models import Sum, Q
 
 from .models import CustomUser
-from .forms import (
-    SignupForm, 
-    VerifyCodeForm, 
-    CompleteRegistrationForm,
-    LoginForm,
-    UpdateProfileForm,
-    ChangePasswordForm
-)
+from .forms import *
 from .utils import send_verification_email
 
 
@@ -140,7 +129,7 @@ def complete_registration_view(request):
                 )
                 
      
-                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+                login(request, user, backend='django.contrib.auth.backends.ModelBackend') # here specified which backend authentiacted the user - login must know that 
                 
 
                 del request.session['verification_user_id']

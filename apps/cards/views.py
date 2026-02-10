@@ -82,7 +82,8 @@ class CardListView(LoginRequiredMixin, ListView):
             user=self.request.user
         ).select_related("card_type", "currency")
 
-        status_filter = self.request.GET.get("status")
+        # optional status filter. if the user wnats to see active we hsow the only cards with that status, if not show all 
+        status_filter = self.request.GET.get("status") 
         if status_filter:
             qs = qs.filter(status=status_filter)
 
