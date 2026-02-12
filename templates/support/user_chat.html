@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Support Chat" %}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="bi bi-chat-dots"></i> {% trans "Support Chat" %}</h5>
+                <small>{% trans "Get help from our support team" %}</small>
+            </div>
+            
+            <div class="chat-messages">
+                {% for msg in chat_messages %}
+                <div class="chat-message {% if msg.is_admin_reply %}admin-message{% else %}user-message{% endif %}">
+                    <div class="chat-message-header">
+                        {% if msg.is_admin_reply %}
+                            <i class="bi bi-shield-check"></i> {% trans "Support Team" %}
+                        {% else %}
+                            You
+                        {% endif %}
+                    </div>
+                    <div>{{ msg.message|linebreaks }}</div>
+                    <div class="chat-message-time">{{ msg.created_at|date:"M d, Y g:i A" }}</div>
+                </div>
+                {% empty %}
+                <div class="text-center text-muted py-5">
+                    <i class="bi bi-chat-dots" style="font-size: 3rem;"></i>
+                    <p class="mt-3">{% trans "No messages yet. Start a conversation!" %}</p>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="card-footer bg-white">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-2">
+                        {{ form.message }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-send"></i> {% trans "Send Message" %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

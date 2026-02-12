@@ -1,13 +1,15 @@
+
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <section style="text-align:center; padding: 80px 20px;">
-    <h1>Track Your Money. Control Your Life.</h1>
-    <p>Simple. Secure. Smart personal finance tracking.</p>
+    <h1>{% trans "Track Your Money. Control Your Life." %}</h1>
+    <p>{% trans "Simple. Secure. Smart personal finance tracking." %}</p>
 
     <div style="margin-top:40px;">
         <a href="{% url 'accounts:signup' %}" class="btn btn-primary">
-            Get Started
+            {% trans "Get Started" %}
         </a>
     </div>
 </section>

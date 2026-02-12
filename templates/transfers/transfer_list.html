@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Transfer History" %}{% endblock %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="display-6"><i class="bi bi-arrow-left-right"></i> {% trans "Card Transfers" %}</h1>
+        <p class="text-muted">{% trans "History of all your card-to-card transfers" %}</p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'transfers:transfer_create' %}" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> {% trans "New Transfer" %}
+        </a>
+    </div>
+</div>
+
+<!-- Summary Card -->
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="stats-card blue">
+            <div>
+                <p class="mb-1 opacity-75">{% trans "Total Transfers" %}</p>
+                <h3>{{ transfers.count }}</h3>
+            </div>
+            <i class="bi bi-arrow-left-right fs-1 opacity-50"></i>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stats-card">
+            <div>
+                <p class="mb-1 opacity-75">{% trans "Total Amount" %}</p>
+                <h3>{{ total_transferred|floatformat:0 }}</h3>
+                <small>{{ user.default_currency }}</small>
+            </div>
+            <i class="bi bi-cash-stack fs-1 opacity-50"></i>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stats-card green">
+            <div>
+                <p class="mb-1 opacity-75">{% trans "Active Cards" %}</p>
+                <h3>{{ user_cards.count }}</h3>
+            </div>
+            <i class="bi bi-credit-card fs-1 opacity-50"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Filter -->
+{% if user_cards %}
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-10">
+                <select name="card" class="form-select">
+                    <option value="">{% trans "All Cards" %}</option>
+                    {% for card in user_cards %}
+                        <option value="{{ card.id }}" {% if card_filter == card.id|stringformat:"s" %}selected{% endif %}>
+                            {{ card.card_name }} ({{ card.currency.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="bi bi-funnel"></i> {% trans "Filter" %}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endif %}
+
+<!-- Transfers List -->
+{% if transfers %}
+<div class="card">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>{% trans "Date" %}</th>
+                    <th>{% trans "From" %}</th>
+                    <th></th>
+                    <th>{% trans "To" %}</th>
+                    <th class="text-end">{% trans "Amount" %}</th>
+                    <th class="text-end">{% trans "Received" %}</th>
+                    <th>{% trans "Actions" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transfer in transfers %}
+                <tr>
+                    <td>
+                        <small class="text-muted">{{ transfer.created_at|date:"M d, Y" }}</small><br>
+                        <small class="text-muted">{{ transfer.created_at|time:"g:i A" }}</small>
+                    </td>
+                    <td>
+                        <strong>{{ transfer.from_card.card_name }}</strong><br>
+                        <small class="text-muted">{{ transfer.from_card.currency.code }}</small>
+                    </td>
+                    <td class="text-center">
+                        <i class="bi bi-arrow-right text-primary"></i>
+                    </td>
+                    <td>
+                        <strong>{{ transfer.to_card.card_name }}</strong><br>
+                        <small class="text-muted">{{ transfer.to_card.currency.code }}</small>
+                    </td>
+                    <td class="text-end">
+                        <strong class="text-danger">-{{ transfer.amount|floatformat:2 }}</strong><br>
+                        <small class="text-muted">{{ transfer.from_card.currency.code }}</small>
+                    </td>
+                    <td class="text-end">
+                        <strong class="text-success">+{{ transfer.converted_amount|floatformat:2 }}</strong><br>
+                        <small class="text-muted">{{ transfer.to_card.currency.code }}</small>
+                    </td>
+                    <td>
+                        <a href="{% url 'transfers:transfer_detail' transfer.pk %}" class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-eye"></i> {% trans "View" %}
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% else %}
+<div class="card">
+    <div class="card-body text-center py-5">
+        <i class="bi bi-arrow-left-right text-muted" style="font-size: 4rem;"></i>
+        <h4 class="mt-3">{% trans "No Transfers Yet" %}</h4>
+        <p class="text-muted mb-4">{% trans "You haven't made any card-to-card transfers yet." %}</p>
+        <a href="{% url 'transfers:transfer_create' %}" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> {% trans "Make Your First Transfer" %}
+        </a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,4 +1,7 @@
+
+
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}{{ title }} - Finance Tracker{% endblock %}
 
@@ -7,7 +10,7 @@
     <div class="col-12 mb-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{% url 'cards:cards_list' %}">Cards & Wallets</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'cards:cards_list' %}">{% trans "Cards & Wallets" %}</a></li>
                 <li class="breadcrumb-item active">{{ title }}</li>
             </ol>
         </nav>
@@ -27,7 +30,7 @@
                     <!-- Card Name -->
                     <div class="mb-3">
                         <label for="{{ form.card_name.id_for_label }}" class="form-label">
-                            <i class="bi bi-card-text"></i> Card Name <span class="text-danger">*</span>
+                            <i class="bi bi-card-text"></i> {% trans "Card Name" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.card_name }}
                         {% if form.card_name.errors %}
@@ -35,13 +38,13 @@
                                 {{ form.card_name.errors.0 }}
                             </div>
                         {% endif %}
-                        <div class="form-text">Give your card a memorable name (e.g., "My Visa Card", "Savings Wallet")</div>
+                        <div class="form-text">{% trans "Give your card a memorable name (e.g., \"My Visa Card\", \"Savings Wallet\")" %}</div>
                     </div>
                     
                     <!-- Bank Name -->
                     <div class="mb-3">
                         <label for="{{ form.bank_name.id_for_label }}" class="form-label">
-                            <i class="bi bi-bank"></i> Bank Name <span class="text-danger">*</span>
+                            <i class="bi bi-bank"></i> {% trans "Bank Name" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.bank_name }}
                         {% if form.bank_name.errors %}
@@ -55,7 +58,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.card_type.id_for_label }}" class="form-label">
-                                <i class="bi bi-credit-card-2-front"></i> Card Type <span class="text-danger">*</span>
+                                <i class="bi bi-credit-card-2-front"></i> {% trans "Card Type" %} <span class="text-danger">*</span>
                             </label>
                             {{ form.card_type }}
                             {% if form.card_type.errors %}
@@ -67,7 +70,7 @@
                         
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.currency.id_for_label }}" class="form-label">
-                                <i class="bi bi-cash-stack"></i> Currency <span class="text-danger">*</span>
+                                <i class="bi bi-cash-stack"></i> {% trans "Currency" %} <span class="text-danger">*</span>
                             </label>
                             {{ form.currency }}
                             {% if form.currency.errors %}
@@ -82,7 +85,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.balance.id_for_label }}" class="form-label">
-                                <i class="bi bi-wallet2"></i> Initial Balance <span class="text-danger">*</span>
+                                <i class="bi bi-wallet2"></i> {% trans "Initial Balance" %} <span class="text-danger">*</span>
                             </label>
                             {{ form.balance }}
                             {% if form.balance.errors %}
@@ -94,7 +97,7 @@
                         
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.card_number_last4.id_for_label }}" class="form-label">
-                                <i class="bi bi-hash"></i> Last 4 Digits
+                                <i class="bi bi-hash"></i> {% trans "Last 4 Digits" %}
                             </label>
                             {{ form.card_number_last4 }}
                             {% if form.card_number_last4.errors %}
@@ -102,14 +105,14 @@
                                     {{ form.card_number_last4.errors.0 }}
                                 </div>
                             {% endif %}
-                            <div class="form-text">Last 4 digits of your card number (for identification)</div>
+                            <div class="form-text">{% trans "Last 4 digits of your card number (for identification)" %}</div>
                         </div>
                     </div>
                     
                     <!-- Status -->
                     <div class="mb-4">
                         <label for="{{ form.status.id_for_label }}" class="form-label">
-                            <i class="bi bi-toggle-on"></i> Status <span class="text-danger">*</span>
+                            <i class="bi bi-toggle-on"></i> {% trans "Status" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.status }}
                         {% if form.status.errors %}
@@ -130,7 +133,7 @@
                             <i class="bi bi-check-circle"></i> {{ button_text }}
                         </button>
                         <a href="{% url 'cards:cards_list' %}" class="btn btn-outline-secondary">
-                            <i class="bi bi-x-circle"></i> Cancel
+                            <i class="bi bi-x-circle"></i> {% trans "Cancel" %}
                         </a>
                     </div>
                 </form>
@@ -140,13 +143,13 @@
         <!-- Tips -->
         <div class="card mt-4 bg-light">
             <div class="card-body">
-                <h6 class="mb-3"><i class="bi bi-lightbulb"></i> Tips</h6>
+                <h6 class="mb-3"><i class="bi bi-lightbulb"></i> {% trans "Tips" %}</h6>
                 <ul class="small mb-0">
-                    <li>Choose a descriptive name for easy identification</li>
-                    <li>Select the correct currency to avoid conversion issues</li>
-                    <li>Enter your current balance accurately</li>
-                    <li>You can always update the balance later</li>
-                    <li>Set status to "Active" for cards you use regularly</li>
+                    <li>{% trans "Choose a descriptive name for easy identification" %}</li>
+                    <li>{% trans "Select the correct currency to avoid conversion issues" %}</li>
+                    <li>{% trans "Enter your current balance accurately" %}</li>
+                    <li>{% trans "You can always update the balance later" %}</li>
+                    <li>{% trans "Set status to \"Active\" for cards you use regularly" %}</li>
                 </ul>
             </div>
         </div>

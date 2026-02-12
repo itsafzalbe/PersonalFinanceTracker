@@ -1,26 +1,28 @@
+
 {% extends 'base.html' %}
-{% block title %}Delete Budget{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Delete Budget" %}{% endblock %}
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-lg-6">
         <div class="card border-danger">
             <div class="card-body p-4 text-center">
                 <i class="bi bi-exclamation-triangle-fill text-warning" style="font-size: 3rem;"></i>
-                <h4 class="mt-3">Delete "{{ object.name }}"?</h4>
-                <p class="text-muted">This will permanently delete this budget. This action cannot be undone!</p>
+                <h4 class="mt-3">{% trans "Delete Budget" %} "{{ object.name }}"?</h4>
+                <p class="text-muted">{% trans "This will permanently delete this budget. This action cannot be undone!" %}</p>
                 <div class="card bg-light mb-4">
                     <div class="card-body">
                         <dl class="row mb-0">
-                            <dt class="col-sm-4">Budget:</dt><dd class="col-sm-8">{{ object.amount }} {{ object.currency.code }}</dd>
-                            <dt class="col-sm-4">Period:</dt><dd class="col-sm-8">{{ object.get_period_display }}</dd>
-                            <dt class="col-sm-4">Category:</dt><dd class="col-sm-8">{{ object.category.name }}</dd>
+                            <dt class="col-sm-4">{% trans "Budget:" %}</dt><dd class="col-sm-8">{{ object.amount }} {{ object.currency.code }}</dd>
+                            <dt class="col-sm-4">{% trans "Period:" %}</dt><dd class="col-sm-8">{{ object.get_period_display }}</dd>
+                            <dt class="col-sm-4">{% trans "Category:" %}</dt><dd class="col-sm-8">{{ object.category.name }}</dd>
                         </dl>
                     </div>
                 </div>
                 <form method="post">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-danger">Yes, Delete Budget</button>
-                    <a href="{% url 'budgets:budget_detail' object.pk %}" class="btn btn-outline-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-danger">{% trans "Yes, Delete Budget" %}</button>
+                    <a href="{% url 'budgets:budget_detail' object.pk %}" class="btn btn-outline-secondary">{% trans "Cancel" %}</a>
                 </form>
             </div>
         </div>

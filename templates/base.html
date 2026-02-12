@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -282,6 +284,36 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <!-- Language Switcher -->
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            🌍 {% get_current_language as LANGUAGE_CODE %}
+                            {{ LANGUAGE_CODE|upper }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <form action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="language" value="en">
+                                    <button type="submit" class="dropdown-item">English 🏴󠁧󠁢󠁥󠁮󠁧󠁿</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="language" value="ru">
+                                    <button type="submit" class="dropdown-item">Русский 🇷🇺</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="language" value="uz">
+                                    <button type="submit" class="dropdown-item">O‘zbek 🇺🇿</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                     {% if user.is_authenticated %}
                         
                         <li class="nav-item dropdown">
@@ -289,14 +321,14 @@
                                 <i class="bi bi-person-circle"></i> {{ user.username }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{% url 'accounts:profile' %}"><i class="bi bi-person"></i> Profile</a></li>
-                                <li><a class="dropdown-item" href="{% url 'dashboard:statistics' %}"><i class="bi bi-bar-chart"></i> Statistics</a></li>
+                                <li><a class="dropdown-item" href="{% url 'accounts:profile' %}"><i class="bi bi-person"></i> {% trans "Profile" %}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'dashboard:statistics' %}"><i class="bi bi-bar-chart"></i> {% trans "Statistics" %}</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form method="post" action="{% url 'accounts:logout' %}" class="d-inline">
                                         {% csrf_token %}
                                         <button type="submit" class="dropdown-item text-danger">
-                                            <i class="bi bi-box-arrow-right"></i> Logout
+                                            <i class="bi bi-box-arrow-right"></i> {% trans "Logout" %}
                                         </button>
                                     </form>
                                 </li>
@@ -305,12 +337,12 @@
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'accounts:login' %}">
-                                <i class="bi bi-box-arrow-in-right"></i> Login
+                                <i class="bi bi-box-arrow-in-right"></i> {% trans "Login" %}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'accounts:signup' %}">
-                                <i class="bi bi-person-plus"></i> Sign Up
+                                <i class="bi bi-person-plus"></i> {% trans "Sign Up" %}
                             </a>
                         </li>
                     {% endif %}
@@ -335,33 +367,51 @@
             <!-- NAV LINKS -->
             <nav class="sidebar-nav">
                 <a href="{% url 'dashboard:dashboard' %}" class="sidebar-link">
-                    <i class="bi bi-house-door"></i> Dashboard
+                    <i class="bi bi-house-door"></i> {% trans "Dashboard" %}
                 </a>
                 <a href="{% url 'transactions:transaction_list' %}" class="sidebar-link">
-                    <i class="bi bi-arrow-left-right"></i> Transactions
+                    <i class="bi bi-arrow-left-right"></i> {% trans "Transactions" %}
                 </a>
                 <a href="{% url 'cards:cards_list' %}" class="sidebar-link">
-                    <i class="bi bi-credit-card"></i> Cards / Wallets
+                    <i class="bi bi-credit-card"></i> {% trans "Cards / Wallets" %}
                 </a>
                 <a href="{% url 'budgets:budget_list' %}" class="sidebar-link">
-                    <i class="bi bi-pie-chart"></i> Budgets
+                    <i class="bi bi-pie-chart"></i> {% trans "Budgets" %}
                 </a>
                 <a href="{% url 'dashboard:statistics' %}" class="sidebar-link">
-                    <i class="bi bi-bar-chart"></i> Statistics
+                    <i class="bi bi-bar-chart"></i> {% trans "Statistics" %}
                 </a>
+                <a href="{% url 'transfers:transfer_list' %}" class="sidebar-link">
+                    <i class="bi bi-arrow-left-right"></i> {% trans "Transfers" %}
+                </a>
+                {% if user.is_staff %}
+                <a href="{% url 'support:admin_chat_list' %}" 
+                class="sidebar-link d-flex justify-content-between align-items-center"
+                id="adminSupportLink">
+
+                    <span>
+                        <i class="bi bi-chat-dots"></i> {% trans "Support Chats" %}
+                    </span>
+
+                    <span id="adminUnreadBadge" 
+                        class="badge bg-danger"
+                        style="display: none;">
+                    </span>
+                </a>
+                {% endif %}
             </nav>
 
             <!-- BOTTOM -->
             <div class="sidebar-footer">
                 <div class="member-since">
-                    Member since<br>
+                    {% trans "Member since" %}<br>
                     <strong>{{ user.date_joined|date:"F Y" }}</strong>
                 </div>
 
                 <form method="post" action="{% url 'accounts:logout' %}">
                     {% csrf_token %}
                     <button type="submit" class="sidebar-logout">
-                        <i class="bi bi-box-arrow-right"></i> Logout
+                        <i class="bi bi-box-arrow-right"></i> {% trans "Logout" %}
                     </button>
                 </form>
             </div>
@@ -395,6 +445,15 @@
         </div>
     </main>
     </div> 
+    {% if request.user.is_authenticated %}
+        {% load static %}
+        <a href="{% url 'support:user_chat' %}" id="supportBtn" class="support-btn" title="Support">
+            <i class="bi bi-chat-dots"></i>
+        </a>
+
+        <link rel="stylesheet" href="{% static 'support/css/support.css' %}">
+        <script src="{% static 'support/js/support.js' %}"></script>
+    {% endif %}
 
     {% comment %} <!-- Footer -->
     <footer class="mt-5">
@@ -413,7 +472,35 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        function updateUnread() {
+            fetch("{% url 'support:get_unread_count' %}")
+                .then(response => response.json())
+                .then(data => {
+                    const badge = document.getElementById("adminUnreadBadge");
+                    const link = document.getElementById("adminSupportLink");
+
+                    if (!badge) return;
+
+                    if (data.unread_count > 0) {
+                        badge.textContent = data.unread_count;
+                        badge.style.display = "inline-block";
+                        link.classList.add("text-danger");
+                    } else {
+                        badge.style.display = "none";
+                        link.classList.remove("text-danger");
+                    }
+                })
+                .catch(error => console.log("Unread error:", error));
+        }
+
+        updateUnread();
+        setInterval(updateUnread, 5000);
+
+    });
+    </script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

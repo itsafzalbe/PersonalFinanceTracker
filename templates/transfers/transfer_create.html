@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Transfer Between Cards" %}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white py-3">
+                <h5 class="mb-0"><i class="bi bi-arrow-left-right"></i> {% trans "Transfer Between Cards" %}</h5>
+                <small>{% trans "Transfer between ANY currencies - USD, EUR, UZS, and more!" %}</small>
+            </div>
+            
+            <!-- Multi-Currency Support Banner -->
+            <div class="alert alert-success mb-0 rounded-0 border-0">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-currency-exchange fs-4 me-3"></i>
+                    <div>
+                        <strong>{% trans "Multi-Currency Support" %}</strong><br>
+                        <small>{% trans "Transfer from USD to UZS, EUR to USD, UZS to EUR - any combination! Automatic conversion at current rates." %}</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-body p-4">
+                <form method="post" id="transferForm">
+                    {% csrf_token %}
+                    
+                    <!-- From Card -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">
+                            <i class="bi bi-credit-card"></i> {% trans "From Card (Any Currency)" %} *
+                        </label>
+                        {{ form.from_card }}
+                        {% if form.from_card.errors %}
+                            <div class="text-danger small mt-1">{{ form.from_card.errors.0 }}</div>
+                        {% endif %}
+                        <div id="fromCardBalance" class="mt-2">
+                            <span class="badge bg-secondary" id="fromCurrencyBadge"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Transfer Icon -->
+                    <div class="text-center mb-4">
+                        <div class="position-relative">
+                            <i class="bi bi-arrow-down-circle text-primary" style="font-size: 2rem;"></i>
+                            <div class="badge bg-info position-absolute top-100 start-50 translate-middle mt-2" id="conversionBadge" style="display: none;">
+                                <i class="bi bi-currency-exchange"></i> {% trans "Converting..." %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- To Card -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">
+                            <i class="bi bi-credit-card-2-front"></i> {% trans "To Card (Any Currency)" %} *
+                        </label>
+                        {{ form.to_card }}
+                        {% if form.to_card.errors %}
+                            <div class="text-danger small mt-1">{{ form.to_card.errors.0 }}</div>
+                        {% endif %}
+                        <div id="toCardBalance" class="mt-2">
+                            <span class="badge bg-secondary" id="toCurrencyBadge"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Amount -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">
+                            <i class="bi bi-cash-coin"></i> {% trans "Amount to Transfer" %} *
+                        </label>
+                        {{ form.amount }}
+                        {% if form.amount.errors %}
+                            <div class="text-danger small mt-1">{{ form.amount.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Conversion Preview -->
+                    <div id="conversionPreview" class="alert alert-info mb-4" style="display: none;">
+                        <h6 class="alert-heading mb-3">
+                            <i class="bi bi-currency-exchange"></i> {% trans "Multi-Currency Transfer Preview" %}
+                        </h6>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white rounded">
+                                    <small class="text-muted d-block mb-1">{% trans "You Send" %}</small>
+                                    <strong class="fs-5 text-danger" id="sendAmount">-</strong>
+                                    <div class="mt-1">
+                                        <span class="badge bg-danger" id="sendCurrency">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white rounded">
+                                    <small class="text-muted d-block mb-1">{% trans "Recipient Gets" %}</small>
+                                    <strong class="fs-5 text-success" id="receiveAmount">-</strong>
+                                    <div class="mt-1">
+                                        <span class="badge bg-success" id="receiveCurrency">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-3">
+                        <div id="exchangeRateInfo" class="small mb-2">
+                            <i class="bi bi-info-circle"></i> <strong>{% trans "Exchange Rate" %}:</strong> <span id="rateText">-</span>
+                        </div>
+                        <div id="conversionType" class="small mb-2">
+                            <i class="bi bi-arrow-left-right"></i> <strong>{% trans "Conversion" %}:</strong> <span id="conversionTypeText">-</span>
+                        </div>
+                        <div class="mt-3 small bg-light p-2 rounded">
+                            <strong><i class="bi bi-wallet2"></i> {% trans "New Balances After Transfer" %}:</strong><br>
+                            <div class="mt-1" id="newBalances">
+                                <span id="newFromBalance" class="d-block"></span>
+                                <span id="newToBalance" class="d-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Description -->
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="bi bi-card-text"></i> {% trans "Description (Optional)" %}
+                        </label>
+                        {{ form.description }}
+                        {% if form.description.errors %}
+                            <div class="text-danger small mt-1">{{ form.description.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Form Errors -->
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+                    
+                    <!-- Submit Buttons -->
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <i class="bi bi-check-circle"></i> {% trans "Complete Transfer" %}
+                        </button>
+                        <a href="{% url 'transfers:transfer_list' %}" class="btn btn-outline-secondary">
+                            <i class="bi bi-x-circle"></i> {% trans "Cancel" %}
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Help Tips -->
+        <div class="card mt-3 bg-light border-0">
+            <div class="card-body py-3">
+                <h6 class="mb-2"><i class="bi bi-lightbulb-fill text-warning"></i> {% trans "Transfer Tips" %}:</h6>
+                <ul class="mb-0 small">
+                    <li><strong>{% trans "Multi-Currency Support" %}:</strong> {% trans "Transfer between ANY currencies! USD → UZS, EUR → USD, UZS → EUR, etc." %}</li>
+                    <li><strong>{% trans "Automatic Conversion" %}:</strong> {% trans "We'll convert at the current exchange rate automatically." %}</li>
+                    <li><strong>{% trans "Live Preview" %}:</strong> {% trans "See exactly how much will be received before confirming." %}</li>
+                    <li><strong>{% trans "Instant Transfer" %}:</strong> {% trans "Money moves between your cards immediately." %}</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Currency Examples -->
+        <div class="card mt-3 border-success">
+            <div class="card-body py-3">
+                <h6 class="mb-2 text-success"><i class="bi bi-check-circle-fill"></i> {% trans "Supported Currency Transfers" %}:</h6>
+                <div class="row g-2 small">
+                    <div class="col-6 col-md-4">
+                        <span class="badge bg-light text-dark w-100">USD → UZS</span>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <span class="badge bg-light text-dark w-100">UZS → USD</span>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <span class="badge bg-light text-dark w-100">EUR → UZS</span>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <span class="badge bg-light text-dark w-100">UZS → EUR</span>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <span class="badge bg-light text-dark w-100">USD → EUR</span>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <span class="badge bg-light text-dark w-100">EUR → USD</span>
+                    </div>
+                </div>
+                <p class="mb-0 mt-2 small text-muted">{% trans "and any other currency combination!" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fromCard = document.getElementById('fromCard');
+    const toCard = document.getElementById('toCard');
+    const amount = document.getElementById('transferAmount');
+    const preview = document.getElementById('conversionPreview');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    let calculationTimeout;
+    
+    function calculateTransfer() {
+        const fromCardId = fromCard.value;
+        const toCardId = toCard.value;
+        const amountValue = amount.value;
+        
+        if (!fromCardId || !toCardId || !amountValue || parseFloat(amountValue) <= 0) {
+            preview.style.display = 'none';
+            return;
+        }
+        
+        // Clear previous timeout
+        clearTimeout(calculationTimeout);
+        
+        // Show loading
+        preview.style.display = 'block';
+        document.getElementById('sendAmount').textContent = 'Calculating...';
+        
+        // Debounce calculation
+        calculationTimeout = setTimeout(() => {
+            fetch(`/transfers/api/calculate/?from_card=${fromCardId}&to_card=${toCardId}&amount=${amountValue}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        preview.className = 'alert alert-danger mb-4';
+                        preview.innerHTML = `<i class="bi bi-exclamation-triangle"></i> ${data.error}`;
+                        submitBtn.disabled = true;
+                    } else {
+                        preview.className = 'alert alert-info mb-4';
+                        preview.style.display = 'block';
+                        
+                        // Show currency badges
+                        document.getElementById('sendCurrency').textContent = data.from_currency;
+                        document.getElementById('receiveCurrency').textContent = data.to_currency;
+                        
+                        document.getElementById('sendAmount').textContent = 
+                            data.amount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                        
+                        document.getElementById('receiveAmount').textContent = 
+                            data.converted_amount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                        
+                        // Show conversion type
+                        const conversionBadge = document.getElementById('conversionBadge');
+                        const conversionTypeText = document.getElementById('conversionTypeText');
+                        
+                        if (data.from_currency !== data.to_currency) {
+                            conversionBadge.style.display = 'block';
+                            conversionBadge.innerHTML = `<i class="bi bi-currency-exchange"></i> ${data.from_currency} → ${data.to_currency}`;
+                            
+                            document.getElementById('rateText').innerHTML = 
+                                `<span class="badge bg-primary">1 ${data.from_currency} = ${data.exchange_rate.toFixed(6)} ${data.to_currency}</span>`;
+                            
+                            conversionTypeText.innerHTML = 
+                                `<span class="badge bg-warning text-dark">${data.from_currency} to ${data.to_currency}</span> (Different currencies - automatic conversion applied)`;
+                        } else {
+                            conversionBadge.style.display = 'none';
+                            document.getElementById('rateText').innerHTML = 
+                                `<span class="badge bg-secondary">1:1 (Same currency)</span>`;
+                            
+                            conversionTypeText.innerHTML = 
+                                `<span class="badge bg-success">${data.from_currency} to ${data.to_currency}</span> (Same currency - no conversion needed)`;
+                        }
+                        
+                        // Update currency badges
+                        document.getElementById('fromCurrencyBadge').textContent = 
+                            `Available: ${data.from_balance.toLocaleString()} ${data.from_currency}`;
+                        document.getElementById('toCurrencyBadge').textContent = 
+                            `Current: ${data.to_balance.toLocaleString()} ${data.to_currency}`;
+                        
+                        document.getElementById('newFromBalance').innerHTML = 
+                            `<i class="bi bi-credit-card text-danger"></i> ${fromCard.options[fromCard.selectedIndex].text.split(' - ')[0]}: <strong>${data.new_from_balance.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} ${data.from_currency}</strong>`;
+                        
+                        document.getElementById('newToBalance').innerHTML = 
+                            `<i class="bi bi-credit-card text-success"></i> ${toCard.options[toCard.selectedIndex].text.split(' - ')[0]}: <strong>${data.new_to_balance.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} ${data.to_currency}</strong>`;
+                        
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    preview.style.display = 'none';
+                    submitBtn.disabled = true;
+                });
+        }, 500);
+    }
+    
+    // Event listeners
+    fromCard.addEventListener('change', calculateTransfer);
+    toCard.addEventListener('change', calculateTransfer);
+    amount.addEventListener('input', calculateTransfer);
+    
+    // Form submit confirmation
+    document.getElementById('transferForm').addEventListener('submit', function(e) {
+        if (!confirm('Are you sure you want to complete this transfer?')) {
+            e.preventDefault();
+            return false;
+        }
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Processing...';
+    });
+});
+</script>
+{% endblock %}

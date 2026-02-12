@@ -1,4 +1,6 @@
+
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}Currency Converter - Finance Tracker{% endblock %}
 
@@ -7,14 +9,14 @@
     <div class="col-12">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{% url 'cards:currency_list' %}">Currencies</a></li>
-                <li class="breadcrumb-item active">Convert</li>
+                <li class="breadcrumb-item"><a href="{% url 'cards:currency_list' %}">{% trans "Currencies" %}</a></li>
+                <li class="breadcrumb-item active">{% trans "Convert" %}</li>
             </ol>
         </nav>
         <h1 class="display-6">
-            <i class="bi bi-currency-exchange"></i> Currency Converter
+            <i class="bi bi-currency-exchange"></i> {% trans "Currency Converter" %}
         </h1>
-        <p class="text-muted">Convert between different currencies</p>
+        <p class="text-muted">{% trans "Convert between different currencies" %}</p>
     </div>
 </div>
 
@@ -28,7 +30,7 @@
                     <!-- Amount -->
                     <div class="mb-4">
                         <label for="{{ form.amount.id_for_label }}" class="form-label">
-                            <i class="bi bi-cash"></i> Amount <span class="text-danger">*</span>
+                            <i class="bi bi-cash"></i> {% trans "Amount" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.amount }}
                         {% if form.amount.errors %}
@@ -41,7 +43,7 @@
                     <!-- From Currency -->
                     <div class="mb-3">
                         <label for="{{ form.from_currency.id_for_label }}" class="form-label">
-                            <i class="bi bi-arrow-up-circle"></i> From Currency <span class="text-danger">*</span>
+                            <i class="bi bi-arrow-up-circle"></i> {% trans "From Currency" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.from_currency }}
                         {% if form.from_currency.errors %}
@@ -54,14 +56,14 @@
                     <!-- Swap Button -->
                     <div class="text-center mb-3">
                         <button type="button" class="btn btn-outline-secondary btn-sm" onclick="swapCurrencies()">
-                            <i class="bi bi-arrow-down-up"></i> Swap
+                            <i class="bi bi-arrow-down-up"></i> {% trans "Swap" %}
                         </button>
                     </div>
                     
                     <!-- To Currency -->
                     <div class="mb-4">
                         <label for="{{ form.to_currency.id_for_label }}" class="form-label">
-                            <i class="bi bi-arrow-down-circle"></i> To Currency <span class="text-danger">*</span>
+                            <i class="bi bi-arrow-down-circle"></i> {% trans "To Currency" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.to_currency }}
                         {% if form.to_currency.errors %}
@@ -78,7 +80,7 @@
                     {% endif %}
                     
                     <button type="submit" class="btn btn-primary w-100 py-3">
-                        <i class="bi bi-calculator"></i> Convert
+                        <i class="bi bi-calculator"></i> {% trans "Convert" %}
                     </button>
                 </form>
             </div>
@@ -89,13 +91,13 @@
             <div class="card mt-4 border-success">
                 <div class="card-body p-4">
                     <h5 class="mb-4 text-center">
-                        <i class="bi bi-check-circle-fill text-success"></i> Conversion Result
+                        <i class="bi bi-check-circle-fill text-success"></i> {% trans "Conversion Result" %}
                     </h5>
                     
                     <div class="row g-4 mb-4">
                         <div class="col-md-5">
                             <div class="text-center p-4 bg-light rounded">
-                                <small class="text-muted d-block mb-2">From</small>
+                                <small class="text-muted d-block mb-2">{% trans "From" %}</small>
                                 <h2 class="mb-0">{{ result.amount|floatformat:2 }}</h2>
                                 <h5 class="text-muted">{{ result.from_currency.code }}</h5>
                                 <p class="small mb-0">{{ result.from_currency.name }}</p>
@@ -108,7 +110,7 @@
                         
                         <div class="col-md-5">
                             <div class="text-center p-4 bg-success bg-opacity-10 rounded border border-success">
-                                <small class="text-muted d-block mb-2">To</small>
+                                <small class="text-muted d-block mb-2">{% trans "To" %}</small>
                                 <h2 class="mb-0 text-success">{{ result.converted|floatformat:2 }}</h2>
                                 <h5 class="text-muted">{{ result.to_currency.code }}</h5>
                                 <p class="small mb-0">{{ result.to_currency.name }}</p>
@@ -120,7 +122,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <span>
                                 <i class="bi bi-info-circle"></i>
-                                <strong>Exchange Rate:</strong> 
+                                <strong>{% trans "Exchange Rate:" %}</strong> 
                                 1 {{ result.from_currency.code }} = {{ result.rate|floatformat:4 }} {{ result.to_currency.code }}
                             </span>
                             <small class="text-muted">{{ result.date|date:"M d, Y" }}</small>
@@ -133,7 +135,7 @@
         <!-- Popular Conversions -->
         <div class="card mt-4 bg-light">
             <div class="card-body">
-                <h6 class="mb-3"><i class="bi bi-star"></i> Popular Conversions</h6>
+                <h6 class="mb-3"><i class="bi bi-star"></i> {% trans "Popular Conversions" %}</h6>
                 <div class="row g-2">
                     <div class="col-6 col-md-3">
                         <a href="?from_currency=USD&to_currency=UZS" class="btn btn-sm btn-outline-secondary w-100">

@@ -1,4 +1,6 @@
+
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}{{ card.card_name }} - Finance Tracker{% endblock %}
 
@@ -8,20 +10,20 @@
     <div class="col-md-8">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{% url 'cards:cards_list' %}">Cards & Wallets</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'cards:cards_list' %}">{% trans "Cards & Wallets" %}</a></li>
                 <li class="breadcrumb-item active">{{ card.card_name }}</li>
             </ol>
         </nav>
         <h1 class="display-6">
             {{ card.card_name }}
             {% if card.is_default %}
-                <span class="badge bg-primary">Default</span>
+                <span class="badge bg-primary">{% trans "Default" %}</span>
             {% endif %}
         </h1>
     </div>
     <div class="col-md-4 text-md-end">
         <a href="{% url 'cards:card_edit' card.pk %}" class="btn btn-primary">
-            <i class="bi bi-pencil"></i> Edit Card
+            <i class="bi bi-pencil"></i> {% trans "Edit Card" %}
         </a>
     </div>
 </div>
@@ -42,24 +44,24 @@
                 </div>
                 
                 <div class="mb-4">
-                    <p class="mb-2 small opacity-75">Card Number</p>
+                    <p class="mb-2 small opacity-75">{% trans "Card Number" %}</p>
                     <h4 class="mb-0 letter-spacing">•••• •••• •••• {{ card.card_number_last4 }}</h4>
                 </div>
                 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-1 small opacity-75">Current Balance</p>
+                        <p class="mb-1 small opacity-75">{% trans "Current Balance" %}</p>
                         <h3 class="mb-0">{{ card.balance|floatformat:2 }} {{ card.currency.code }}</h3>
                     </div>
                     <div class="col-6 text-end">
-                        <p class="mb-1 small opacity-75">Status</p>
+                        <p class="mb-1 small opacity-75">{% trans "Status" %}</p>
                         <h6 class="mb-0">
                             {% if card.status == 'active' %}
-                                <span class="badge bg-success">Active</span>
+                                <span class="badge bg-success">{% trans "Active" %}</span>
                             {% elif card.status == 'inactive' %}
-                                <span class="badge bg-secondary">Inactive</span>
+                                <span class="badge bg-secondary">{% trans "Inactive" %}</span>
                             {% else %}
-                                <span class="badge bg-danger">Blocked</span>
+                                <span class="badge bg-danger">{% trans "Blocked" %}</span>
                             {% endif %}
                         </h6>
                     </div>
@@ -70,7 +72,7 @@
         <!-- This Month Activity -->
         <div class="card mb-4">
             <div class="card-header bg-white border-0 pt-4">
-                <h5 class="mb-0"><i class="bi bi-calendar3"></i> This Month's Activity</h5>
+                <h5 class="mb-0"><i class="bi bi-calendar3"></i> {% trans "This Month's Activity" %}</h5>
             </div>
             <div class="card-body">
                 <div class="row g-4">
@@ -80,7 +82,7 @@
                                 <div class="bg-success bg-opacity-10 text-success rounded-circle p-2 me-2">
                                     <i class="bi bi-arrow-down-circle"></i>
                                 </div>
-                                <span class="text-muted">Income</span>
+                                <span class="text-muted">{% trans "Income" %}</span>
                             </div>
                             <h4 class="mb-0 text-success">{{ monthly_income|floatformat:2 }} {{ card.currency.code }}</h4>
                         </div>
@@ -91,7 +93,7 @@
                                 <div class="bg-danger bg-opacity-10 text-danger rounded-circle p-2 me-2">
                                     <i class="bi bi-arrow-up-circle"></i>
                                 </div>
-                                <span class="text-muted">Expenses</span>
+                                <span class="text-muted">{% trans "Expenses" %}</span>
                             </div>
                             <h4 class="mb-0 text-danger">{{ monthly_expenses|floatformat:2 }} {{ card.currency.code }}</h4>
                         </div>
@@ -104,8 +106,8 @@
         <div class="card">
             <div class="card-header bg-white border-0 pt-4">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0"><i class="bi bi-clock-history"></i> Recent Transactions</h5>
-                    <a href="{% url 'transactions:transaction_list' %}" class="btn btn-sm btn-outline-primary">View All</a>
+                    <h5 class="mb-0"><i class="bi bi-clock-history"></i> {% trans "Recent Transactions" %}</h5>
+                    <a href="{% url 'transactions:transaction_list' %}" class="btn btn-sm btn-outline-primary">{% trans "View All" %}</a>
                 </div>
             </div>
             <div class="card-body">
@@ -140,7 +142,7 @@
                 {% else %}
                     <div class="text-center py-4">
                         <i class="bi bi-inbox text-muted" style="font-size: 3rem;"></i>
-                        <p class="text-muted mt-3 mb-0">No transactions yet</p>
+                        <p class="text-muted mt-3 mb-0">{% trans "No transactions yet" %}</p>
                     </div>
                 {% endif %}
             </div>
@@ -152,21 +154,21 @@
         <!-- Quick Actions -->
         <div class="card mb-4">
             <div class="card-header bg-white border-0 pt-4">
-                <h6 class="mb-0"><i class="bi bi-lightning"></i> Quick Actions</h6>
+                <h6 class="mb-0"><i class="bi bi-lightning"></i> {% trans "Quick Actions" %}</h6>
             </div>
             <div class="card-body">
                 <div class="d-grid gap-2">
                     <a href="{% url 'cards:card_update_balance' card.pk %}" class="btn btn-outline-primary">
-                        <i class="bi bi-cash-coin"></i> Update Balance
+                        <i class="bi bi-cash-coin"></i> {% trans "Update Balance" %}    
                     </a>
                     <a href="{% url 'transactions:transaction_create' %}?card_id={{ card.pk }}" class="btn btn-outline-success">
-                        <i class="bi bi-plus-circle"></i> Add Transaction
+                        <i class="bi bi-plus-circle"></i> {% trans "Add Transaction" %}
                     </a>
                     {% if not card.is_default and card.status == 'active' %}
                         <form method="post" action="{% url 'cards:card_set_default' card.pk %}">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-outline-warning w-100">
-                                <i class="bi bi-star"></i> Set as Default
+                                <i class="bi bi-star"></i> {% trans "Set as Default" %}
                             </button>
                         </form>
                     {% endif %}
@@ -177,34 +179,34 @@
         <!-- Card Details -->
         <div class="card mb-4">
             <div class="card-header bg-white border-0 pt-4">
-                <h6 class="mb-0"><i class="bi bi-info-circle"></i> Card Details</h6>
+                <h6 class="mb-0"><i class="bi bi-info-circle"></i> {% trans "Card Details" %}</h6>
             </div>
             <div class="card-body">
                 <dl class="row mb-0">
-                    <dt class="col-sm-5 small text-muted">Card Name</dt>
+                    <dt class="col-sm-5 small text-muted">{% trans "Card Name" %}</dt>
                     <dd class="col-sm-7 small">{{ card.card_name }}</dd>
                     
-                    <dt class="col-sm-5 small text-muted">Bank</dt>
+                    <dt class="col-sm-5 small text-muted">{% trans "Bank" %}</dt>
                     <dd class="col-sm-7 small">{{ card.bank_name }}</dd>
                     
-                    <dt class="col-sm-5 small text-muted">Card Type</dt>
+                    <dt class="col-sm-5 small text-muted">{% trans "Card Type" %}</dt>
                     <dd class="col-sm-7 small">{{ card.card_type.name }}</dd>
                     
-                    <dt class="col-sm-5 small text-muted">Currency</dt>
+                    <dt class="col-sm-5 small text-muted">{% trans "Currency" %}</dt>
                     <dd class="col-sm-7 small">{{ card.currency.code }} - {{ card.currency.name }}</dd>
                     
-                    <dt class="col-sm-5 small text-muted">Last 4 Digits</dt>
+                    <dt class="col-sm-5 small text-muted">{% trans "Last 4 Digits" %}</dt>
                     <dd class="col-sm-7 small">{{ card.card_number_last4 }}</dd>
                     
-                    <dt class="col-sm-5 small text-muted">Created</dt>
+                    <dt class="col-sm-5 small text-muted">{% trans "Created" %}</dt>
                     <dd class="col-sm-7 small">{{ card.created_at|date:"M d, Y" }}</dd>
                     
-                    <dt class="col-sm-5 small text-muted">Default Card</dt>
+                    <dt class="col-sm-5 small text-muted">{% trans "Default Card" %}</dt>
                     <dd class="col-sm-7 small">
                         {% if card.is_default %}
-                            <span class="badge bg-primary">Yes</span>
+                            <span class="badge bg-primary">{% trans "Yes" %}</span>
                         {% else %}
-                            No
+                            {% trans "No" %}
                         {% endif %}
                     </dd>
                 </dl>
@@ -214,18 +216,18 @@
         <!-- Change Status -->
         <div class="card mb-4">
             <div class="card-header bg-white border-0 pt-4">
-                <h6 class="mb-0"><i class="bi bi-toggle-on"></i> Change Status</h6>
+                <h6 class="mb-0"><i class="bi bi-toggle-on"></i> {% trans "Change Status" %}</h6>
             </div>
             <div class="card-body">
                 <form method="post" action="{% url 'cards:card_change_status' card.pk %}">
                     {% csrf_token %}
                     <select name="status" class="form-select mb-2" required>
-                        <option value="active" {% if card.status == 'active' %}selected{% endif %}>Active</option>
-                        <option value="inactive" {% if card.status == 'inactive' %}selected{% endif %}>Inactive</option>
-                        <option value="blocked" {% if card.status == 'blocked' %}selected{% endif %}>Blocked</option>
+                        <option value="active" {% if card.status == 'active' %}selected{% endif %}>{% trans "Active" %}</option>
+                        <option value="inactive" {% if card.status == 'inactive' %}selected{% endif %}>{% trans "Inactive" %}</option>
+                        <option value="blocked" {% if card.status == 'blocked' %}selected{% endif %}>{% trans "Blocked" %}</option>
                     </select>
                     <button type="submit" class="btn btn-sm btn-primary w-100">
-                        <i class="bi bi-check-circle"></i> Update Status
+                        <i class="bi bi-check-circle"></i> {% trans "Update Status" %}
                     </button>
                 </form>
             </div>
@@ -234,12 +236,12 @@
         <!-- Danger Zone -->
         <div class="card border-danger">
             <div class="card-header bg-white border-0 pt-4">
-                <h6 class="mb-0 text-danger"><i class="bi bi-exclamation-triangle"></i> Danger Zone</h6>
+                <h6 class="mb-0 text-danger"><i class="bi bi-exclamation-triangle"></i> {% trans "Danger Zone" %}</h6>
             </div>
             <div class="card-body">
-                <p class="small text-muted mb-2">Permanently delete this card</p>
+                <p class="small text-muted mb-2">{% trans "Permanently delete this card" %}</p>
                 <a href="{% url 'cards:card_delete' card.pk %}" class="btn btn-sm btn-danger w-100">
-                    <i class="bi bi-trash"></i> Delete Card
+                    <i class="bi bi-trash"></i> {% trans "Delete Card" %}
                 </a>
             </div>
         </div>

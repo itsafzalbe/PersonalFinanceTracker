@@ -1,4 +1,7 @@
+
+
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}{{ title }} - Finance Tracker{% endblock %}
 
@@ -7,7 +10,7 @@
     <div class="col-12 mb-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{% url 'transactions:transaction_list' %}">Transactions</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'transactions:transaction_list' %}">{% trans "Transactions" %}</a></li>
                 <li class="breadcrumb-item active">{{ title }}</li>
             </ol>
         </nav>
@@ -27,7 +30,7 @@
                     <!-- Type -->
                     <div class="mb-4">
                         <label for="{{ form.type.id_for_label }}" class="form-label">
-                            <i class="bi bi-arrow-left-right"></i> Type <span class="text-danger">*</span>
+                            <i class="bi bi-arrow-left-right"></i> {% trans "Type" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.type }}
                         {% if form.type.errors %}
@@ -41,7 +44,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.title.id_for_label }}" class="form-label">
-                                <i class="bi bi-card-text"></i> Title <span class="text-danger">*</span>
+                                <i class="bi bi-card-text"></i> {% trans "Title" %} <span class="text-danger">*</span>
                             </label>
                             {{ form.title }}
                             {% if form.title.errors %}
@@ -53,7 +56,7 @@
                         
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.amount.id_for_label }}" class="form-label">
-                                <i class="bi bi-cash-coin"></i> Amount <span class="text-danger">*</span>
+                                <i class="bi bi-cash-coin"></i> {% trans "Amount" %} <span class="text-danger">*</span>
                             </label>
                             {{ form.amount }}
                             {% if form.amount.errors %}
@@ -68,7 +71,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.card.id_for_label }}" class="form-label">
-                                <i class="bi bi-credit-card"></i> Card/Wallet <span class="text-danger">*</span>
+                                <i class="bi bi-credit-card"></i> {% trans "Card/Wallet" %} <span class="text-danger">*</span>
                             </label>
                             {{ form.card }}
                             {% if form.card.errors %}
@@ -80,7 +83,7 @@
                         
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.category.id_for_label }}" class="form-label">
-                                <i class="bi bi-tags"></i> Category <span class="text-danger">*</span>
+                                <i class="bi bi-tags"></i> {% trans "Category" %} <span class="text-danger">*</span>
                             </label>
                             {{ form.category }}
                             {% if form.category.errors %}
@@ -94,7 +97,7 @@
                     <!-- Date -->
                     <div class="mb-3">
                         <label for="{{ form.date.id_for_label }}" class="form-label">
-                            <i class="bi bi-calendar"></i> Date <span class="text-danger">*</span>
+                            <i class="bi bi-calendar"></i> {% trans "Date" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.date }}
                         {% if form.date.errors %}
@@ -107,7 +110,7 @@
                     <!-- Description -->
                     <div class="mb-3">
                         <label for="{{ form.description.id_for_label }}" class="form-label">
-                            <i class="bi bi-file-text"></i> Description
+                            <i class="bi bi-file-text"></i> {% trans "Description" %}
                         </label>
                         {{ form.description }}
                         {% if form.description.errors %}
@@ -120,7 +123,7 @@
                     <!-- Location -->
                     <div class="mb-3">
                         <label for="{{ form.location.id_for_label }}" class="form-label">
-                            <i class="bi bi-geo-alt"></i> Location
+                            <i class="bi bi-geo-alt"></i> {% trans "Location" %}
                         </label>
                         {{ form.location }}
                         {% if form.location.errors %}
@@ -133,7 +136,7 @@
                     <!-- Tags -->
                     <div class="mb-3">
                         <label class="form-label">
-                            <i class="bi bi-bookmark"></i> Tags
+                            <i class="bi bi-bookmark"></i> {% trans "Tags" %}
                         </label>
                         <div class="border rounded p-3">
                             {% load static %}
@@ -141,24 +144,24 @@
                             Here we would list available tags as checkboxes
                             For now showing a simple example
                             {% endcomment %}
-                            <p class="text-muted small mb-2">Select tags for this transaction:</p>
+                            <p class="text-muted small mb-2">{% trans "Select tags for this transaction:" %}</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="tags" value="1" id="tag1"
                                     {% if 1 in current_tags %}checked{% endif %}>
                                 <label class="form-check-label" for="tag1">
-                                    Business
+                                    {% trans "Business" %}
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="tags" value="2" id="tag2"
                                     {% if 2 in current_tags %}checked{% endif %}>
                                 <label class="form-check-label" for="tag2">
-                                    Personal
+                                    {% trans "Personal" %}
                                 </label>
                             </div>
                         </div>
                         <small class="form-text text-muted">
-                            <a href="{% url 'transactions:transaction_tag_list' %}" target="_blank">Manage tags</a>
+                            <a href="{% url 'transactions:transaction_tag_list' %}" target="_blank">{% trans "Manage tags" %}</a>
                         </small>
                     </div>
                     
@@ -167,7 +170,7 @@
                         <div class="form-check">
                             {{ form.is_recurring }}
                             <label class="form-check-label" for="{{ form.is_recurring.id_for_label }}">
-                                <i class="bi bi-arrow-repeat"></i> This is a recurring transaction
+                                <i class="bi bi-arrow-repeat"></i> {% trans "This is a recurring transaction" %}
                             </label>
                         </div>
                     </div>
@@ -183,7 +186,7 @@
                             <i class="bi bi-check-circle"></i> {{ button_text }}
                         </button>
                         <a href="{% url 'transactions:transaction_list' %}" class="btn btn-outline-secondary">
-                            <i class="bi bi-x-circle"></i> Cancel
+                            <i class="bi bi-x-circle"></i> {% trans "Cancel" %}
                         </a>
                     </div>
                 </form>
@@ -193,13 +196,13 @@
         <!-- Tips -->
         <div class="card mt-4 bg-light">
             <div class="card-body">
-                <h6 class="mb-3"><i class="bi bi-lightbulb"></i> Tips</h6>
+                <h6 class="mb-3"><i class="bi bi-lightbulb"></i> {% trans "Tips" %}</h6>
                 <ul class="small mb-0">
-                    <li>Choose "Income" for money you receive</li>
-                    <li>Choose "Expense" for money you spend</li>
-                    <li>Select the appropriate card/wallet used</li>
-                    <li>Pick a category that best describes the transaction</li>
-                    <li>Add location and description for better tracking</li>
+                    <li>{% trans "Choose \"Income\" for money you receive" %}</li>
+                    <li>{% trans "Choose \"Expense\" for money you spend" %}</li>
+                    <li>{% trans "Select the appropriate card/wallet used" %}</li>
+                    <li>{% trans "Pick a category that best describes the transaction" %}</li>
+                    <li>{% trans "Add location and description for better tracking" %}</li>
                 </ul>
             </div>
         </div>

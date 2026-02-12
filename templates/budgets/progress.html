@@ -1,16 +1,19 @@
+
+
 {% extends 'base.html' %}
+{% load i18n %}
 {% block title %}{{ budget.name }} - Progress{% endblock %}
 {% block content %}
 <div class="row mb-4">
     <div class="col-12">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{% url 'budgets:budget_list' %}">Budgets</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'budgets:budget_list' %}">{% trans "Budgets" %}</a></li>
                 <li class="breadcrumb-item"><a href="{% url 'budgets:budget_detail' budget.pk %}">{{ budget.name }}</a></li>
-                <li class="breadcrumb-item active">Progress</li>
+                <li class="breadcrumb-item active">{% trans "Progress" %}</li>
             </ol>
         </nav>
-        <h1 class="display-6">{{ budget.name }} - Progress Report</h1>
+        <h1 class="display-6">{{ budget.name }} - {% trans "Progress Report" %}</h1>
     </div>
 </div>
 
@@ -18,40 +21,40 @@
 <div class="row g-4 mb-4">
     <div class="col-md-3">
         <div class="stats-card {% if status == 'over_budget' %}red{% elif status == 'warning' %}orange{% elif status == 'on_track' %}blue{% else %}green{% endif %}">
-            <div><p class="mb-1 opacity-75">Status</p><h4>{% if status == 'over_budget' %}Over Budget{% elif status == 'warning' %}Warning{% elif status == 'on_track' %}On Track{% else %}Good{% endif %}</h4></div>
+            <div><p class="mb-1 opacity-75">{% trans "Status" %}</p><h4>{% if status == 'over_budget' %}{% trans "Over Budget" %}{% elif status == 'warning' %}{% trans "Warning" %}{% elif status == 'on_track' %}{% trans "On Track" %}{% else %}{% trans "Good" %}{% endif %}</h4></div>
         </div>
     </div>
     <div class="col-md-3">
-        <div class="stats-card red"><div><p class="mb-1 opacity-75">Spent</p><h4>{{ spent|floatformat:0 }}</h4><small>{{ budget.currency.code }}</small></div></div>
+        <div class="stats-card red"><div><p class="mb-1 opacity-75">{% trans "Spent" %}</p><h4>{{ spent|floatformat:0 }}</h4><small>{{ budget.currency.code }}</small></div></div>
     </div>
     <div class="col-md-3">
-        <div class="stats-card green"><div><p class="mb-1 opacity-75">Remaining</p><h4>{{ remaining|floatformat:0 }}</h4><small>{{ budget.currency.code }}</small></div></div>
+        <div class="stats-card green"><div><p class="mb-1 opacity-75">{% trans "Remaining" %}</p><h4>{{ remaining|floatformat:0 }}</h4><small>{{ budget.currency.code }}</small></div></div>
     </div>
     <div class="col-md-3">
-        <div class="stats-card"><div><p class="mb-1 opacity-75">Progress</p><h4>{{ percentage|floatformat:1 }}%</h4></div></div>
+        <div class="stats-card"><div><p class="mb-1 opacity-75">{% trans "Progress" %}</p><h4>{{ percentage|floatformat:1 }}%</h4></div></div>
     </div>
 </div>
 
 <!-- Timeline -->
 <div class="card mb-4">
     <div class="card-body">
-        <h5 class="mb-3">Period Timeline</h5>
+        <h5 class="mb-3">{% trans "Period Timeline" %}</h5>
         <p><strong>{{ period_start|date:"M d, Y" }}</strong> to <strong>{{ period_end|date:"M d, Y" }}</strong></p>
         <div class="progress mb-2" style="height: 20px;">
             {% widthratio days_elapsed days_total 100 as days_percent %}
             <div class="progress-bar bg-info" style="width: {{ days_percent }}%">Day {{ days_elapsed }} of {{ days_total }}</div>
         </div>
-        <p class="text-muted mb-0">{{ days_remaining }} days remaining</p>
+        <p class="text-muted mb-0">{{ days_remaining }} {% trans "days remaining" %}</p>
     </div>
 </div>
 
 <!-- Spending Analysis -->
 <div class="card">
     <div class="card-body">
-        <h5 class="mb-3">Spending Analysis</h5>
+        <h5 class="mb-3">{% trans "Spending Analysis" %}</h5>
         <dl class="row">
-            <dt class="col-sm-4">Average Daily Spending</dt><dd class="col-sm-8">{{ average_daily_spending|floatformat:2 }} {{ budget.currency.code }}</dd>
-            <dt class="col-sm-4">Suggested Daily Limit</dt><dd class="col-sm-8">{{ suggested_daily_limit|floatformat:2 }} {{ budget.currency.code }}</dd>
+            <dt class="col-sm-4">{% trans "Average Daily Spending" %}</dt><dd class="col-sm-8">{{ average_daily_spending|floatformat:2 }} {{ budget.currency.code }}</dd>
+            <dt class="col-sm-4">{% trans "Suggested Daily Limit" %}</dt><dd class="col-sm-8">{{ suggested_daily_limit|floatformat:2 }} {{ budget.currency.code }}</dd>
         </dl>
     </div>
 </div>

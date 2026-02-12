@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2>🛠{% trans "Admin Support Chats" %}</h2>
+
+    {% if user_data %}
+        <ul class="list-group mt-3">
+            {% for item in user_data %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    
+                    <div>
+                        <strong>{{ item.user.username }}</strong><br>
+
+                        {% if item.last_message %}
+                            <small class="text-muted">
+                                {{ item.last_message.message|truncatechars:40 }}
+                            </small>
+                        {% else %}
+                            <small class="text-muted">{% trans "No messages yet" %}</small>
+                        {% endif %}
+                    </div>
+
+                    <div class="d-flex align-items-center gap-2">
+                        {% if item.unread_count > 0 %}
+                            <span class="badge bg-danger">
+                                {{ item.unread_count }}
+                            </span>
+                        {% endif %}
+
+                        <a href="{% url 'support:admin_chat_detail' item.user.id %}"
+                           class="btn btn-sm btn-primary">
+                            {% trans "Open" %}
+                        </a>
+                    </div>
+
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-muted mt-3">{% trans "No support messages yet." %}</p>
+    {% endif %}
+</div>
+
+{% endblock %}

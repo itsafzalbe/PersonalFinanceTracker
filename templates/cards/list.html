@@ -1,4 +1,7 @@
+
+
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}Cards & Wallets - Finance Tracker{% endblock %}
 
@@ -7,13 +10,13 @@
 <div class="row mb-4">
     <div class="col-md-8">
         <h1 class="display-6">
-            <i class="bi bi-credit-card"></i> Cards & Wallets
+            <i class="bi bi-credit-card"></i> {% trans "Cards & Wallets" %}
         </h1>
-        <p class="text-muted">Manage your payment cards and digital wallets</p>
+        <p class="text-muted">{% trans "Manage your payment cards and digital wallets" %}</p>
     </div>
     <div class="col-md-4 text-md-end">
         <a href="{% url 'cards:card_create' %}" class="btn btn-primary">
-            <i class="bi bi-plus-circle"></i> Add New Card
+            <i class="bi bi-plus-circle"></i> {% trans "Add New Card" %}
         </a>
     </div>
 </div>
@@ -24,7 +27,7 @@
         <div class="stats-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
-                    <p class="mb-1 opacity-75">Total Balance</p>
+                    <p class="mb-1 opacity-75">{% trans "Total Balance" %}</p>
                     <h3 class="mb-0">{{ total_balance|floatformat:2 }}</h3>
                     <small class="opacity-75">{{ user_currency }}</small>
                 </div>
@@ -37,9 +40,9 @@
         <div class="stats-card green">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
-                    <p class="mb-1 opacity-75">Active Cards</p>
+                    <p class="mb-1 opacity-75">{% trans "Active Cards" %}</p>
                     <h3 class="mb-0">{{ active_cards_count }}</h3>
-                    <small class="opacity-75">Cards</small>
+                    <small class="opacity-75">{% trans "Cards" %}</small>
                 </div>
                 <i class="bi bi-credit-card fs-1 opacity-50"></i>
             </div>
@@ -50,9 +53,9 @@
         <div class="stats-card blue">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
-                    <p class="mb-1 opacity-75">Total Cards</p>
+                    <p class="mb-1 opacity-75">{% trans "Total Cards" %}</p>
                     <h3 class="mb-0">{{ cards|length }}</h3>
-                    <small class="opacity-75">All cards</small>
+                    <small class="opacity-75">{% trans "All cards" %}</small>
                 </div>
                 <i class="bi bi-stack fs-1 opacity-50"></i>
             </div>
@@ -79,14 +82,14 @@
             <div class="col-md-4">
                 <select name="status" class="form-select">
                     <option value="">All Statuses</option>
-                    <option value="active" {% if request.GET.status == 'active' %}selected{% endif %}>Active</option>
-                    <option value="inactive" {% if request.GET.status == 'inactive' %}selected{% endif %}>Inactive</option>
-                    <option value="blocked" {% if request.GET.status == 'blocked' %}selected{% endif %}>Blocked</option>
+                    <option value="active" {% if request.GET.status == 'active' %}selected{% endif %}>{% trans "Active" %}</option>
+                    <option value="inactive" {% if request.GET.status == 'inactive' %}selected{% endif %}>{% trans "Inactive" %}</option>
+                    <option value="blocked" {% if request.GET.status == 'blocked' %}selected{% endif %}>{% trans "Blocked" %}</option>
                 </select>
             </div>
             <div class="col-md-2">
                 <button type="submit" class="btn btn-primary w-100">
-                    <i class="bi bi-funnel"></i> Filter
+                    <i class="bi bi-funnel"></i> {% trans "Filter" %}
                 </button>
             </div>
         </form>
@@ -106,7 +109,7 @@
                                 <h5 class="card-title mb-1">
                                     {{ card.card_name }}
                                     {% if card.is_default %}
-                                        <span class="badge bg-primary">Default</span>
+                                        <span class="badge bg-primary">{% trans "Default" %}</span>
                                     {% endif %}
                                 </h5>
                                 <p class="text-muted small mb-0">
@@ -119,13 +122,13 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li><a class="dropdown-item" href="{% url 'cards:card_detail' card.pk %}">
-                                        <i class="bi bi-eye"></i> View Details
+                                        <i class="bi bi-eye"></i> {% trans "View Details" %}
                                     </a></li>
                                     <li><a class="dropdown-item" href="{% url 'cards:card_edit' card.pk %}">
-                                        <i class="bi bi-pencil"></i> Edit Card
+                                        <i class="bi bi-pencil"></i> {% trans "Edit Card" %}
                                     </a></li>
                                     <li><a class="dropdown-item" href="{% url 'cards:card_update_balance' card.pk %}">
-                                        <i class="bi bi-cash-coin"></i> Update Balance
+                                        <i class="bi bi-cash-coin"></i> {% trans "Update Balance" %}
                                     </a></li>
                                     {% if not card.is_default and card.status == 'active' %}
                                         <li><hr class="dropdown-divider"></li>
@@ -133,14 +136,14 @@
                                             <form method="post" action="{% url 'cards:card_set_default' card.pk %}" class="d-inline">
                                                 {% csrf_token %}
                                                 <button type="submit" class="dropdown-item">
-                                                    <i class="bi bi-star"></i> Set as Default
+                                                    <i class="bi bi-star"></i> {% trans "Set as Default" %}
                                                 </button>
                                             </form>
                                         </li>
                                     {% endif %}
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item text-danger" href="{% url 'cards:card_delete' card.pk %}">
-                                        <i class="bi bi-trash"></i> Delete Card
+                                        <i class="bi bi-trash"></i> {% trans "Delete Card" %}
                                     </a></li>
                                 </ul>
                             </div>
@@ -157,7 +160,7 @@
                         
                         <!-- Balance -->
                         <div class="mb-3">
-                            <small class="text-muted d-block mb-1">Current Balance</small>
+                            <small class="text-muted d-block mb-1">{% trans "Current Balance" %}</small>
                             <h4 class="mb-0">
                                 {{ card.balance|floatformat:2 }} 
                                 <small class="text-muted">{{ card.currency.code }}</small>
@@ -169,20 +172,20 @@
                             <span>
                                 {% if card.status == 'active' %}
                                     <span class="badge bg-success">
-                                        <i class="bi bi-check-circle"></i> Active
+                                        <i class="bi bi-check-circle"></i> {% trans "Active" %}
                                     </span>
                                 {% elif card.status == 'inactive' %}
                                     <span class="badge bg-secondary">
-                                        <i class="bi bi-pause-circle"></i> Inactive
+                                        <i class="bi bi-pause-circle"></i> {% trans "Inactive" %}
                                     </span>
                                 {% else %}
                                     <span class="badge bg-danger">
-                                        <i class="bi bi-x-circle"></i> Blocked
+                                        <i class="bi bi-x-circle"></i> {% trans "Blocked" %}
                                     </span>
                                 {% endif %}
                             </span>
                             <a href="{% url 'cards:card_detail' card.pk %}" class="btn btn-sm btn-outline-primary">
-                                View Details <i class="bi bi-arrow-right"></i>
+                                {% trans "View Details" %} <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -195,21 +198,21 @@
     <div class="card">
         <div class="card-body text-center py-5">
             <i class="bi bi-credit-card text-muted" style="font-size: 4rem;"></i>
-            <h4 class="mt-3 mb-2">No Cards Yet</h4>
+            <h4 class="mt-3 mb-2">{% trans "No Cards Yet" %}</h4>
             <p class="text-muted mb-4">
                 {% if request.GET.search or request.GET.status %}
-                    No cards match your filters. Try adjusting your search criteria.
+                    {% trans "No cards match your filters. Try adjusting your search criteria." %}
                 {% else %}
-                    Start by adding your first payment card or digital wallet to track your finances.
+                    {% trans "Start by adding your first payment card or digital wallet to track your finances." %}
                 {% endif %}
             </p>
             {% if not request.GET.search and not request.GET.status %}
                 <a href="{% url 'cards:card_create' %}" class="btn btn-primary">
-                    <i class="bi bi-plus-circle"></i> Add Your First Card
+                    <i class="bi bi-plus-circle"></i> {% trans "Add Your First Card" %}
                 </a>
             {% else %}
                 <a href="{% url 'cards:cards_list' %}" class="btn btn-outline-secondary">
-                    <i class="bi bi-x-circle"></i> Clear Filters
+                    <i class="bi bi-x-circle"></i> {% trans "Clear Filters" %}
                 </a>
             {% endif %}
         </div>
@@ -221,16 +224,16 @@
     <div class="col-12">
         <div class="card bg-light">
             <div class="card-body">
-                <h6 class="mb-3"><i class="bi bi-lightning"></i> Quick Actions</h6>
+                <h6 class="mb-3"><i class="bi bi-lightning"></i> {% trans "Quick Actions" %}</h6>
                 <div class="d-flex gap-2 flex-wrap">
                     <a href="{% url 'cards:currency_convert' %}" class="btn btn-outline-primary btn-sm">
-                        <i class="bi bi-currency-exchange"></i> Convert Currency
+                        <i class="bi bi-currency-exchange"></i> {% trans "Convert Currency" %}
                     </a>
                     <a href="{% url 'cards:currency_list' %}" class="btn btn-outline-info btn-sm">
-                        <i class="bi bi-cash-stack"></i> View Currencies
+                        <i class="bi bi-cash-stack"></i> {% trans "View Currencies" %}
                     </a>
                     <a href="{% url 'cards:card_types' %}" class="btn btn-outline-secondary btn-sm">
-                        <i class="bi bi-credit-card-2-back"></i> Card Types
+                        <i class="bi bi-credit-card-2-back"></i> {% trans "Card Types" %}
                     </a>
                 </div>
             </div>

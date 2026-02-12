@@ -1,0 +1,3349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-12 17:19+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: core/settings.py:201
+msgid "English"
+msgstr "Ingliz"
+
+#: core/settings.py:202
+msgid "Russian"
+msgstr "rus"
+
+#: core/settings.py:203
+msgid "Uzbek"
+msgstr "o'zbek"
+
+#: templates/accounts/change_password.html:4
+#: templates/accounts/change_password.html:10
+#: templates/accounts/profile.html:104
+msgid "Change Password"
+msgstr "Parolni o'zgartirish"
+
+#: templates/accounts/change_password.html:12
+msgid "Update your account password"
+msgstr "Hisobingiz parolini yangilang"
+
+#: templates/accounts/change_password.html:25
+msgid "Current Password"
+msgstr "Joriy parol"
+
+#: templates/accounts/change_password.html:37
+msgid "New Password"
+msgstr "Yangi parol"
+
+#: templates/accounts/change_password.html:46
+#: templates/accounts/complete_registration.html:75
+msgid "At least 8 characters"
+msgstr "Kamida 8 ta belgi"
+
+#: templates/accounts/change_password.html:52
+msgid "Confirm New Password"
+msgstr "Yangi parolni tasdiqlang"
+
+#: templates/accounts/change_password.html:70
+msgid "Update Password"
+msgstr "Parolni yangilash"
+
+#: templates/accounts/change_password.html:73
+#: templates/accounts/profile.html:147
+#: templates/accounts/update_profile.html:109
+#: templates/budgets/confirm_delete.html:25 templates/budgets/form.html:64
+#: templates/cards/confirm_delete.html:78 templates/cards/form.html:136
+#: templates/cards/update_balance.html:122 templates/categories/form.html:23
+#: templates/transactions/confirm_delete.html:40
+#: templates/transactions/form.html:190
+#: templates/transfers/transfer_create.html:142
+msgid "Cancel"
+msgstr "Bekor qilish"
+
+#: templates/accounts/change_password.html:83
+msgid "Password Security Tips"
+msgstr "Parol xavfsizligi bo'yicha maslahatlar"
+
+#: templates/accounts/change_password.html:85
+msgid "Use at least 8 characters"
+msgstr "Kamida 8 ta belgidan foydalaning"
+
+#: templates/accounts/change_password.html:86
+msgid "Mix uppercase and lowercase letters"
+msgstr "Katta va kichik harflarni aralashtiring"
+
+#: templates/accounts/change_password.html:87
+msgid "Include numbers and special characters"
+msgstr "Raqamlar va maxsus belgilarni qo'shing"
+
+#: templates/accounts/change_password.html:88
+msgid "Avoid common words or personal information"
+msgstr "Umumiy so'zlardan yoki shaxsiy ma'lumotlardan saqlaning"
+
+#: templates/accounts/change_password.html:89
+msgid "Don't reuse passwords from other sites"
+msgstr "Boshqa saytlardan parollarni qayta ishlatmang"
+
+#: templates/accounts/complete_registration.html:5
+#: templates/accounts/complete_registration.html:128
+msgid "Complete Registration"
+msgstr "Roʻyxatdan oʻtish"
+
+#: templates/accounts/complete_registration.html:16
+msgid "Complete Your Profile"
+msgstr "Profilingizni toʻldiring"
+
+#: templates/accounts/complete_registration.html:17
+msgid "Just a few more details to get started"
+msgstr "Boshlash uchun yana bir nechta tafsilotlar"
+
+#: templates/accounts/complete_registration.html:26
+#: templates/accounts/profile.html:32
+#: templates/accounts/update_profile.html:27
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: templates/accounts/complete_registration.html:40
+#: templates/accounts/update_profile.html:41
+msgid "First Name"
+msgstr "Ism"
+
+#: templates/accounts/complete_registration.html:52
+#: templates/accounts/update_profile.html:53
+msgid "Last Name"
+msgstr "Familiya"
+
+#: templates/accounts/complete_registration.html:66
+#: templates/accounts/login.html:37
+msgid "Password"
+msgstr "Parol"
+
+#: templates/accounts/complete_registration.html:82
+msgid "Confirm Password"
+msgstr "Parolni tasdiqlang"
+
+#: templates/accounts/complete_registration.html:95
+#: templates/accounts/profile.html:53
+#: templates/accounts/update_profile.html:67
+msgid "Phone Number"
+msgstr "Telefon raqami"
+
+#: templates/accounts/complete_registration.html:104
+#: templates/accounts/update_profile.html:75
+msgid "Format: +998912345678"
+msgstr "Format: +998912345678"
+
+#: templates/accounts/complete_registration.html:111
+#: templates/accounts/profile.html:64
+#: templates/accounts/update_profile.html:81
+msgid "Date of Birth"
+msgstr "Tug'ilgan kuni"
+
+#: templates/accounts/login.html:5 templates/accounts/login.html:48
+#: templates/accounts/signup.html:44 templates/base.html:340
+msgid "Login"
+msgstr "Tizimga kirish"
+
+#: templates/accounts/login.html:16
+msgid "Welcome Back!"
+msgstr "Qaytib kelganingizdan xursandmiz!"
+
+#: templates/accounts/login.html:17
+msgid "Login to manage your finances"
+msgstr "Moliyangizni boshqarish uchun tizimga kiring"
+
+#: templates/accounts/login.html:25
+msgid "Username or Email"
+msgstr "Foydalanuvchi nomi yoki elektron pochta"
+
+#: templates/accounts/login.html:55
+msgid "Don't have an account?"
+msgstr "Hisobingiz yo'qmi?"
+
+#: templates/accounts/login.html:55
+msgid "Sign up"
+msgstr "Ro'yxatdan o'tish"
+
+#: templates/accounts/login.html:64
+msgid "Encrypted"
+msgstr "Shifrlangan"
+
+#: templates/accounts/login.html:68
+msgid "Secure"
+msgstr "Xavfsiz"
+
+#: templates/accounts/login.html:72
+msgid "Private"
+msgstr "Shaxsiy"
+
+#: templates/accounts/profile.html:5 templates/base.html:324
+msgid "Profile"
+msgstr "Profil"
+
+#: templates/accounts/profile.html:11
+msgid "My Profile"
+msgstr "Mening profilim"
+
+#: templates/accounts/profile.html:13
+msgid "Manage your account settings"
+msgstr "Hisobingiz sozlamalarini boshqaring"
+
+#: templates/accounts/profile.html:23
+msgid "Profile Information"
+msgstr "Profil haqida ma'lumot"
+
+#: templates/accounts/profile.html:25
+msgid "Edit Profile"
+msgstr "Profilni tahrirlash"
+
+#: templates/accounts/profile.html:37
+msgid "Email"
+msgstr "Elektron pochta"
+
+#: templates/accounts/profile.html:42
+msgid "Full Name"
+msgstr "To'liq ism"
+
+#: templates/accounts/profile.html:47 templates/accounts/profile.html:58
+#: templates/accounts/profile.html:69
+msgid "Not provided"
+msgstr "Taqdim etilmaydi"
+
+#: templates/accounts/profile.html:75
+#: templates/accounts/update_profile.html:94
+msgid "Default Currency"
+msgstr "Standart valyuta"
+
+#: templates/accounts/profile.html:80 templates/statistics.html:110
+msgid "Member Since"
+msgstr "dan beri a'zo"
+
+#: templates/accounts/profile.html:85
+msgid "Account Status"
+msgstr "Hisob holati"
+
+#: templates/accounts/profile.html:100
+msgid "Security"
+msgstr "Xavfsizlik"
+
+#: templates/accounts/profile.html:112 templates/cards/detail.html:239
+msgid "Danger Zone"
+msgstr "Xavfli zona"
+
+#: templates/accounts/profile.html:115
+msgid ""
+"Once you delete your account, there is no going back. Please be certain."
+msgstr ""
+"Hisobingizni o'chirib tashlaganingizdan so'ng, orqaga qaytib bo'lmaydi. "
+"Iltimos, ishonch hosil qiling."
+
+#: templates/accounts/profile.html:117 templates/accounts/profile.html:130
+msgid "Delete Account"
+msgstr "Hisobni o'chirish"
+
+#: templates/accounts/profile.html:135
+msgid ""
+"Are you sure you want to delete your account? This action cannot be undone."
+msgstr ""
+"Hisobingizni oʻchirib tashlamoqchimisiz? Bu amalni ortga qaytarib bo‘lmaydi."
+
+#: templates/accounts/profile.html:136
+msgid ""
+"All your data including cards, transactions, and budgets will be permanently"
+" deleted."
+msgstr ""
+"Barcha maʼlumotlaringiz, jumladan, kartalar, tranzaksiyalar va byudjetlar "
+"butunlay oʻchirib tashlanadi."
+
+#: templates/accounts/profile.html:141
+msgid "Enter your password to confirm"
+msgstr "Tasdiqlash uchun parolingizni kiriting"
+
+#: templates/accounts/profile.html:149
+msgid "Delete My Account"
+msgstr "Mening hisobimni o'chirish"
+
+#: templates/accounts/signup.html:5 templates/base.html:345
+msgid "Sign Up"
+msgstr "Ro'yxatdan o'tish"
+
+#: templates/accounts/signup.html:16
+msgid "Create Your Account"
+msgstr "Hisobingizni yarating"
+
+#: templates/accounts/signup.html:17
+msgid "Start tracking your finances today"
+msgstr "Moliyaviy ahvolingizni bugun kuzatishni boshlang"
+
+#: templates/accounts/signup.html:25
+msgid "Email Address"
+msgstr "E-pochta manzili"
+
+#: templates/accounts/signup.html:33
+msgid "We'll send you a verification code"
+msgstr "Sizga tasdiqlash kodini yuboramiz"
+
+#: templates/accounts/signup.html:37
+msgid "Send Verification Code"
+msgstr "Tasdiqlash kodini yuboring"
+
+#: templates/accounts/signup.html:44
+msgid "Already have an account?"
+msgstr "Hisobingiz bormi?"
+
+#: templates/accounts/signup.html:53
+msgid "Secure & Private"
+msgstr "Xavfsiz va shaxsiy"
+
+#: templates/accounts/signup.html:57
+msgid "Track Expenses"
+msgstr "Xarajatlarni kuzatish"
+
+#: templates/accounts/signup.html:61
+msgid "Save Money"
+msgstr "Pulni tejash"
+
+#: templates/accounts/update_profile.html:5
+#: templates/accounts/update_profile.html:11
+msgid "Update Profile"
+msgstr "Profilni yangilash"
+
+#: templates/accounts/update_profile.html:13
+msgid "Manage your personal information"
+msgstr "Shaxsiy ma'lumotlaringizni boshqaring"
+
+#: templates/accounts/update_profile.html:106
+msgid "Save Changes"
+msgstr "O'zgarishlarni saqlash"
+
+#: templates/accounts/verify_code.html:5
+msgid "Verify Email - Finance Tracker"
+msgstr "Elektron pochtani tekshiring - Moliyaviy kuzatuvchi"
+
+#: templates/accounts/verify_code.html:16
+msgid "Verify Your Email"
+msgstr "Elektron pochtangizni tasdiqlang"
+
+#: templates/accounts/verify_code.html:18
+msgid "We've sent a 4-digit code to"
+msgstr "Biz 4 xonali kodni yubordik"
+
+#: templates/accounts/verify_code.html:28
+msgid "Verification Code"
+msgstr "Tasdiq kodi"
+
+#: templates/accounts/verify_code.html:46
+msgid "Code expires in 2 minutes"
+msgstr "Kod 2 daqiqada tugaydi"
+
+#: templates/accounts/verify_code.html:51
+msgid "Verify Code"
+msgstr "Kodni tekshiring"
+
+#: templates/accounts/verify_code.html:60
+msgid "Resend Code"
+msgstr "Kodni qayta yuborish"
+
+#: templates/accounts/verify_code.html:65
+msgid "Please wait 2 minutes before requesting a new code"
+msgstr "Yangi kod soʻrashdan oldin 2 daqiqa kuting"
+
+#: templates/accounts/verify_code.html:73
+msgid "Wrong email?"
+msgstr "Noto'g'ri elektron pochtami?"
+
+#: templates/accounts/verify_code.html:73
+msgid "Start over"
+msgstr "Qaytadan boshlang"
+
+#: templates/base.html:325 templates/base.html:382 templates/statistics.html:6
+#: templates/transactions/list.html:149
+msgid "Statistics"
+msgstr "Statistika"
+
+#: templates/base.html:331 templates/base.html:414
+msgid "Logout"
+msgstr "Chiqish"
+
+#: templates/base.html:370 templates/dashboard.html:6
+msgid "Dashboard"
+msgstr "Boshqaruv paneli"
+
+#: templates/base.html:373 templates/dashboard.html:49
+#: templates/statistics.html:96 templates/transactions/detail.html:13
+#: templates/transactions/form.html:13 templates/transactions/list.html:6
+#: templates/transactions/list.html:13
+#: templates/transactions/statistics.html:65
+msgid "Transactions"
+msgstr "Bitimlar"
+
+#: templates/base.html:376
+msgid "Cards / Wallets"
+msgstr "Kartalar / hamyonlar"
+
+#: templates/base.html:379 templates/budgets/detail.html:10
+#: templates/budgets/list.html:5 templates/budgets/list.html:9
+#: templates/budgets/progress.html:11
+#: templates/budgets/spending_history.html:13
+msgid "Budgets"
+msgstr "Byudjetlar"
+
+#: templates/base.html:385 templates/transfers/transfer_detail.html:9
+msgid "Transfers"
+msgstr "Transferlar"
+
+#: templates/base.html:393
+msgid "Support Chats"
+msgstr "Yordam chatlari"
+
+#: templates/base.html:407
+msgid "Member since"
+msgstr "beri a'zo"
+
+#: templates/budgets/active.html:8 templates/budgets/overview.html:29
+#: templates/dashboard.html:61 templates/dashboard.html:151
+#: templates/statistics.html:103
+msgid "Active Budgets"
+msgstr "Faol byudjetlar"
+
+#: templates/budgets/active.html:9
+msgid "All Budgets"
+msgstr "Barcha byudjetlar"
+
+#: templates/budgets/active.html:30 templates/budgets/by_period.html:45
+#: templates/budgets/by_period.html:77 templates/budgets/list.html:83
+#: templates/transfers/transfer_list.html:118
+msgid "View"
+msgstr "Ko‘rish"
+
+#: templates/budgets/active.html:40 templates/budgets/by_period.html:123
+msgid "No Active Budgets"
+msgstr "Faol byudjetlar yo'q"
+
+#: templates/budgets/active.html:41 templates/budgets/by_category.html:73
+#: templates/budgets/by_period.html:126 templates/budgets/list.html:14
+#: templates/dashboard.html:139
+msgid "Create Budget"
+msgstr "Byudjet yaratish"
+
+#: templates/budgets/alerts.html:5 templates/budgets/alerts.html:9
+msgid "Budget Alerts"
+msgstr "Byudjet ogohlantirishlari"
+
+#: templates/budgets/alerts.html:10
+msgid "Budgets requiring attention"
+msgstr "E'tibor talab qiladigan byudjetlar"
+
+#: templates/budgets/alerts.html:24
+msgid "View Budget"
+msgstr "Byudjetni ko'rish"
+
+#: templates/budgets/alerts.html:33
+msgid "All Clear!"
+msgstr "Hammasi aniq!"
+
+#: templates/budgets/alerts.html:34
+msgid "No budget alerts at the moment. You're doing great!"
+msgstr ""
+"Ayni paytda byudjet haqida ogohlantirishlar yo'q. Siz ajoyib ishlayapsiz!"
+
+#: templates/budgets/alerts.html:35
+msgid "View All Budgets"
+msgstr "Barcha byudjetlarni ko'rish"
+
+#: templates/budgets/by_category.html:6 templates/budgets/by_category.html:12
+msgid "Budgets by Category"
+msgstr "Turkum bo'yicha byudjetlar"
+
+#: templates/budgets/by_category.html:14
+msgid "View budgets organized by spending category"
+msgstr "Xarajatlar toifasi boʻyicha tuzilgan byudjetlarni koʻring"
+
+#: templates/budgets/by_category.html:18 templates/budgets/by_period.html:18
+#: templates/transfers/transfer_detail.html:17
+msgid "Back to List"
+msgstr "Roʻyxatga qaytish"
+
+#: templates/budgets/by_category.html:56 templates/budgets/overview.html:70
+#: templates/cards/list.html:125 templates/cards/list.html:188
+msgid "View Details"
+msgstr "Tafsilotlarni ko'rish"
+
+#: templates/budgets/by_category.html:70
+msgid "No Budgets Found"
+msgstr "Hech qanday byudjet topilmadi"
+
+#: templates/budgets/by_category.html:71
+msgid "Create your first budget to get started."
+msgstr "Boshlash uchun birinchi byudjetingizni yarating."
+
+#: templates/budgets/by_period.html:6 templates/budgets/by_period.html:12
+msgid "Budgets by Period"
+msgstr "Davrlar bo'yicha byudjetlar"
+
+#: templates/budgets/by_period.html:14
+msgid "View budgets organized by time period"
+msgstr "Vaqt davri bo'yicha tuzilgan byudjetlarni ko'rish"
+
+#: templates/budgets/by_period.html:27
+msgid "Weekly Budgets"
+msgstr "Haftalik byudjetlar"
+
+#: templates/budgets/by_period.html:59
+msgid "Monthly Budgets"
+msgstr "Oylik byudjetlar"
+
+#: templates/budgets/by_period.html:91
+msgid "Yearly Budgets"
+msgstr "Yillik byudjetlar"
+
+#: templates/budgets/by_period.html:124
+msgid "Create budgets to track your spending over time."
+msgstr "Vaqt o'tishi bilan xarajatlaringizni kuzatish uchun byudjet yarating."
+
+#: templates/budgets/confirm_delete.html:4
+#: templates/budgets/confirm_delete.html:11 templates/budgets/detail.html:71
+msgid "Delete Budget"
+msgstr "Byudjetni o'chirish"
+
+#: templates/budgets/confirm_delete.html:12
+msgid ""
+"This will permanently delete this budget. This action cannot be undone!"
+msgstr ""
+"Bu budjetni butunlay o‘chirib tashlaydi. Bu amalni ortga qaytarib bo‘lmaydi!"
+
+#: templates/budgets/confirm_delete.html:16 templates/budgets/detail.html:28
+msgid "Budget:"
+msgstr "Byudjet:"
+
+#: templates/budgets/confirm_delete.html:17
+msgid "Period:"
+msgstr "Davr:"
+
+#: templates/budgets/confirm_delete.html:18
+msgid "Category:"
+msgstr "Turkum:"
+
+#: templates/budgets/confirm_delete.html:24
+msgid "Yes, Delete Budget"
+msgstr "Ha, budjetni oʻchirish"
+
+#: templates/budgets/detail.html:15 templates/budgets/list.html:84
+#: templates/categories/list.html:79 templates/transactions/detail.html:21
+msgid "Edit"
+msgstr "Tahrirlash"
+
+#: templates/budgets/detail.html:24
+msgid "Budget Progress"
+msgstr "Byudjet taraqqiyoti"
+
+#: templates/budgets/detail.html:27
+msgid "Spent:"
+msgstr "Sarflangan:"
+
+#: templates/budgets/detail.html:37
+msgid "Remaining:"
+msgstr "Qolgan:"
+
+#: templates/budgets/detail.html:38
+msgid "Over Budget!"
+msgstr "Byudjetdan ortiq!"
+
+#: templates/budgets/detail.html:48
+msgid "Details"
+msgstr "Tafsilotlar"
+
+#: templates/budgets/detail.html:51 templates/budgets/form.html:22
+#: templates/transactions/detail.html:50 templates/transactions/form.html:86
+#: templates/transactions/list.html:93 templates/transactions/list.html:172
+msgid "Category"
+msgstr "Turkum"
+
+#: templates/budgets/detail.html:52 templates/budgets/form.html:27
+#: templates/budgets/spending_history.html:39
+#: templates/budgets/spending_history.html:61
+msgid "Period"
+msgstr "Davr"
+
+#: templates/budgets/detail.html:53 templates/budgets/form.html:40
+#: templates/cards/detail.html:195 templates/cards/form.html:73
+msgid "Currency"
+msgstr "Valyuta"
+
+#: templates/budgets/detail.html:54
+msgid "Alert At"
+msgstr "Ogohlantirish"
+
+#: templates/budgets/detail.html:55 templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:65 templates/cards/detail.html:57
+#: templates/cards/form.html:115 templates/transfers/transfer_detail.html:102
+msgid "Status"
+msgstr "Status"
+
+#: templates/budgets/detail.html:55 templates/budgets/form.html:57
+#: templates/budgets/list.html:50 templates/budgets/list.html:109
+#: templates/cards/change_status.html:16 templates/cards/detail.html:60
+#: templates/cards/detail.html:225 templates/cards/list.html:85
+#: templates/cards/list.html:175
+msgid "Active"
+msgstr "Faol"
+
+#: templates/budgets/detail.html:55 templates/budgets/list.html:51
+#: templates/budgets/list.html:111 templates/cards/change_status.html:17
+#: templates/cards/confirm_delete.html:92 templates/cards/detail.html:62
+#: templates/cards/detail.html:226 templates/cards/list.html:86
+#: templates/cards/list.html:179
+msgid "Inactive"
+msgstr "Faol emas"
+
+#: templates/budgets/detail.html:62 templates/currency/list.html:51
+#: templates/transactions/list.html:175
+#: templates/transfers/transfer_list.html:87
+msgid "Actions"
+msgstr "Harakatlar"
+
+#: templates/budgets/detail.html:65
+msgid "View Progress"
+msgstr "Jarayonni ko‘rish"
+
+#: templates/budgets/detail.html:66 templates/budgets/spending_history.html:6
+#: templates/budgets/spending_history.html:15
+#: templates/budgets/spending_history.html:18
+msgid "Spending History"
+msgstr "Sarflash tarixi"
+
+#: templates/budgets/detail.html:69
+msgid "Deactivate"
+msgstr "Faolsizlantirish"
+
+#: templates/budgets/detail.html:69
+msgid "Activate"
+msgstr "Faollashtirish"
+
+#: templates/budgets/form.html:4 templates/budgets/form.html:10
+#: templates/budgets/form.html:63 templates/budgets/spending_history.html:63
+msgid "Budget"
+msgstr "Byudjet"
+
+#: templates/budgets/form.html:15
+msgid "Budget Name"
+msgstr "Byudjet nomi"
+
+#: templates/budgets/form.html:35
+msgid "Budget Amount"
+msgstr "Byudjet miqdori"
+
+#: templates/budgets/form.html:47 templates/budgets/spending_history.html:43
+msgid "Alert Threshold"
+msgstr "Ogohlantirish chegarasi"
+
+#: templates/budgets/form.html:50
+msgid "Get notified when you reach this percentage of your budget"
+msgstr "Byudjetingizning shu foiziga yetganingizda bildirishnoma oling"
+
+#: templates/budgets/form.html:57
+msgid "Track spending against this budget"
+msgstr "Ushbu byudjetga nisbatan xarajatlarni kuzatib boring"
+
+#: templates/budgets/list.html:10
+msgid "Plan and track your spending limits"
+msgstr "Xarajat chegaralarini rejalashtiring va kuzatib boring"
+
+#: templates/budgets/list.html:22
+msgid "Overview"
+msgstr "Umumiy koʻrinish"
+
+#: templates/budgets/list.html:25
+msgid "Active Only"
+msgstr "Faqat faol"
+
+#: templates/budgets/list.html:28
+msgid "Alerts"
+msgstr "Ogohlantirishlar"
+
+#: templates/budgets/list.html:31
+msgid "By Category"
+msgstr "Kategoriya bo'yicha"
+
+#: templates/budgets/list.html:41
+msgid "All Periods"
+msgstr "Barcha davrlar"
+
+#: templates/budgets/list.html:42
+msgid "Weekly"
+msgstr "Haftalik"
+
+#: templates/budgets/list.html:43
+msgid "Monthly"
+msgstr "Oylik"
+
+#: templates/budgets/list.html:44
+msgid "Yearly"
+msgstr "Yillik"
+
+#: templates/budgets/list.html:49
+msgid "All Status"
+msgstr "Barcha holat"
+
+#: templates/budgets/list.html:58 templates/cards/list.html:92
+#: templates/categories/list.html:49 templates/transactions/list.html:135
+#: templates/transfers/transfer_list.html:66
+msgid "Filter"
+msgstr "Filtr"
+
+#: templates/budgets/list.html:85 templates/budgets/progress.html:13
+#: templates/budgets/progress.html:34
+#: templates/budgets/spending_history.html:64
+msgid "Progress"
+msgstr "Taraqqiyot"
+
+#: templates/budgets/list.html:87 templates/cards/confirm_delete.html:15
+#: templates/categories/list.html:80
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr "Oʻchirish"
+
+#: templates/budgets/list.html:94 templates/budgets/progress.html:28
+#: templates/budgets/spending_history.html:62
+msgid "Spent"
+msgstr "Sarflangan"
+
+#: templates/budgets/list.html:103
+#, python-format
+msgid "%% used"
+msgstr "%% foydalanilgan"
+
+#: templates/budgets/list.html:103
+msgid "left"
+msgstr "chap"
+
+#: templates/budgets/list.html:124 templates/transactions/list.html:269
+msgid "Previous"
+msgstr "Oldingi"
+
+#: templates/budgets/list.html:128 templates/transactions/list.html:281
+msgid "Next"
+msgstr "Keyingisi"
+
+#: templates/budgets/list.html:138
+msgid "No Budgets Yet"
+msgstr "Hozircha byudjet yo'q"
+
+#: templates/budgets/list.html:139
+msgid "Start managing your spending by creating your first budget."
+msgstr ""
+"Birinchi byudjetingizni yaratish orqali xarajatlaringizni boshqarishni "
+"boshlang."
+
+#: templates/budgets/list.html:140
+msgid "Create Your First Budget"
+msgstr "Birinchi byudjetingizni yarating"
+
+#: templates/budgets/overview.html:5 templates/budgets/overview.html:9
+msgid "Budget Overview"
+msgstr "Byudjetga umumiy nuqtai"
+
+#: templates/budgets/overview.html:10
+msgid "See all your budgets at a glance"
+msgstr "Barcha byudjetlaringizni bir qarashda ko'ring"
+
+#: templates/budgets/overview.html:13
+msgid "Back"
+msgstr "Orqaga"
+
+#: templates/budgets/overview.html:20
+msgid "Total Budgeted"
+msgstr "Jami byudjet"
+
+#: templates/budgets/overview.html:23
+msgid "Total Spent"
+msgstr "Jami sarflangan"
+
+#: templates/budgets/overview.html:26 templates/budgets/progress.html:31
+msgid "Remaining"
+msgstr "Qolgan"
+
+#: templates/budgets/overview.html:29
+#: templates/transactions/statistics.html:67
+msgid "Total"
+msgstr "Jami"
+
+#: templates/budgets/overview.html:36
+msgid "Overall Budget Progress"
+msgstr "Umumiy byudjet taraqqiyoti"
+
+#: templates/budgets/overview.html:44
+msgid "over budget"
+msgstr "byudjetdan ortiq"
+
+#: templates/budgets/overview.html:45
+msgid "at warning"
+msgstr "ogohlantirishda"
+
+#: templates/budgets/progress.html:16
+msgid "Progress Report"
+msgstr "Taraqqiyot hisoboti"
+
+#: templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:95
+msgid "Over Budget"
+msgstr "Byudjetdan ortiq"
+
+#: templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:97
+msgid "Warning"
+msgstr "Ogohlantirish"
+
+#: templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:99
+msgid "On Track"
+msgstr "Yo'lda"
+
+#: templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:101
+msgid "Good"
+msgstr "Yaxshi"
+
+#: templates/budgets/progress.html:41
+msgid "Period Timeline"
+msgstr "Davr xronologiyasi"
+
+#: templates/budgets/progress.html:47
+msgid "days remaining"
+msgstr "qolgan kunlar"
+
+#: templates/budgets/progress.html:54
+msgid "Spending Analysis"
+msgstr "Xarajatlar tahlili"
+
+#: templates/budgets/progress.html:56
+msgid "Average Daily Spending"
+msgstr "O'rtacha kunlik xarajatlar"
+
+#: templates/budgets/progress.html:57
+msgid "Suggested Daily Limit"
+msgstr "Tavsiya etilgan kunlik chegara"
+
+#: templates/budgets/spending_history.html:19
+msgid " • Past"
+msgstr "• O‘tgan"
+
+#: templates/budgets/spending_history.html:19
+msgid "months"
+msgstr "oylar"
+
+#: templates/budgets/spending_history.html:23
+msgid "3 Months"
+msgstr "3 oy"
+
+#: templates/budgets/spending_history.html:24
+msgid "6 Months"
+msgstr "6 oy"
+
+#: templates/budgets/spending_history.html:25
+msgid "12 Months"
+msgstr "12 oy"
+
+#: templates/budgets/spending_history.html:35
+msgid "Current Budget"
+msgstr "Joriy byudjet"
+
+#: templates/budgets/spending_history.html:54
+msgid "Historical Spending"
+msgstr "Tarixiy xarajatlar"
+
+#: templates/budgets/spending_history.html:117
+msgid "Average Monthly Spending"
+msgstr "O'rtacha oylik xarajatlar"
+
+#: templates/budgets/spending_history.html:133
+msgid "Times Over Budget"
+msgstr "Byudjetdan ortiq vaqt"
+
+#: templates/budgets/spending_history.html:143
+msgid "Months Tracked"
+msgstr "Oylar kuzatildi"
+
+#: templates/budgets/spending_history.html:153
+msgid "No Historical Data"
+msgstr "Tarixiy ma'lumotlar yo'q"
+
+#: templates/budgets/spending_history.html:155
+msgid ""
+"No spending history found for this budget category in the selected time "
+"period."
+msgstr ""
+"Tanlangan vaqt oralig‘ida ushbu byudjet toifasi uchun sarflangan mablag‘lar "
+"tarixi topilmadi."
+
+#: templates/budgets/spending_history.html:158
+msgid "Back to Budget"
+msgstr "Byudjet sahifasiga qaytish"
+
+#: templates/cards/card_types.html:13 templates/cards/list.html:236
+msgid "Card Types"
+msgstr "Karta turlari"
+
+#: templates/cards/card_types.html:15
+msgid "Available card types for your wallets"
+msgstr "Hamyonlaringiz uchun mavjud karta turlari"
+
+#: templates/cards/card_types.html:19
+msgid "Back to Cards"
+msgstr "Kartalar sahifasiga qaytish"
+
+#: templates/cards/card_types.html:49
+msgid "No Card Types Available"
+msgstr "Hech qanday karta turlari mavjud emas"
+
+#: templates/cards/card_types.html:50
+msgid "There are no active card types at the moment."
+msgstr "Hozirda faol karta turlari mavjud emas."
+
+#: templates/cards/card_types.html:58
+msgid "About Card Types"
+msgstr "Karta turlari haqida"
+
+#: templates/cards/card_types.html:59
+msgid "Card types help you categorize your payment methods:"
+msgstr "Karta turlari to'lov usullarini tasniflashda yordam beradi:"
+
+#: templates/cards/card_types.html:61
+msgid "International payment cards"
+msgstr "Xalqaro to'lov kartalari"
+
+#: templates/cards/card_types.html:62
+msgid "Local Uzbekistan payment cards"
+msgstr "Mahalliy O'zbekiston to'lov kartalari"
+
+#: templates/cards/card_types.html:63
+msgid "Online payment services (PayPal, Click, etc.)"
+msgstr "Onlayn to'lov xizmatlari (PayPal, Click va boshqalar)"
+
+#: templates/cards/card_types.html:64
+msgid "Direct bank account access"
+msgstr "To'g'ridan-to'g'ri bank hisobiga kirish"
+
+#: templates/cards/change_status.html:7
+msgid "Change Card Status"
+msgstr "Karta holatini o'zgartirish"
+
+#: templates/cards/change_status.html:18
+#: templates/cards/confirm_delete.html:93 templates/cards/detail.html:64
+#: templates/cards/detail.html:227 templates/cards/list.html:87
+#: templates/cards/list.html:183
+msgid "Blocked"
+msgstr "Bloklangan"
+
+#: templates/cards/change_status.html:21
+msgid "Update"
+msgstr "Yangilash"
+
+#: templates/cards/confirm_delete.html:6
+#: templates/cards/confirm_delete.html:19 templates/cards/detail.html:244
+#: templates/cards/list.html:146
+msgid "Delete Card"
+msgstr "Kartani o'chirish"
+
+#: templates/cards/confirm_delete.html:13 templates/cards/detail.html:13
+#: templates/cards/form.html:13 templates/cards/list.html:13
+#: templates/cards/update_balance.html:13
+msgid "Cards & Wallets"
+msgstr "Kartalar va hamyonlar"
+
+#: templates/cards/confirm_delete.html:32
+msgid "Cannot Delete Card"
+msgstr "Kartani oʻchirib boʻlmadi"
+
+#: templates/cards/confirm_delete.html:35
+msgid "Go Back"
+msgstr "Ortga qaytish"
+
+#: templates/cards/confirm_delete.html:42
+msgid "Are you sure?"
+msgstr "Ishonchingiz komilmi?"
+
+#: templates/cards/confirm_delete.html:43
+#: templates/transactions/confirm_delete.html:16
+msgid "This action cannot be undone!"
+msgstr "Bu amalni ortga qaytarib bo‘lmaydi!"
+
+#: templates/cards/confirm_delete.html:49
+msgid "Card to be deleted:"
+msgstr "O'chirilishi kerak bo'lgan karta:"
+
+#: templates/cards/confirm_delete.html:51
+msgid "Name:"
+msgstr "Nomi:"
+
+#: templates/cards/confirm_delete.html:54
+msgid "Bank:"
+msgstr "Bank:"
+
+#: templates/cards/confirm_delete.html:57
+msgid "Balance:"
+msgstr "Balans:"
+
+#: templates/cards/confirm_delete.html:60
+msgid "Last 4:"
+msgstr "Oxirgi 4:"
+
+#: templates/cards/confirm_delete.html:68
+msgid "Warning:"
+msgstr "Ogohlantirish:"
+
+#: templates/cards/confirm_delete.html:68
+msgid ""
+"Deleting this card will permanently remove it from your account. This action"
+" cannot be reversed."
+msgstr ""
+"Bu kartani oʻchirib tashlasangiz, u hisobingizdan butunlay oʻchirib "
+"tashlanadi. Bu harakatni qaytarib bo'lmaydi."
+
+#: templates/cards/confirm_delete.html:75
+msgid "Yes, Delete Card"
+msgstr "Ha, kartani o'chirish"
+
+#: templates/cards/confirm_delete.html:90
+msgid "Consider these alternatives:"
+msgstr "Ushbu alternativalarni ko'rib chiqing:"
+
+#: templates/cards/confirm_delete.html:92
+msgid "Set the card status to"
+msgstr "Karta holatini sozlang"
+
+#: templates/cards/confirm_delete.html:92
+msgid "instead of deleting"
+msgstr "o'chirish o'rniga"
+
+#: templates/cards/confirm_delete.html:93
+msgid "Mark it as"
+msgstr "Uni belgilang"
+
+#: templates/cards/confirm_delete.html:93
+msgid "if it's lost or stolen"
+msgstr "agar u yo'qolgan yoki o'g'irlangan bo'lsa"
+
+#: templates/cards/confirm_delete.html:94
+msgid "Keep the card for historical transaction records"
+msgstr "Tarixiy tranzaksiya yozuvlari uchun kartani saqlang"
+
+#: templates/cards/detail.html:20 templates/cards/list.html:112
+msgid "Default"
+msgstr "Standart"
+
+#: templates/cards/detail.html:26 templates/cards/list.html:128
+msgid "Edit Card"
+msgstr "Kartani tahrirlash"
+
+#: templates/cards/detail.html:47
+msgid "Card Number"
+msgstr "Karta raqami"
+
+#: templates/cards/detail.html:53 templates/cards/list.html:163
+#: templates/cards/update_balance.html:34
+msgid "Current Balance"
+msgstr "Joriy balans"
+
+#: templates/cards/detail.html:75
+msgid "This Month's Activity"
+msgstr "Bu oylik faoliyat"
+
+#: templates/cards/detail.html:85 templates/categories/list.html:41
+#: templates/categories/list.html:69 templates/statistics.html:127
+#: templates/transactions/detail.html:36 templates/transactions/list.html:87
+#: templates/transactions/statistics.html:38
+msgid "Income"
+msgstr "Daromad"
+
+#: templates/cards/detail.html:96 templates/statistics.html:137
+#: templates/transactions/statistics.html:47
+msgid "Expenses"
+msgstr "Xarajatlar"
+
+#: templates/cards/detail.html:109 templates/dashboard.html:77
+msgid "Recent Transactions"
+msgstr "Oxirgi operatsiyalar"
+
+#: templates/cards/detail.html:110 templates/dashboard.html:78
+msgid "View All"
+msgstr "Hammasini ko‘rish"
+
+#: templates/cards/detail.html:145 templates/dashboard.html:115
+msgid "No transactions yet"
+msgstr "Hozircha tranzaksiya yo‘q"
+
+#: templates/cards/detail.html:157 templates/cards/list.html:227
+#: templates/dashboard.html:128 templates/transactions/detail.html:90
+msgid "Quick Actions"
+msgstr "Tezkor harakatlar"
+
+#: templates/cards/detail.html:162 templates/cards/list.html:131
+#: templates/cards/update_balance.html:15
+#: templates/cards/update_balance.html:19
+#: templates/cards/update_balance.html:119
+msgid "Update Balance"
+msgstr "Balansni yangilash"
+
+#: templates/cards/detail.html:165 templates/dashboard.html:116
+#: templates/dashboard.html:133 templates/transactions/list.html:19
+msgid "Add Transaction"
+msgstr "Tranzaksiya qo'shish"
+
+#: templates/cards/detail.html:171 templates/cards/list.html:139
+msgid "Set as Default"
+msgstr "Standart sifatida sozlash"
+
+#: templates/cards/detail.html:182
+msgid "Card Details"
+msgstr "Karta tafsilotlari"
+
+#: templates/cards/detail.html:186 templates/cards/form.html:33
+msgid "Card Name"
+msgstr "Karta nomi"
+
+#: templates/cards/detail.html:189
+msgid "Bank"
+msgstr "Bank"
+
+#: templates/cards/detail.html:192 templates/cards/form.html:61
+msgid "Card Type"
+msgstr "Karta turi"
+
+#: templates/cards/detail.html:198 templates/cards/form.html:100
+msgid "Last 4 Digits"
+msgstr "Oxirgi 4 ta raqam"
+
+#: templates/cards/detail.html:201 templates/transactions/detail.html:66
+msgid "Created"
+msgstr "Yaratilgan"
+
+#: templates/cards/detail.html:204
+msgid "Default Card"
+msgstr "Standart karta"
+
+#: templates/cards/detail.html:207
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:870
+msgid "Yes"
+msgstr "Ha"
+
+#: templates/cards/detail.html:209
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:871
+msgid "No"
+msgstr "Yo'q"
+
+#: templates/cards/detail.html:219
+msgid "Change Status"
+msgstr "Statusni o'zgartirish"
+
+#: templates/cards/detail.html:230
+msgid "Update Status"
+msgstr "Statusni yangilash"
+
+#: templates/cards/detail.html:242
+msgid "Permanently delete this card"
+msgstr "Ushbu kartani butunlay o'chirib tashlang"
+
+#: templates/cards/form.html:41
+msgid "Give your card a memorable name (e.g., \\"
+msgstr "Kartangizga esda qolarli nom bering (masalan, \\"
+
+#: templates/cards/form.html:47
+msgid "Bank Name"
+msgstr "Bank nomi"
+
+#: templates/cards/form.html:88
+msgid "Initial Balance"
+msgstr "Dastlabki balans"
+
+#: templates/cards/form.html:108
+msgid "Last 4 digits of your card number (for identification)"
+msgstr ""
+"Karta raqamingizning oxirgi 4 ta raqami (identifikatsiya qilish uchun)"
+
+#: templates/cards/form.html:146 templates/transactions/form.html:200
+msgid "Tips"
+msgstr "Maslahatlar"
+
+#: templates/cards/form.html:148
+msgid "Choose a descriptive name for easy identification"
+msgstr "Oson identifikatsiya qilish uchun tavsiflovchi nom tanlang"
+
+#: templates/cards/form.html:149
+msgid "Select the correct currency to avoid conversion issues"
+msgstr ""
+"Konvertatsiya bilan bog'liq muammolarni oldini olish uchun to'g'ri valyutani"
+" tanlang"
+
+#: templates/cards/form.html:150
+msgid "Enter your current balance accurately"
+msgstr "Joriy balansingizni aniq kiriting"
+
+#: templates/cards/form.html:151
+msgid "You can always update the balance later"
+msgstr "Balansni keyinroq har doim yangilashingiz mumkin"
+
+#: templates/cards/form.html:152
+msgid "Set status to \\"
+msgstr "Holatni \\ ga o'rnatish"
+
+#: templates/cards/list.html:15
+msgid "Manage your payment cards and digital wallets"
+msgstr "Toʻlov kartalari va raqamli hamyonlarni boshqaring"
+
+#: templates/cards/list.html:19
+msgid "Add New Card"
+msgstr "Yangi karta qo'shing"
+
+#: templates/cards/list.html:30 templates/dashboard.html:25
+#: templates/statistics.html:24
+msgid "Total Balance"
+msgstr "Umumiy balans"
+
+#: templates/cards/list.html:43 templates/dashboard.html:37
+#: templates/statistics.html:89 templates/transfers/transfer_list.html:41
+msgid "Active Cards"
+msgstr "Faol kartalar"
+
+#: templates/cards/list.html:45
+msgid "Cards"
+msgstr "Kartalar"
+
+#: templates/cards/list.html:56
+msgid "Total Cards"
+msgstr "Jami kartalar"
+
+#: templates/cards/list.html:58
+msgid "All cards"
+msgstr "Barcha kartalar"
+
+#: templates/cards/list.html:201
+msgid "No Cards Yet"
+msgstr "Hali kartalar yo'q"
+
+#: templates/cards/list.html:204
+msgid "No cards match your filters. Try adjusting your search criteria."
+msgstr ""
+"Filtringizga mos keladigan kartalar topilmadi. Qidiruv mezonlarini "
+"o'zgartirishga harakat qiling."
+
+#: templates/cards/list.html:206
+msgid ""
+"Start by adding your first payment card or digital wallet to track your "
+"finances."
+msgstr ""
+"Moliyangizni kuzatish uchun birinchi toʻlov kartangizni yoki raqamli "
+"hamyonni qoʻshishdan boshlang."
+
+#: templates/cards/list.html:211
+msgid "Add Your First Card"
+msgstr "Birinchi kartangizni qo'shing"
+
+#: templates/cards/list.html:215 templates/transactions/list.html:309
+msgid "Clear Filters"
+msgstr "Filtrlarni tozalash"
+
+#: templates/cards/list.html:230 templates/currency/list.html:17
+msgid "Convert Currency"
+msgstr "Valyutani konvertatsiya qilish"
+
+#: templates/cards/list.html:233
+msgid "View Currencies"
+msgstr "Valyutalarni ko'rish"
+
+#: templates/cards/update_balance.html:45
+msgid "Balance Updated!"
+msgstr "Balans yangilandi!"
+
+#: templates/cards/update_balance.html:46
+msgid "Your card balance has been successfully updated."
+msgstr "Karta balansingiz muvaffaqiyatli yangilandi."
+
+#: templates/cards/update_balance.html:51
+msgid "Old Balance"
+msgstr "Eski balans"
+
+#: templates/cards/update_balance.html:57
+#: templates/cards/update_balance.html:93
+msgid "New Balance"
+msgstr "Yangi balans"
+
+#: templates/cards/update_balance.html:64
+#: templates/transfers/transfer_detail.html:125
+msgid "Difference"
+msgstr "Farq"
+
+#: templates/cards/update_balance.html:70
+msgid "Reason"
+msgstr "Sabab"
+
+#: templates/cards/update_balance.html:76
+msgid "View Card"
+msgstr "Kartani ko'rish"
+
+#: templates/cards/update_balance.html:79 templates/transactions/list.html:107
+#: templates/transfers/transfer_list.html:56
+msgid "All Cards"
+msgstr "Barcha kartalar"
+
+#: templates/cards/update_balance.html:101
+msgid "Enter the new balance for this card"
+msgstr "Ushbu karta uchun yangi balansni kiriting"
+
+#: templates/cards/update_balance.html:106
+msgid "Reason (Optional)"
+msgstr "Sabab (ixtiyoriy)"
+
+#: templates/cards/update_balance.html:114
+msgid "Why are you updating the balance?"
+msgstr "Nega balansni yangilayapsiz?"
+
+#: templates/cards/update_balance.html:132
+msgid "Note"
+msgstr "Eslatma"
+
+#: templates/cards/update_balance.html:132
+msgid ""
+"This will directly update your card balance. Use the transactions feature to"
+" properly record income or expenses."
+msgstr ""
+"Bu to'g'ridan-to'g'ri kartangiz balansini yangilaydi. Daromad yoki "
+"xarajatlarni to'g'ri qayd qilish uchun tranzaktsiyalar xususiyatidan "
+"foydalaning."
+
+#: templates/categories/list.html:11 templates/transactions/list.html:152
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+#: templates/categories/list.html:12
+msgid "Organize your transactions"
+msgstr "Tranzaktsiyalaringizni tashkil qiling"
+
+#: templates/categories/list.html:16
+msgid "Add Category"
+msgstr "Kategoriya qo'shish"
+
+#: templates/categories/list.html:24
+msgid "Total Categories"
+msgstr "Jami toifalar"
+
+#: templates/categories/list.html:27
+msgid "Income Categories"
+msgstr "Daromad toifalari"
+
+#: templates/categories/list.html:30
+msgid "Expense Categories"
+msgstr "Xarajatlar toifalari"
+
+#: templates/categories/list.html:40 templates/transactions/list.html:86
+msgid "All Types"
+msgstr "Barcha turlari"
+
+#: templates/categories/list.html:42 templates/categories/list.html:69
+#: templates/transactions/detail.html:38 templates/transactions/list.html:88
+msgid "Expense"
+msgstr "Xarajat"
+
+#: templates/categories/list.html:46
+msgid "Search categories..."
+msgstr "Kategoriyalarni qidirish..."
+
+#: templates/categories/list.html:70
+msgid "System"
+msgstr "Tizim"
+
+#: templates/categories/list.html:70
+msgid "Custom"
+msgstr "Maxsus"
+
+#: templates/categories/list.html:93
+msgid "No categories found"
+msgstr "Hech qanday toifa topilmadi"
+
+#: templates/currency/convert.html:12 templates/currency/list.html:11
+msgid "Currencies"
+msgstr "Valyutalar"
+
+#: templates/currency/convert.html:13 templates/currency/convert.html:83
+#: templates/currency/list.html:67
+msgid "Convert"
+msgstr "Konvertatsiya qilish"
+
+#: templates/currency/convert.html:17
+msgid "Currency Converter"
+msgstr "Valyuta konvertori"
+
+#: templates/currency/convert.html:19
+msgid "Convert between different currencies"
+msgstr "Turli valyutalar o'rtasida konvertatsiya qilish"
+
+#: templates/currency/convert.html:33 templates/transactions/detail.html:43
+#: templates/transactions/form.html:59 templates/transactions/list.html:174
+#: templates/transfers/transfer_list.html:85
+msgid "Amount"
+msgstr "Miqdori"
+
+#: templates/currency/convert.html:46
+#: templates/transfers/transfer_detail.html:116
+msgid "From Currency"
+msgstr "Valyutadan"
+
+#: templates/currency/convert.html:59
+msgid "Swap"
+msgstr "Almashtirish"
+
+#: templates/currency/convert.html:66
+#: templates/transfers/transfer_detail.html:119
+msgid "To Currency"
+msgstr "Valyutaga"
+
+#: templates/currency/convert.html:94
+msgid "Conversion Result"
+msgstr "Konvertatsiya natijasi"
+
+#: templates/currency/convert.html:100
+#: templates/transfers/transfer_list.html:82
+msgid "From"
+msgstr "Kimdan"
+
+#: templates/currency/convert.html:113
+#: templates/transfers/transfer_list.html:84
+msgid "To"
+msgstr "Kimga"
+
+#: templates/currency/convert.html:125
+msgid "Exchange Rate:"
+msgstr "Valyuta kursi:"
+
+#: templates/currency/convert.html:138
+msgid "Popular Conversions"
+msgstr "Ommabop konversiyalar"
+
+#: templates/currency/list.html:13
+msgid "View all supported currencies"
+msgstr "Barcha qo'llab-quvvatlanadigan valyutalarni ko'ring"
+
+#: templates/currency/list.html:33
+msgid "Search by code or name..."
+msgstr "Kod yoki ism bo'yicha qidirish..."
+
+#: templates/currency/list.html:35 templates/transactions/list.html:127
+msgid "Search"
+msgstr "Qidiruv"
+
+#: templates/currency/list.html:48
+msgid "Code"
+msgstr "Kod"
+
+#: templates/currency/list.html:49
+msgid "Name"
+msgstr "Ism"
+
+#: templates/currency/list.html:50
+msgid "Symbol"
+msgstr "Belgi"
+
+#: templates/currency/list.html:80
+msgid "No Currencies Found"
+msgstr "Hech qanday valyuta topilmadi"
+
+#: templates/currency/list.html:81
+msgid "Try adjusting your search criteria."
+msgstr "Qidiruv mezonlarini o'zgartirishga harakat qiling."
+
+#: templates/currency/list.html:83
+msgid "Clear Search"
+msgstr "Qidiruvni tozalash"
+
+#: templates/currency/list.html:92
+msgid "About Currencies"
+msgstr "Valyutalar haqida"
+
+#: templates/currency/list.html:94
+msgid ""
+"These are the currencies supported by our system. You can use them when "
+"creating cards and wallets. "
+msgstr ""
+"Bu bizning tizimimiz tomonidan qo'llab-quvvatlanadigan valyutalar. Siz "
+"ularni kartalar va hamyonlarni yaratishda ishlatishingiz mumkin."
+
+#: templates/currency/list.html:95
+msgid "Exchange rates are updated regularly to provide accurate conversions."
+msgstr ""
+"To'g'ri konvertatsiya qilish uchun valyuta kurslari muntazam yangilanadi."
+
+#: templates/dashboard.html:13
+msgid "Welcome back"
+msgstr "qaytib kelganingizdan xursandmiz"
+
+#: templates/dashboard.html:15
+msgid "Here's your financial overview"
+msgstr "Mana sizning moliyaviy sharhingiz"
+
+#: templates/dashboard.html:136
+msgid "Add Card"
+msgstr "Karta qo'shish"
+
+#: templates/dashboard.html:142
+msgid "View Statistics"
+msgstr "Statistikani ko'rish"
+
+#: templates/dashboard.html:175
+msgid "No budgets yet"
+msgstr "Hozircha byudjet yo'q"
+
+#: templates/landing/landing.html:7
+msgid "Track Your Money. Control Your Life."
+msgstr "Pulingizni kuzatib boring. Hayotingizni boshqaring."
+
+#: templates/landing/landing.html:8
+msgid "Simple. Secure. Smart personal finance tracking."
+msgstr "Oddiy. Xavfsiz. Shaxsiy moliyani aqlli kuzatish."
+
+#: templates/landing/landing.html:12
+msgid "Get Started"
+msgstr "Boshlash"
+
+#: templates/statistics.html:12
+msgid "Financial Statistics"
+msgstr "Moliyaviy statistika"
+
+#: templates/statistics.html:14
+msgid "Your financial overview and insights"
+msgstr "Sizning moliyaviy nuqtai nazaringiz va tushunchalaringiz"
+
+#: templates/statistics.html:37
+msgid "Monthly Income"
+msgstr "Oylik daromad"
+
+#: templates/statistics.html:50
+msgid "Monthly Expenses"
+msgstr "Oylik xarajatlar"
+
+#: templates/statistics.html:63
+msgid "Net Savings"
+msgstr "Sof tejash"
+
+#: templates/statistics.html:81
+msgid "Account Overview"
+msgstr "Hisobga umumiy nuqtai"
+
+#: templates/statistics.html:122 templates/transactions/statistics.html:27
+msgid "This Month"
+msgstr "Shu oy"
+
+#: templates/statistics.html:152 templates/transactions/list.html:56
+msgid "Net Balance"
+msgstr "Net balans"
+
+#: templates/statistics.html:170
+msgid "Want more detailed insights?"
+msgstr "Batafsil ma'lumot olishni xohlaysizmi?"
+
+#: templates/statistics.html:173
+msgid "View Charts"
+msgstr "Diagrammalarni ko'rish"
+
+#: templates/statistics.html:176
+msgid "Export Data"
+msgstr "Ma'lumotlarni eksport qilish"
+
+#: templates/statistics.html:179
+msgid "Back to Dashboard"
+msgstr "Boshqaruv paneli sahifasiga qaytish"
+
+#: templates/support/admin_chat_detail.html:7
+msgid "Chat with"
+msgstr "bilan suhbatlashing"
+
+#: templates/support/admin_chat_detail.html:17
+msgid "Admin"
+msgstr "Admin"
+
+#: templates/support/admin_chat_detail.html:38
+msgid "No messages yet."
+msgstr "Hali hech qanday xabar yo'q."
+
+#: templates/support/admin_chat_detail.html:50
+msgid "Send"
+msgstr "Yuborish"
+
+#: templates/support/admin_chat_list.html:7
+msgid "Admin Support Chats"
+msgstr "Administratorni qo'llab-quvvatlash suhbatlari"
+
+#: templates/support/admin_chat_list.html:22
+msgid "No messages yet"
+msgstr "Hali hech qanday xabar yo'q"
+
+#: templates/support/admin_chat_list.html:35
+msgid "Open"
+msgstr "Ochiq"
+
+#: templates/support/admin_chat_list.html:43
+msgid "No support messages yet."
+msgstr "Hozircha qoʻllab-quvvatlash xabarlari yoʻq."
+
+#: templates/support/user_chat.html:4 templates/support/user_chat.html:10
+msgid "Support Chat"
+msgstr "Yordam chat"
+
+#: templates/support/user_chat.html:11
+msgid "Get help from our support team"
+msgstr "Bizning qo'llab-quvvatlash guruhimizdan yordam oling"
+
+#: templates/support/user_chat.html:19
+msgid "Support Team"
+msgstr "Yordam jamoasi"
+
+#: templates/support/user_chat.html:30
+msgid "No messages yet. Start a conversation!"
+msgstr "Hali hech qanday xabar yo'q. Suhbatni boshlang!"
+
+#: templates/support/user_chat.html:42
+msgid "Send Message"
+msgstr "Xabar yuborish"
+
+#: templates/transactions/confirm_delete.html:15
+msgid "Delete Transaction?"
+msgstr "Tranzaksiya oʻchirilsinmi?"
+
+#: templates/transactions/confirm_delete.html:21
+msgid "Transaction Details:"
+msgstr "Tranzaksiya tafsilotlari:"
+
+#: templates/transactions/confirm_delete.html:23
+msgid "Title:"
+msgstr "Sarlavha:"
+
+#: templates/transactions/confirm_delete.html:25
+msgid "Amount:"
+msgstr "Miqdori:"
+
+#: templates/transactions/confirm_delete.html:27
+msgid "Date:"
+msgstr "Sana:"
+
+#: templates/transactions/confirm_delete.html:37
+msgid "Yes, Delete"
+msgstr "Ha, o'chirish"
+
+#: templates/transactions/detail.html:33 templates/transactions/form.html:33
+#: templates/transactions/list.html:84
+msgid "Type"
+msgstr "Turi"
+
+#: templates/transactions/detail.html:58 templates/transactions/form.html:74
+msgid "Card/Wallet"
+msgstr "Karta/hamyon"
+
+#: templates/transactions/detail.html:62 templates/transactions/form.html:100
+#: templates/transactions/list.html:170
+#: templates/transfers/transfer_detail.html:96
+#: templates/transfers/transfer_list.html:81
+msgid "Date"
+msgstr "Sana"
+
+#: templates/transactions/detail.html:71 templates/transactions/form.html:113
+#: templates/transfers/transfer_detail.html:78
+msgid "Description"
+msgstr "Tavsif"
+
+#: templates/transactions/detail.html:77 templates/transactions/form.html:126
+msgid "Location"
+msgstr "Joylashuv"
+
+#: templates/transactions/detail.html:95
+msgid "Edit Transaction"
+msgstr "Tranzaksiyani tahrirlash"
+
+#: templates/transactions/detail.html:98
+msgid "Delete Transaction"
+msgstr "Tranzaksiyani oʻchirish"
+
+#: templates/transactions/form.html:47 templates/transactions/list.html:171
+msgid "Title"
+msgstr "Sarlavha"
+
+#: templates/transactions/form.html:139 templates/transactions/list.html:155
+msgid "Tags"
+msgstr "Teglar"
+
+#: templates/transactions/form.html:148
+msgid "Select tags for this transaction:"
+msgstr "Ushbu tranzaksiya uchun teglarni tanlang:"
+
+#: templates/transactions/form.html:153
+msgid "Business"
+msgstr "Biznes"
+
+#: templates/transactions/form.html:160
+msgid "Personal"
+msgstr "Shaxsiy"
+
+#: templates/transactions/form.html:165
+msgid "Manage tags"
+msgstr "Teglarni boshqarish"
+
+#: templates/transactions/form.html:174
+msgid "This is a recurring transaction"
+msgstr "Bu takrorlanuvchi tranzaksiya"
+
+#: templates/transactions/form.html:202 templates/transactions/form.html:203
+msgid "Choose \\"
+msgstr "tanlang \\"
+
+#: templates/transactions/form.html:204
+msgid "Select the appropriate card/wallet used"
+msgstr "Amaldagi tegishli karta/hamyonni tanlang"
+
+#: templates/transactions/form.html:205
+msgid "Pick a category that best describes the transaction"
+msgstr "Tranzaktsiyani eng yaxshi tavsiflovchi toifani tanlang"
+
+#: templates/transactions/form.html:206
+msgid "Add location and description for better tracking"
+msgstr "Yaxshiroq kuzatish uchun joylashuv va tavsif qo'shing"
+
+#: templates/transactions/list.html:15
+msgid "Track your income and expenses"
+msgstr "Daromad va xarajatlaringizni kuzatib boring"
+
+#: templates/transactions/list.html:30
+msgid "Total Income"
+msgstr "Jami daromad"
+
+#: templates/transactions/list.html:43
+msgid "Total Expenses"
+msgstr "Jami xarajatlar"
+
+#: templates/transactions/list.html:69
+msgid "Total Transactions"
+msgstr "Jami tranzaktsiyalar"
+
+#: templates/transactions/list.html:71
+msgid "All time"
+msgstr "Hamma vaqt"
+
+#: templates/transactions/list.html:95
+msgid "All Categories"
+msgstr "Barcha toifalar"
+
+#: templates/transactions/list.html:105 templates/transactions/list.html:173
+msgid "Card"
+msgstr "Karta"
+
+#: templates/transactions/list.html:117
+msgid "Start Date"
+msgstr "Boshlanish sanasi"
+
+#: templates/transactions/list.html:122
+msgid "End Date"
+msgstr "Tugash sanasi"
+
+#: templates/transactions/list.html:138
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:528
+msgid "Clear"
+msgstr "Toza"
+
+#: templates/transactions/list.html:251
+msgid "selected"
+msgstr "tanlangan"
+
+#: templates/transactions/list.html:253
+msgid "Delete Selected"
+msgstr "Tanlanganni o'chirish"
+
+#: templates/transactions/list.html:266
+msgid "First"
+msgstr "Birinchidan"
+
+#: templates/transactions/list.html:284
+msgid "Last"
+msgstr "Oxirgi"
+
+#: templates/transactions/list.html:295
+msgid "No Transactions Yet"
+msgstr "Hozircha tranzaktsiyalar yoʻq"
+
+#: templates/transactions/list.html:298
+msgid ""
+"No transactions match your filters. Try adjusting your search criteria."
+msgstr ""
+"Hech qanday tranzaksiya filtrlaringizga mos kelmaydi. Qidiruv mezonlarini "
+"o'zgartirishga harakat qiling."
+
+#: templates/transactions/list.html:300
+msgid "Start tracking your finances by adding your first transaction."
+msgstr ""
+"Birinchi tranzaksiyani qo'shish orqali moliyangizni kuzatishni boshlang."
+
+#: templates/transactions/list.html:305
+msgid "Add Your First Transaction"
+msgstr "Birinchi tranzaktsiyangizni qo'shing"
+
+#: templates/transactions/statistics.html:11
+msgid "Transaction Statistics"
+msgstr "Tranzaktsiyalar statistikasi"
+
+#: templates/transactions/statistics.html:12
+msgid "Analyze your financial data"
+msgstr "Moliyaviy ma'lumotlaringizni tahlil qiling"
+
+#: templates/transactions/statistics.html:16
+msgid "Back to Transactions"
+msgstr "Tranzaksiyalar sahifasiga qaytish"
+
+#: templates/transactions/statistics.html:25
+msgid "Today"
+msgstr "Bugun"
+
+#: templates/transactions/statistics.html:26
+msgid "This Week"
+msgstr "Ushbu hafta"
+
+#: templates/transactions/statistics.html:28
+msgid "This Year"
+msgstr "Bu yil"
+
+#: templates/transactions/statistics.html:56
+msgid "Net"
+msgstr "Net"
+
+#: templates/transactions/statistics.html:79
+msgid "Top Expense Categories"
+msgstr "Eng yaxshi xarajat toifalari"
+
+#: templates/transactions/statistics.html:94
+msgid "No expense data"
+msgstr "Xarajat ma'lumotlari yo'q"
+
+#: templates/transactions/statistics.html:102
+msgid "Top Income Categories"
+msgstr "Yuqori daromad toifalari"
+
+#: templates/transactions/statistics.html:117
+msgid "No income data"
+msgstr "Daromad ma'lumotlari yo'q"
+
+#: templates/transfers/transfer_create.html:3
+#: templates/transfers/transfer_create.html:9
+msgid "Transfer Between Cards"
+msgstr "Kartalar o'rtasida o'tkazma"
+
+#: templates/transfers/transfer_create.html:10
+msgid "Transfer between ANY currencies - USD, EUR, UZS, and more!"
+msgstr ""
+"HAR QANDAY valyutalar o'rtasida o'tkazma - USD, EUR, SO'M va boshqalar!"
+
+#: templates/transfers/transfer_create.html:18
+#: templates/transfers/transfer_create.html:154
+msgid "Multi-Currency Support"
+msgstr "Ko'p valyutali qo'llab-quvvatlash"
+
+#: templates/transfers/transfer_create.html:19
+msgid ""
+"Transfer from USD to UZS, EUR to USD, UZS to EUR - any combination! "
+"Automatic conversion at current rates."
+msgstr ""
+"AQSH dollaridan soʻmga, yevrodan dollarga, soʻmdan yevroga oʻtkazma – "
+"istalgan kombinatsiya! Joriy tariflar bo'yicha avtomatik konvertatsiya."
+
+#: templates/transfers/transfer_create.html:31
+msgid "From Card (Any Currency)"
+msgstr "Kartadan (har qanday valyuta)"
+
+#: templates/transfers/transfer_create.html:47
+msgid "Converting..."
+msgstr "Oʻzgartirilmoqda..."
+
+#: templates/transfers/transfer_create.html:55
+msgid "To Card (Any Currency)"
+msgstr "Kartaga (har qanday valyuta)"
+
+#: templates/transfers/transfer_create.html:69
+msgid "Amount to Transfer"
+msgstr "O'tkazish uchun summa"
+
+#: templates/transfers/transfer_create.html:80
+msgid "Multi-Currency Transfer Preview"
+msgstr "Ko'p valyutali o'tkazmalarni oldindan ko'rish"
+
+#: templates/transfers/transfer_create.html:85
+msgid "You Send"
+msgstr "Siz yuborasiz"
+
+#: templates/transfers/transfer_create.html:94
+msgid "Recipient Gets"
+msgstr "Qabul qiluvchi oladi"
+
+#: templates/transfers/transfer_create.html:104
+#: templates/transfers/transfer_detail.html:122
+msgid "Exchange Rate"
+msgstr "Valyuta kursi"
+
+#: templates/transfers/transfer_create.html:107
+msgid "Conversion"
+msgstr "Konvertatsiya"
+
+#: templates/transfers/transfer_create.html:110
+msgid "New Balances After Transfer"
+msgstr "Transferdan keyin yangi qoldiqlar"
+
+#: templates/transfers/transfer_create.html:121
+msgid "Description (Optional)"
+msgstr "Tavsif (ixtiyoriy)"
+
+#: templates/transfers/transfer_create.html:139
+msgid "Complete Transfer"
+msgstr "To'liq uzatish"
+
+#: templates/transfers/transfer_create.html:152
+msgid "Transfer Tips"
+msgstr "O'tkazish bo'yicha maslahatlar"
+
+#: templates/transfers/transfer_create.html:154
+msgid "Transfer between ANY currencies! USD → UZS, EUR → USD, UZS → EUR, etc."
+msgstr ""
+"HAR QANDAY valyutalar o'rtasida o'tkazma! AQSH dollari → so‘m, evro → AQSH "
+"dollari, so‘m → yevro va h.k."
+
+#: templates/transfers/transfer_create.html:155
+msgid "Automatic Conversion"
+msgstr "Avtomatik konvertatsiya"
+
+#: templates/transfers/transfer_create.html:155
+msgid "We'll convert at the current exchange rate automatically."
+msgstr "Biz avtomatik ravishda joriy kurs bo'yicha konvertatsiya qilamiz."
+
+#: templates/transfers/transfer_create.html:156
+msgid "Live Preview"
+msgstr "Jonli ko‘rish"
+
+#: templates/transfers/transfer_create.html:156
+msgid "See exactly how much will be received before confirming."
+msgstr "Tasdiqlashdan oldin aniq qancha olinishini ko'ring."
+
+#: templates/transfers/transfer_create.html:157
+msgid "Instant Transfer"
+msgstr "Bir zumda uzatish"
+
+#: templates/transfers/transfer_create.html:157
+msgid "Money moves between your cards immediately."
+msgstr "Pul darhol kartalaringiz o'rtasida o'tadi."
+
+#: templates/transfers/transfer_create.html:165
+msgid "Supported Currency Transfers"
+msgstr "Qo'llab-quvvatlanadigan valyuta o'tkazmalari"
+
+#: templates/transfers/transfer_create.html:186
+msgid "and any other currency combination!"
+msgstr "va boshqa har qanday valyuta kombinatsiyasi!"
+
+#: templates/transfers/transfer_detail.html:10
+msgid "Transfer #"
+msgstr "Transfer #"
+
+#: templates/transfers/transfer_detail.html:13
+msgid "Transfer Details"
+msgstr "Transfer tafsilotlari"
+
+#: templates/transfers/transfer_detail.html:27
+msgid "Transfer Flow"
+msgstr "Transfer oqimi"
+
+#: templates/transfers/transfer_detail.html:33
+msgid "FROM"
+msgstr "FROM"
+
+#: templates/transfers/transfer_detail.html:38
+msgid "Amount Sent"
+msgstr "Yuborilgan miqdor"
+
+#: templates/transfers/transfer_detail.html:51
+msgid "Rate"
+msgstr "Baho"
+
+#: templates/transfers/transfer_detail.html:60
+msgid "TO"
+msgstr "TO"
+
+#: templates/transfers/transfer_detail.html:65
+msgid "Amount Received"
+msgstr "Qabul qilingan miqdor"
+
+#: templates/transfers/transfer_detail.html:89
+msgid "Transfer Information"
+msgstr "Ma'lumot uzatish"
+
+#: templates/transfers/transfer_detail.html:93
+msgid "Transfer ID"
+msgstr "Transfer identifikatori"
+
+#: templates/transfers/transfer_detail.html:99
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2534
+msgid "Time"
+msgstr "Vaqt"
+
+#: templates/transfers/transfer_detail.html:103
+msgid "Completed"
+msgstr "Bajarildi"
+
+#: templates/transfers/transfer_detail.html:112
+msgid "Exchange Details"
+msgstr "Tafsilotlarni almashish"
+
+#: templates/transfers/transfer_list.html:3
+msgid "Transfer History"
+msgstr "Transfer tarixi"
+
+#: templates/transfers/transfer_list.html:7
+msgid "Card Transfers"
+msgstr "Karta o'tkazmalari"
+
+#: templates/transfers/transfer_list.html:8
+msgid "History of all your card-to-card transfers"
+msgstr "Barcha kartadan kartaga o'tkazmalaringiz tarixi"
+
+#: templates/transfers/transfer_list.html:12
+msgid "New Transfer"
+msgstr "Yangi transfer"
+
+#: templates/transfers/transfer_list.html:22
+msgid "Total Transfers"
+msgstr "Jami transferlar"
+
+#: templates/transfers/transfer_list.html:31
+msgid "Total Amount"
+msgstr "Umumiy hisob"
+
+#: templates/transfers/transfer_list.html:86
+msgid "Received"
+msgstr "Qabul qilingan"
+
+#: templates/transfers/transfer_list.html:131
+msgid "No Transfers Yet"
+msgstr "Hozircha transferlar yo'q"
+
+#: templates/transfers/transfer_list.html:132
+msgid "You haven't made any card-to-card transfers yet."
+msgstr "Siz hali kartadan kartaga oʻtkazmalarni amalga oshirmagansiz."
+
+#: templates/transfers/transfer_list.html:134
+msgid "Make Your First Transfer"
+msgstr "Birinchi transferingizni amalga oshiring"
+
+#: venv/lib/python3.13/site-packages/django/contrib/messages/apps.py:16
+msgid "Messages"
+msgstr "Xabarlar"
+
+#: venv/lib/python3.13/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr "Sayt xaritalari"
+
+#: venv/lib/python3.13/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr "Statik fayllar"
+
+#: venv/lib/python3.13/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr "Sindikatsiya"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:33
+msgid "…"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:35
+msgid "That page number is not an integer"
+msgstr "Bu sahifa raqami butun son emas"
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:36
+msgid "That page number is less than 1"
+msgstr "Bu sahifa raqami 1 dan kichik"
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:37
+msgid "That page contains no results"
+msgstr "Bu sahifada hech qanday natija yoʻq"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr "Yaroqli qiymat kiriting."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:70
+msgid "Enter a valid domain name."
+msgstr "Yaroqli domen nomini kiriting."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:153
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:774
+msgid "Enter a valid URL."
+msgstr "Yaroqli URL manzilini kiriting."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:200
+msgid "Enter a valid integer."
+msgstr "Yaroqli butun son kiriting."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:211
+msgid "Enter a valid email address."
+msgstr "Yaroqli elektron pochta manzilini kiriting."
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: venv/lib/python3.13/site-packages/django/core/validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+"Harflar, raqamlar, pastki chiziq yoki defislardan iborat haqiqiy \"slug\"ni "
+"kiriting."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
+msgstr ""
+"Unicode harflari, raqamlari, pastki chiziq yoki defislardan iborat to'g'ri "
+"\"slug\" kiriting."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:309
+#: venv/lib/python3.13/site-packages/django/core/validators.py:318
+#: venv/lib/python3.13/site-packages/django/core/validators.py:332
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr "Yaroqli %(protocol)s manzilini kiriting."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:311
+msgid "IPv4"
+msgstr "IPv4"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:320
+#: venv/lib/python3.13/site-packages/django/utils/ipv6.py:43
+msgid "IPv6"
+msgstr "IPv6"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:334
+msgid "IPv4 or IPv6"
+msgstr "IPv4 yoki IPv6"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr "Faqat vergul bilan ajratilgan raqamlarni kiriting."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+"Bu qiymat %(cheklangan_qiymat)s ekanligiga ishonch hosil qiling (u "
+"%(show_value)s). %(limit_value)s"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+"Bu qiymat %(limit_value)s dan kichik yoki teng ekanligiga ishonch hosil "
+"qiling."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+"Bu qiymat %(limit_value)s dan katta yoki teng ekanligiga ishonch hosil "
+"qiling."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+"Bu qiymat qadam kattaligi %(cheklangan_value)s ning karrali ekanligiga "
+"ishonch hosil qiling. %(limit_value)s"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+"Bu qiymat %(offset)s dan boshlab qadam kattaligi %(cheklangan_value)s ning "
+"karrali ekanligiga ishonch hosil qiling, masalan. %(offset)s, "
+"%(valid_value1)s, %(valid_value2)s va hokazo. %(limit_value)s"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:514
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:365
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:404
+msgid "Enter a number."
+msgstr "Raqam kiriting."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+"“%(extension)s” fayl kengaytmasiga ruxsat berilmagan. Ruxsat berilgan "
+"kengaytmalar: %(allowed_extensions)s."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:659
+msgid "Null characters are not allowed."
+msgstr "Null belgilarga ruxsat berilmaydi."
+
+#: venv/lib/python3.13/site-packages/django/db/models/base.py:1633
+#: venv/lib/python3.13/site-packages/django/forms/models.py:932
+msgid "and"
+msgstr "va"
+
+#: venv/lib/python3.13/site-packages/django/db/models/base.py:1635
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr "%(model_name)s bilan bu %(field_labels)s allaqachon mavjud."
+
+#: venv/lib/python3.13/site-packages/django/db/models/constraints.py:20
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr "“%(name)s” cheklovi buzilgan."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr "%(value)r qiymati toʻgʻri emas."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:135
+msgid "This field cannot be null."
+msgstr "Bu maydon null bo'lishi mumkin emas."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:136
+msgid "This field cannot be blank."
+msgstr "Bu maydon boʻsh boʻlishi mumkin emas."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr "%(model_name)s bilan bu %(field_label)s allaqachon mavjud."
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+"%(field_label)s %(date_field_label)s %(lookup_type)s uchun yagona bo‘lishi "
+"kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr "Tur maydoni: %(field_type)s"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1161
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr "“%(value)s” qiymati True yoki False bo‘lishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr "“%(value)s” qiymati True, False yoki None boʻlishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1164
+msgid "Boolean (Either True or False)"
+msgstr "Mantiqiy (to'g'ri yoki noto'g'ri)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1214
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr "String (%(max_length)s gacha)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1216
+msgid "String (unlimited)"
+msgstr "String (cheksiz)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1325
+msgid "Comma-separated integers"
+msgstr "Vergul bilan ajratilgan butun sonlar"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1426
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+"“%(value)s” qiymati yaroqsiz sana formatiga ega. YYYY-MM-DD formatida "
+"bo'lishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1430
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1565
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+"“%(value)s” qiymati to‘g‘ri formatga ega (YYYY-MM-DD), lekin bu sana "
+"noto‘g‘ri."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1434
+msgid "Date (without time)"
+msgstr "Sana (vaqtsiz)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1561
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+"“%(value)s” qiymati yaroqsiz formatga ega. YYYY-AA-KK "
+"HH:MM[:ss[.uuuuuu]][TZ] formatida bo'lishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1569
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+msgstr ""
+"“%(value)s” qiymati toʻgʻri formatga ega (YYYY-AA-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]), lekin bu sana/vaqt yaroqsiz."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1574
+msgid "Date (with time)"
+msgstr "Sana (vaqt bilan)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1701
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr "“%(value)s” qiymati kasrli son boʻlishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1703
+msgid "Decimal number"
+msgstr "O'nlik son"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+"“%(value)s” qiymati yaroqsiz formatga ega. U [DD] [[HH:]MM:]ss[.uuuuuu] "
+"formatida bo'lishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1868
+msgid "Duration"
+msgstr "Davomiyligi"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1920
+msgid "Email address"
+msgstr "E-pochta manzili"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1945
+msgid "File path"
+msgstr "Fayl yo'li"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr "“%(value)s” qiymati float boʻlishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2025
+msgid "Floating point number"
+msgstr "Suzuvchi nuqta raqami"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr "“%(value)s” qiymati butun son bo‘lishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2067
+msgid "Integer"
+msgstr "Butun son"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr "Katta (8 bayt) butun son"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2180
+msgid "Small integer"
+msgstr "Kichik butun son"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2188
+msgid "IPv4 address"
+msgstr "IPv4 manzili"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2219
+msgid "IP address"
+msgstr "IP manzili"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2310
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr "“%(value)s” qiymati Yoʻq, True yoki False boʻlishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr "Mantiqiy (to'g'ri, noto'g'ri yoki yo'q)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2364
+msgid "Positive big integer"
+msgstr "Musbat katta butun son"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2379
+msgid "Positive integer"
+msgstr "Musbat butun son"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2394
+msgid "Positive small integer"
+msgstr "Musbat kichik butun son"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr "Slug (%(max_length)s gacha)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2446
+msgid "Text"
+msgstr "Matn"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+"“%(value)s” qiymati yaroqsiz formatga ega. U HH:MM[:ss[.uuuuuu]] formatida "
+"bo'lishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+"“%(value)s” qiymati to‘g‘ri formatga ega (HH:MM[:ss[.uuuuuu]]), lekin vaqt "
+"noto‘g‘ri."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2642
+msgid "URL"
+msgstr "URL"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2666
+msgid "Raw binary data"
+msgstr "Xom ikkilik ma'lumotlar"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr "“%(value)s” yaroqli UUID emas."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2733
+msgid "Universally unique identifier"
+msgstr "Universal noyob identifikator"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/files.py:244
+msgid "File"
+msgstr "Fayl"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/files.py:420
+msgid "Image"
+msgstr "Rasm"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/json.py:24
+msgid "A JSON object"
+msgstr "JSON obyekti"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/json.py:26
+msgid "Value must be valid JSON."
+msgstr "Qiymat haqiqiy JSON boʻlishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:978
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr "%(field)s %(value)r bilan %(model)s misoli yaroqsiz."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:981
+msgid "Foreign Key (type determined by related field)"
+msgstr "Tashqi kalit (turi tegishli maydon bilan belgilanadi)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1275
+msgid "One-to-one relationship"
+msgstr "Birga-bir munosabat"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1332
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr "%(from)s-%(to)s munosabati"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1334
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr "%(from)s-%(to)s munosabatlari"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1382
+msgid "Many-to-many relationship"
+msgstr "Ko'p-ko'p munosabatlari"
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to
+#. the label
+#: venv/lib/python3.13/site-packages/django/forms/boundfield.py:188
+msgid ":?.!"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:92
+msgid "This field is required."
+msgstr "Ushbu qator to'ldirilishi shart."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:314
+msgid "Enter a whole number."
+msgstr "Butun raqamni kiriting."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:485
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1251
+msgid "Enter a valid date."
+msgstr "Yaroqli sanani kiriting."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:508
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1252
+msgid "Enter a valid time."
+msgstr "Yaroqli vaqtni kiriting."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:535
+msgid "Enter a valid date/time."
+msgstr "Yaroqli sana/vaqtni kiriting."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:569
+msgid "Enter a valid duration."
+msgstr "Yaroqli muddatni kiriting."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:570
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr "Kunlar soni {min_days} va {max_days} oralig'ida bo'lishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:639
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "Hech qanday fayl yuborilmadi. Shaklda kodlash turini tekshiring."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:640
+msgid "No file was submitted."
+msgstr "Hech qanday fayl yuborilmadi."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:641
+msgid "The submitted file is empty."
+msgstr "Yuborilgan fayl boʻsh."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:643
+#, python-format
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:648
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+"Iltimos, faylni yuboring yoki ikkalasini ham emas, tozalash katakchasini "
+"belgilang."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:716
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+"Yaroqli rasm yuklang. Siz yuklagan fayl rasm yoki buzilgan rasm emas edi."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:872
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:959
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1621
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr "Yaroqli tanlovni tanlang. %(value)s mavjud variantlardan biri emas."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:961
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1080
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1619
+msgid "Enter a list of values."
+msgstr "Qiymatlar ro'yxatini kiriting."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1081
+msgid "Enter a complete value."
+msgstr "To'liq qiymatni kiriting."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1323
+msgid "Enter a valid UUID."
+msgstr "Yaroqli UUID kiriting."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1353
+msgid "Enter a valid JSON."
+msgstr "Yaroqli JSON kiriting."
+
+#. Translators: This is the default suffix added to form field labels
+#: venv/lib/python3.13/site-packages/django/forms/forms.py:97
+msgid ":"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr "(Yashirin maydon %(name)s) %(xato)s %(error)s"
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+"ManagementForm maʼlumotlari yoʻq yoki oʻzgartirilgan. Yetishmayotgan "
+"maydonlar: %(field_names)s. Muammo davom etsa, xato hisobotini "
+"topshirishingiz kerak bo'lishi mumkin."
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:484
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr "Buyurtma"
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:925
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "%(field)s uchun takroriy maʼlumotlarni toʻgʻrilang."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:930
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+"%(field)s uchun takroriy maʼlumotlarni toʻgʻrilang, ular noyob boʻlishi "
+"kerak."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:937
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+"Iltimos, %(field_name)s uchun takroriy maʼlumotlarni toʻgʻrilang, ular "
+"%(lookup)s uchun %(date_field)s uchun yagona boʻlishi kerak."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:946
+msgid "Please correct the duplicate values below."
+msgstr "Quyidagi takroriy qiymatlarni tuzating."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1383
+msgid "The inline value did not match the parent instance."
+msgstr "Inline qiymat asosiy misolga mos kelmadi."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1474
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
+msgstr "Yaroqli tanlovni tanlang. Bu tanlov mavjud variantlardan biri emas."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1623
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr "“%(pk)s” yaroqli qiymat emas."
+
+#: venv/lib/python3.13/site-packages/django/forms/utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+"%(datetime)s vaqt mintaqasida %(current_timezone)s talqin qilinmadi; u "
+"noaniq bo'lishi yoki mavjud bo'lmasligi mumkin."
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:529
+msgid "Currently"
+msgstr "Hozirda"
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:530
+msgid "Change"
+msgstr "O'zgartirish"
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:869
+msgid "Unknown"
+msgstr "Noma'lum"
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:34
+msgctxt "Task"
+msgid "Ready"
+msgstr "Tayyor"
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:36
+msgctxt "Task"
+msgid "Running"
+msgstr "Yugurish"
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:38
+msgctxt "Task"
+msgid "Failed"
+msgstr "Muvaffaqiyatsiz"
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:40
+msgctxt "Task"
+msgid "Successful"
+msgstr "Muvaffaqiyatli"
+
+#. Translators: Please do not add spaces around commas.
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:878
+msgid "yes,no,maybe"
+msgstr "ha, yo'q, ehtimol"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:908
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:925
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:927
+#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:929
+#, python-format
+msgid "%s MB"
+msgstr "%s MB"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:931
+#, python-format
+msgid "%s GB"
+msgstr "%s GB"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:933
+#, python-format
+msgid "%s TB"
+msgstr "%s TB"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:935
+#, python-format
+msgid "%s PB"
+msgstr "%s PB"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:74
+msgid "p.m."
+msgstr "soat"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:75
+msgid "a.m."
+msgstr "ertalab"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:80
+msgid "PM"
+msgstr "PM"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:81
+msgid "AM"
+msgstr "AM"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:153
+msgid "midnight"
+msgstr "yarim tun"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:155
+msgid "noon"
+msgstr "peshin"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr "dushanba"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr "seshanba"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr "chorshanba"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr "Payshanba"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr "Juma"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr "shanba"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr "yakshanba"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr "dus"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr "Seshanba"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr "Chorshanba"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr "Pays"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr "Juma"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr "Shanba"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr "Quyosh"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr "Yanvar"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr "Fevral"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr "mart"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr "aprel"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr "may"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr "iyun"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr "iyul"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr "avgust"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr "sentyabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr "oktyabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr "noyabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr "dekabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr "jan"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr "fevral"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr "mar"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr "apr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr "mumkin"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr "iyun"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr "iyul"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr "avgust"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr "sen"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr "okt"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr "noyabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr "dek"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Yanvar"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Fevral"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "mart"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "aprel"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "may"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "iyun"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "iyul"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "avgust"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "sentabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Oktyabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Noyabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "dekabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr "Yanvar"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr "Fevral"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr "mart"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr "aprel"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr "may"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr "iyun"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr "iyul"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr "avgust"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr "sentyabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr "oktyabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr "noyabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr "dekabr"
+
+#: venv/lib/python3.13/site-packages/django/utils/ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr "Bu haqiqiy IPv6 manzili emas."
+
+#: venv/lib/python3.13/site-packages/django/utils/text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr "%(truncated_text)s…"
+
+#: venv/lib/python3.13/site-packages/django/utils/text.py:288
+msgid "or"
+msgstr "yoki"
+
+#. Translators: This string is used as a separator between list elements
+#: venv/lib/python3.13/site-packages/django/utils/text.py:307
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:29
+msgid "Forbidden"
+msgstr "Taqiqlangan"
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr "CSRF tekshiruvi amalga oshmadi. So‘rov bekor qilindi."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+"Siz ushbu xabarni ko'ryapsiz, chunki ushbu HTTPS sayti veb-brauzeringiz "
+"tomonidan yuborilishi uchun “Referer sarlavhasi”ni talab qiladi, lekin hech "
+"biri yuborilmadi. Ushbu sarlavha brauzeringiz uchinchi shaxslar tomonidan "
+"o'g'irlanmasligini ta'minlash uchun xavfsizlik nuqtai nazaridan talab "
+"qilinadi."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+"Agar siz brauzeringizni “Referer” sarlavhalarini o‘chirishga sozlagan "
+"bo‘lsangiz, iltimos, ularni hech bo‘lmaganda ushbu sayt yoki HTTPS "
+"ulanishlari yoki “bir xil kelib chiqishi” so‘rovlari uchun qayta yoqing."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+"Agar siz <meta name=\"referrer\" content=\"no-referrer\"> tegidan "
+"foydalanayotgan bo'lsangiz yoki \"Referrer-Policy: no-referrer\" "
+"sarlavhasini qo'shsangiz, ularni olib tashlang. CSRF himoyasi \"Referer\" "
+"sarlavhasini qat'iy referer tekshiruvini o'tkazishni talab qiladi. Maxfiylik"
+" haqida qayg'urayotgan bo'lsangiz, uchinchi tomon saytlariga havolalar uchun"
+" <a rel=\"noreferrer\" …> kabi alternativlardan foydalaning."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+"Siz ushbu xabarni ko'ryapsiz, chunki bu sayt shakllarni yuborishda CSRF "
+"cookie-faylini talab qiladi. Ushbu cookie brauzeringiz uchinchi shaxslar "
+"tomonidan o'g'irlanmasligini ta'minlash uchun xavfsizlik nuqtai nazaridan "
+"talab qilinadi."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+"Agar siz brauzeringizni cookie-fayllarni o'chirib qo'yadigan qilib sozlagan "
+"bo'lsangiz, iltimos, ularni hech bo'lmaganda ushbu sayt uchun yoki \"bir xil"
+" kelib chiqishi\" so'rovlari uchun qayta yoqing."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr "Qo'shimcha ma'lumotni DEBUG=True orqali olish mumkin."
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr "Yil belgilanmagan"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:64
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:115
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr "Sana diapazondan tashqarida"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr "Oy belgilanmagan"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr "Kun belgilanmagan"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr "Hafta belgilanmagan"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:353
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr "Hech qanday %(verbose_name_plural)s mavjud emas"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+"Kelajakdagi %(verbose_name_plural)s mavjud emas, chunki "
+"%(class_name)s.allow_future False."
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr "Yaroqsiz sana qatori “%(datestr)s” berilgan “%(format)s” formatida"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "Soʻrovga mos keladigan %(verbose_name) topilmadi %(verbose_name)s"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr "Sahifa \"oxirgi\" emas va uni int ga aylantirib bo'lmaydi."
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr "Yaroqsiz sahifa (%(page_number)s): %(message)s"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr "Boʻsh roʻyxat va “%(class_name)s.allow_empty” notoʻgʻri."
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr "Bu yerda katalog indekslariga ruxsat berilmaydi."
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr "“%(path)s” mavjud emas"
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:68
+#: venv/lib/python3.13/site-packages/django/views/templates/directory_index.html:8
+#: venv/lib/python3.13/site-packages/django/views/templates/directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr "%(katalog)s indeksi %(directory)s"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr "O'rnatish muvaffaqiyatli ishladi! Tabriklaymiz!"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+"Django %(version)s uchun <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">nashr qaydlarini</a> ko‘rish"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
+msgstr ""
+"Siz bu sahifani ko'ryapsiz, chunki <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> sozlamalar faylida "
+"joylashgan va siz hech qanday URL manzilini sozlamagansiz."
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:217
+msgid "Django Documentation"
+msgstr "Django hujjatlari"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr "Mavzular, havolalar, & amp; qanday qilish kerak"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr "Qo'llanma: So'rovnoma uchun ilova"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:227
+msgid "Get started with Django"
+msgstr "Django bilan boshlang"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:235
+msgid "Django Community"
+msgstr "Django hamjamiyati"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr "Ulanish, yordam olish yoki hissa qo‘shish"

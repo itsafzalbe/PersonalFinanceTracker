@@ -1,6 +1,8 @@
-{% extends 'base.html' %}
 
-{% block title %}Complete Registration - Finance Tracker{% endblock %}
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Complete Registration" %} - Finance Tracker{% endblock %}
 
 {% block content %}
 <div class="auth-container">
@@ -11,8 +13,8 @@
                     <div class="mb-3">
                         <i class="bi bi-person-plus text-primary" style="font-size: 3rem;"></i>
                     </div>
-                    <h2 class="card-title">Complete Your Profile</h2>
-                    <p class="text-muted">Just a few more details to get started</p>
+                    <h2 class="card-title">{% trans "Complete Your Profile" %}</h2>
+                    <p class="text-muted">{% trans "Just a few more details to get started" %}</p>
                 </div>
                 
                 <form method="post" novalidate>
@@ -21,7 +23,7 @@
                     <!-- Username -->
                     <div class="mb-3">
                         <label for="{{ form.username.id_for_label }}" class="form-label">
-                            <i class="bi bi-at"></i> Username <span class="text-danger">*</span>
+                            <i class="bi bi-at"></i> {% trans "Username" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.username }}
                         {% if form.username.errors %}
@@ -35,7 +37,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.first_name.id_for_label }}" class="form-label">
-                                <i class="bi bi-person"></i> First Name
+                                <i class="bi bi-person"></i> {% trans "First Name" %}
                             </label>
                             {{ form.first_name }}
                             {% if form.first_name.errors %}
@@ -47,7 +49,7 @@
                         
                         <div class="col-md-6 mb-3">
                             <label for="{{ form.last_name.id_for_label }}" class="form-label">
-                                <i class="bi bi-person"></i> Last Name
+                                <i class="bi bi-person"></i> {% trans "Last Name" %}
                             </label>
                             {{ form.last_name }}
                             {% if form.last_name.errors %}
@@ -61,7 +63,7 @@
                     <!-- Password -->
                     <div class="mb-3">
                         <label for="{{ form.password.id_for_label }}" class="form-label">
-                            <i class="bi bi-lock"></i> Password <span class="text-danger">*</span>
+                            <i class="bi bi-lock"></i> {% trans "Password" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.password }}
                         {% if form.password.errors %}
@@ -70,14 +72,14 @@
                             </div>
                         {% endif %}
                         <div class="form-text">
-                            <i class="bi bi-info-circle"></i> At least 8 characters
+                            <i class="bi bi-info-circle"></i> {% trans "At least 8 characters" %}
                         </div>
                     </div>
                     
                     <!-- Confirm Password -->
                     <div class="mb-3">
                         <label for="{{ form.password_confirm.id_for_label }}" class="form-label">
-                            <i class="bi bi-lock-fill"></i> Confirm Password <span class="text-danger">*</span>
+                            <i class="bi bi-lock-fill"></i> {% trans "Confirm Password" %} <span class="text-danger">*</span>
                         </label>
                         {{ form.password_confirm }}
                         {% if form.password_confirm.errors %}
@@ -90,7 +92,7 @@
                     <!-- Phone Number -->
                     <div class="mb-3">
                         <label for="{{ form.phone_number.id_for_label }}" class="form-label">
-                            <i class="bi bi-phone"></i> Phone Number
+                            <i class="bi bi-phone"></i> {% trans "Phone Number" %}
                         </label>
                         {{ form.phone_number }}
                         {% if form.phone_number.errors %}
@@ -99,14 +101,14 @@
                             </div>
                         {% endif %}
                         <div class="form-text">
-                            Format: +998912345678
+                            {% trans "Format: +998912345678" %}
                         </div>
                     </div>
                     
                     <!-- Date of Birth -->
                     <div class="mb-4">
                         <label for="{{ form.date_of_birth.id_for_label }}" class="form-label">
-                            <i class="bi bi-calendar"></i> Date of Birth
+                            <i class="bi bi-calendar"></i> {% trans "Date of Birth" %}
                         </label>
                         {{ form.date_of_birth }}
                         {% if form.date_of_birth.errors %}
@@ -123,7 +125,7 @@
                     {% endif %}
                     
                     <button type="submit" class="btn btn-primary w-100 py-3">
-                        <i class="bi bi-check-circle"></i> Complete Registration
+                        <i class="bi bi-check-circle"></i> {% trans "Complete Registration" %}
                     </button>
                 </form>
             </div>

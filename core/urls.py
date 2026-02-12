@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path, include
+from django.views.i18n import set_language
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +31,8 @@ urlpatterns = [
     path('cards/', include('apps.cards.urls', namespace='cards')),
     path('transactions/', include('apps.transactions.urls', namespace='transactions')),
     path('budgets/', include('apps.budgets.urls', namespace='budgets')),
+    path('support/', include('apps.support.urls')),
+    path('transfers/', include('apps.transfers.urls', namespace='transfers')),
+
+    path('i18n/setlang/', set_language, name='set_language'),
 ]

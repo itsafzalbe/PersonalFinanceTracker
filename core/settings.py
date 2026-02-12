@@ -14,7 +14,11 @@ from pathlib import Path
 from datetime import timedelta
 from django.conf import settings
 from dotenv import load_dotenv
+from django.utils.translation import gettext_lazy as _
 import os
+
+
+
 
 
 load_dotenv()
@@ -50,21 +54,30 @@ INSTALLED_APPS = [
     'apps.cards.apps.CardsConfig',
     'apps.dashboard.apps.DashboardConfig',
     'apps.landing.apps.LandingConfig',
-    
+    'apps.support.apps.SupportConfig',
+    'apps.transfers.apps.TransfersConfig',
+
+
     'apps.transactions.apps.TransactionsConfig',
 
     'django_filters',
     
 ]
 
+USE_I18N = True
+USE_L10N = True
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -180,3 +193,19 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+
+
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('ru', _('Russian')),
+    ('uz', _('Uzbek')),
+]
+
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
+

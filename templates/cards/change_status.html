@@ -1,7 +1,10 @@
+
+
 {% extends "dashboard.html" %}
+{% load i18n %}
 {% block content %}
 
-<h2 class="text-xl font-semibold mb-4">Change Card Status</h2>
+<h2 class="text-xl font-semibold mb-4">{% trans "Change Card Status" %}</h2>
 
 {% if error %}
 <p class="text-red-500">{{ error }}</p>
@@ -10,12 +13,12 @@
 <form method="post">
   {% csrf_token %}
   <select name="status" class="input">
-    <option value="active">Active</option>
-    <option value="inactive">Inactive</option>
-    <option value="blocked">Blocked</option>
+    <option value="active">{% trans "Active" %}</option>
+    <option value="inactive">{% trans "Inactive" %}</option>
+    <option value="blocked">{% trans "Blocked" %}</option>
   </select>
 
-  <button class="btn btn-primary mt-3">Update</button>
+  <button class="btn btn-primary mt-3">{% trans "Update" %}</button>
 </form>
 
 {% endblock %}

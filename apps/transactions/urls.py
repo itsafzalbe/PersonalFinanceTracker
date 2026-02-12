@@ -15,13 +15,17 @@ urlpatterns = [
     path('transactions/<int:pk>/delete/', TransactionDeleteView.as_view(), name='transaction_delete'),
     path('transactions/statistics/', TransactionStatisticsView.as_view(), name='transaction_statistics'),
     path('transactions/bulk-delete/', BulkDeleteView.as_view(), name='transaction_bulk_delete'),
+
+    
     path('categories/', CategoryListView.as_view(), name='category_list'),
     path('categories/create/', CategoryCreateView.as_view(), name='category_create'),
     path('categories/<int:pk>/edit/', CategoryUpdateView.as_view(), name='category_edit'),
     path('categories/<int:pk>/delete/', CategoryDeleteView.as_view(), name='category_delete'),
+
+    
     path('tags/', TransactionTagListView.as_view(), name='transaction_tag_list'),
     path('tags/create/', TransactionTagCreateView.as_view(), name='transaction_tag_create'),
     path('tags/<int:pk>/delete/', TransactionTagDeleteView.as_view(), name='transaction_tag_delete'),
 
-    
+
 ]

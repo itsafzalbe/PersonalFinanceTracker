@@ -1,18 +1,21 @@
-{% extends 'base.html' %}
 
-{% block title %}Budgets by Period - Finance Tracker{% endblock %}
+
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Budgets by Period" %} - Finance Tracker{% endblock %}
 
 {% block content %}
 <div class="row mb-4">
     <div class="col-md-8">
         <h1 class="display-6">
-            <i class="bi bi-calendar3"></i> Budgets by Period
+            <i class="bi bi-calendar3"></i> {% trans "Budgets by Period" %}
         </h1>
-        <p class="text-muted">View budgets organized by time period</p>
+        <p class="text-muted">{% trans "View budgets organized by time period" %}</p>
     </div>
     <div class="col-md-4 text-md-end">
         <a href="{% url 'budgets:budget_list' %}" class="btn btn-outline-secondary">
-            <i class="bi bi-arrow-left"></i> Back to List
+            <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
         </a>
     </div>
 </div>
@@ -21,7 +24,7 @@
 {% if periods.weekly %}
 <div class="card mb-4">
     <div class="card-header bg-white border-0 pt-4">
-        <h5 class="mb-0"><i class="bi bi-calendar-week"></i> Weekly Budgets</h5>
+        <h5 class="mb-0"><i class="bi bi-calendar-week"></i> {% trans "Weekly Budgets" %}</h5>
     </div>
     <div class="card-body">
         <div class="row g-3">
@@ -39,7 +42,7 @@
                             <span>{{ budget.spent|floatformat:0 }} / {{ budget.amount|floatformat:0 }}</span>
                             <span>{{ budget.percentage|floatformat:1 }}%</span>
                         </div>
-                        <a href="{% url 'budgets:budget_detail' budget.pk %}" class="btn btn-sm btn-outline-primary mt-2">View</a>
+                        <a href="{% url 'budgets:budget_detail' budget.pk %}" class="btn btn-sm btn-outline-primary mt-2">{% trans "View" %}</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +56,7 @@
 {% if periods.monthly %}
 <div class="card mb-4">
     <div class="card-header bg-white border-0 pt-4">
-        <h5 class="mb-0"><i class="bi bi-calendar-month"></i> Monthly Budgets</h5>
+        <h5 class="mb-0"><i class="bi bi-calendar-month"></i> {% trans "Monthly Budgets" %}</h5>
     </div>
     <div class="card-body">
         <div class="row g-3">
@@ -71,7 +74,7 @@
                             <span>{{ budget.spent|floatformat:0 }} / {{ budget.amount|floatformat:0 }}</span>
                             <span>{{ budget.percentage|floatformat:1 }}%</span>
                         </div>
-                        <a href="{% url 'budgets:budget_detail' budget.pk %}" class="btn btn-sm btn-outline-primary mt-2">View</a>
+                        <a href="{% url 'budgets:budget_detail' budget.pk %}" class="btn btn-sm btn-outline-primary mt-2">{% trans "View" %}</a>
                     </div>
                 </div>
             </div>
@@ -85,7 +88,7 @@
 {% if periods.yearly %}
 <div class="card mb-4">
     <div class="card-header bg-white border-0 pt-4">
-        <h5 class="mb-0"><i class="bi bi-calendar-range"></i> Yearly Budgets</h5>
+        <h5 class="mb-0"><i class="bi bi-calendar-range"></i> {% trans "Yearly Budgets" %}</h5>
     </div>
     <div class="card-body">
         <div class="row g-3">
@@ -117,10 +120,10 @@
 <div class="card">
     <div class="card-body text-center py-5">
         <i class="bi bi-inbox text-muted" style="font-size: 4rem;"></i>
-        <h4 class="mt-3 mb-2">No Active Budgets</h4>
-        <p class="text-muted mb-4">Create budgets to track your spending over time.</p>
+        <h4 class="mt-3 mb-2">{% trans "No Active Budgets" %}</h4>
+        <p class="text-muted mb-4">{% trans "Create budgets to track your spending over time." %}</p>
         <a href="{% url 'budgets:budget_create' %}" class="btn btn-primary">
-            <i class="bi bi-plus-circle"></i> Create Budget
+            <i class="bi bi-plus-circle"></i> {% trans "Create Budget" %}
         </a>
     </div>
 </div>

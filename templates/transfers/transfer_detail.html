@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}Transfer Details{% endblock %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'transfers:transfer_list' %}">{% trans "Transfers" %}</a></li>
+                <li class="breadcrumb-item active">{% trans "Transfer #" %}{{ transfer.id }}</li>
+            </ol>
+        </nav>
+        <h1 class="display-6">{% trans "Transfer Details" %}</h1>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'transfers:transfer_list' %}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <!-- Transfer Flow Card -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body p-4">
+                <h5 class="mb-4"><i class="bi bi-diagram-3"></i> {% trans "Transfer Flow" %}</h5>
+                
+                <!-- From Card -->
+                <div class="transfer-card from-card mb-3 p-3 rounded" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white;">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <small class="opacity-75">{% trans "FROM" %}</small>
+                            <h5 class="mb-1">{{ transfer.from_card.card_name }}</h5>
+                            <small>{{ transfer.from_card.bank_name }}</small>
+                        </div>
+                        <div class="text-end">
+                            <small class="opacity-75">{% trans "Amount Sent" %}</small>
+                            <h4 class="mb-0">{{ transfer.amount|floatformat:2 }}</h4>
+                            <small>{{ transfer.from_card.currency.code }}</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Transfer Arrow -->
+                <div class="text-center my-3">
+                    <i class="bi bi-arrow-down-circle text-primary" style="font-size: 2.5rem;"></i>
+                    {% if transfer.exchange_rate and transfer.exchange_rate != 1 %}
+                        <div class="badge bg-info mt-2">
+                            <i class="bi bi-currency-exchange"></i> 
+                            {% trans "Rate" %}: {{ transfer.exchange_rate|floatformat:6 }}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <!-- To Card -->
+                <div class="transfer-card to-card p-3 rounded" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white;">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <small class="opacity-75">{% trans "TO" %}</small>
+                            <h5 class="mb-1">{{ transfer.to_card.card_name }}</h5>
+                            <small>{{ transfer.to_card.bank_name }}</small>
+                        </div>
+                        <div class="text-end">
+                            <small class="opacity-75">{% trans "Amount Received" %}</small>
+                            <h4 class="mb-0">{{ transfer.converted_amount|floatformat:2 }}</h4>
+                            <small>{{ transfer.to_card.currency.code }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Description if exists -->
+        {% if transfer.description %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h6><i class="bi bi-card-text"></i> {% trans "Description" %}</h6>
+                <p class="mb-0 text-muted">{{ transfer.description }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="col-lg-4">
+        <!-- Transfer Info -->
+        <div class="card mb-4">
+            <div class="card-header bg-white">
+                <h6 class="mb-0">{% trans "Transfer Information" %}</h6>
+            </div>
+            <div class="card-body">
+                <dl class="row mb-0 small">
+                    <dt class="col-sm-5">{% trans "Transfer ID" %}:</dt>
+                    <dd class="col-sm-7">#{{ transfer.id }}</dd>
+                    
+                    <dt class="col-sm-5">{% trans "Date" %}:</dt>
+                    <dd class="col-sm-7">{{ transfer.created_at|date:"M d, Y" }}</dd>
+                    
+                    <dt class="col-sm-5">{% trans "Time" %}:</dt>
+                    <dd class="col-sm-7">{{ transfer.created_at|time:"g:i A" }}</dd>
+                    
+                    <dt class="col-sm-5">{% trans "Status" %}:</dt>
+                    <dd class="col-sm-7"><span class="badge bg-success">{% trans "Completed" %}</span></dd>
+                </dl>
+            </div>
+        </div>
+        
+        <!-- Exchange Details -->
+        {% if transfer.exchange_rate and transfer.exchange_rate != 1 %}
+        <div class="card">
+            <div class="card-header bg-white">
+                <h6 class="mb-0">{% trans "Exchange Details" %}</h6>
+            </div>
+            <div class="card-body">
+                <dl class="row mb-0 small">
+                    <dt class="col-sm-6">{% trans "From Currency" %}:</dt>
+                    <dd class="col-sm-6">{{ transfer.from_card.currency.code }}</dd>
+                    
+                    <dt class="col-sm-6">{% trans "To Currency" %}:</dt>
+                    <dd class="col-sm-6">{{ transfer.to_card.currency.code }}</dd>
+                    
+                    <dt class="col-sm-6">{% trans "Exchange Rate" %}:</dt>
+                    <dd class="col-sm-6">{{ transfer.exchange_rate|floatformat:6 }}</dd>
+                    
+                    <dt class="col-sm-6">{% trans "Difference" %}:</dt>
+                    <dd class="col-sm-6">
+                        {% widthratio transfer.converted_amount transfer.amount 1 as diff %}
+                        {{ diff|floatformat:2 }}%
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

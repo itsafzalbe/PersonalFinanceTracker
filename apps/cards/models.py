@@ -163,8 +163,8 @@ class Card(models.Model):
         if transaction_type == 'income':
             self.balance += amount
         elif transaction_type == 'expense':
-            self.balance -= 'amount'
-        
+            self.balance -= amount
+
         self.save()
 
     def can_withdraw(self, amount):

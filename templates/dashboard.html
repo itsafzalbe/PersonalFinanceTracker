@@ -1,15 +1,18 @@
-{% extends 'base.html' %}
 
-{% block title %}Dashboard - Finance Tracker{% endblock %}
+
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Dashboard" %} - Finance Tracker{% endblock %}
 
 {% block content %}
 <!-- Welcome Section -->
 <div class="row mb-4">
     <div class="col-12">
         <h1 class="display-6 mb-2">
-            <i class="bi bi-house-door"></i> Welcome back, {{ user.first_name|default:user.username }}!
+            <i class="bi bi-house-door"></i> {% trans "Welcome back" %}, {{ user.first_name|default:user.username }}!
         </h1>
-        <p class="text-muted">Here's your financial overview</p>
+        <p class="text-muted">{% trans "Here's your financial overview" %}</p>
     </div>
 </div>
 
@@ -19,7 +22,7 @@
         <div class="stats-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
-                    <p class="mb-1 opacity-75">Total Balance</p>
+                    <p class="mb-1 opacity-75">{% trans "Total Balance" %}</p>
                     <h3 class="mb-0">{{ total_balance|floatformat:2 }} {{ currency }}</h3>
                 </div>
                 <i class="bi bi-wallet2 fs-1 opacity-50"></i>
@@ -31,7 +34,7 @@
         <div class="stats-card green">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
-                    <p class="mb-1 opacity-75">Active Cards</p>
+                    <p class="mb-1 opacity-75">{% trans "Active Cards" %}</p>
                     <h3 class="mb-0">{{ total_cards }}</h3>
                 </div>
                 <i class="bi bi-credit-card fs-1 opacity-50"></i>
@@ -43,7 +46,7 @@
         <div class="stats-card blue">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
-                    <p class="mb-1 opacity-75">Transactions</p>
+                    <p class="mb-1 opacity-75">{% trans "Transactions" %}</p>
                     <h3 class="mb-0">{{ total_transactions }}</h3>
                 </div>
                 <i class="bi bi-arrow-left-right fs-1 opacity-50"></i>
@@ -55,7 +58,7 @@
         <div class="stats-card orange">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
-                    <p class="mb-1 opacity-75">Active Budgets</p>
+                    <p class="mb-1 opacity-75">{% trans "Active Budgets" %}</p>
                     <h3 class="mb-0">{{ total_budgets }}</h3>
                 </div>
                 <i class="bi bi-piggy-bank fs-1 opacity-50"></i>
@@ -71,8 +74,8 @@
         <div class="card">
             <div class="card-header bg-white border-0 pt-4">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0"><i class="bi bi-clock-history"></i> Recent Transactions</h5>
-                    <a href="{% url 'transactions:transaction_list' %}" class="btn btn-sm btn-outline-primary">View All</a>
+                    <h5 class="mb-0"><i class="bi bi-clock-history"></i> {% trans "Recent Transactions" %}</h5>
+                    <a href="{% url 'transactions:transaction_list' %}" class="btn btn-sm btn-outline-primary">{% trans "View All" %}</a>
                 </div>
             </div>
             <div class="card-body">
@@ -109,8 +112,8 @@
                 {% else %}
                     <div class="text-center py-5">
                         <i class="bi bi-inbox text-muted" style="font-size: 3rem;"></i>
-                        <p class="text-muted mt-3">No transactions yet</p>
-                        <a href="#" class="btn btn-primary">Add Transaction</a>
+                        <p class="text-muted mt-3">{% trans "No transactions yet" %}</p>
+                        <a href="#" class="btn btn-primary">{% trans "Add Transaction" %}</a>
                     </div>
                 {% endif %}
             </div>
@@ -122,21 +125,21 @@
         <!-- Quick Actions -->
         <div class="card mb-4">
             <div class="card-header bg-white border-0 pt-4">
-                <h5 class="mb-0"><i class="bi bi-lightning"></i> Quick Actions</h5>
+                <h5 class="mb-0"><i class="bi bi-lightning"></i> {% trans "Quick Actions" %}</h5>
             </div>
             <div class="card-body">
                 <div class="d-grid gap-2">
                     <a href="{% url 'transactions:transaction_create' %}" class="btn btn-outline-primary">
-                        <i class="bi bi-plus-circle"></i> Add Transaction
+                        <i class="bi bi-plus-circle"></i> {% trans "Add Transaction" %}
                     </a>
                     <a href="{% url 'cards:card_create' %}" class="btn btn-outline-success">
-                        <i class="bi bi-credit-card"></i> Add Card
+                        <i class="bi bi-credit-card"></i> {% trans "Add Card" %}
                     </a>
                     <a href="{% url 'budgets:budget_create' %}" class="btn btn-outline-warning">
-                        <i class="bi bi-piggy-bank"></i> Create Budget
+                        <i class="bi bi-piggy-bank"></i> {% trans "Create Budget" %}
                     </a>
                     <a href="{% url 'dashboard:statistics' %}" class="btn btn-outline-info">
-                        <i class="bi bi-bar-chart"></i> View Statistics
+                        <i class="bi bi-bar-chart"></i> {% trans "View Statistics" %}
                     </a>
                 </div>
             </div>
@@ -145,7 +148,7 @@
         <!-- Active Budgets -->
         <div class="card">
             <div class="card-header bg-white border-0 pt-4">
-                <h5 class="mb-0"><i class="bi bi-piggy-bank"></i> Active Budgets</h5>
+                <h5 class="mb-0"><i class="bi bi-piggy-bank"></i> {% trans "Active Budgets" %}</h5>
             </div>
             <div class="card-body">
                 {% if active_budgets %}
@@ -169,7 +172,7 @@
                 {% else %}
                     <div class="text-center py-3">
                         <i class="bi bi-piggy-bank text-muted" style="font-size: 2rem;"></i>
-                        <p class="text-muted small mt-2 mb-0">No budgets yet</p>
+                        <p class="text-muted small mt-2 mb-0">{% trans "No budgets yet" %}</p>
                     </div>
                 {% endif %}
             </div>

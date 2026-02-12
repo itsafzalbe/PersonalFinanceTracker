@@ -6,6 +6,8 @@ from datetime import timedelta
 from apps.accounts.models import *
 from apps.cards.models import *
 from apps.transactions.models import *
+from apps.transactions.models import Transaction
+from apps.cards.models import ExchangeRate
 
 
 
@@ -85,8 +87,7 @@ class Budget(models.Model):
         return self.end_date or timezone.now().date()
     
     def get_spent_amount(self):
-        from transactions.models import Transaction
-        from cards.models import ExchangeRate
+        
 
         period_start = self.get_current_period_start()
         period_end = self.get_current_period_end()

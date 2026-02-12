@@ -1,0 +1,3344 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-12 17:19+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: core/settings.py:201
+msgid "English"
+msgstr "Английский"
+
+#: core/settings.py:202
+msgid "Russian"
+msgstr "Русский"
+
+#: core/settings.py:203
+msgid "Uzbek"
+msgstr "Узбекский"
+
+#: templates/accounts/change_password.html:4
+#: templates/accounts/change_password.html:10
+#: templates/accounts/profile.html:104
+msgid "Change Password"
+msgstr "Изменить пароль"
+
+#: templates/accounts/change_password.html:12
+msgid "Update your account password"
+msgstr "Обновите пароль своей учетной записи"
+
+#: templates/accounts/change_password.html:25
+msgid "Current Password"
+msgstr "Текущий пароль"
+
+#: templates/accounts/change_password.html:37
+msgid "New Password"
+msgstr "Новый пароль"
+
+#: templates/accounts/change_password.html:46
+#: templates/accounts/complete_registration.html:75
+msgid "At least 8 characters"
+msgstr "Минимум 8 символов"
+
+#: templates/accounts/change_password.html:52
+msgid "Confirm New Password"
+msgstr "Подтвердите новый пароль"
+
+#: templates/accounts/change_password.html:70
+msgid "Update Password"
+msgstr "Обновить пароль"
+
+#: templates/accounts/change_password.html:73
+#: templates/accounts/profile.html:147
+#: templates/accounts/update_profile.html:109
+#: templates/budgets/confirm_delete.html:25 templates/budgets/form.html:64
+#: templates/cards/confirm_delete.html:78 templates/cards/form.html:136
+#: templates/cards/update_balance.html:122 templates/categories/form.html:23
+#: templates/transactions/confirm_delete.html:40
+#: templates/transactions/form.html:190
+#: templates/transfers/transfer_create.html:142
+msgid "Cancel"
+msgstr "Отмена"
+
+#: templates/accounts/change_password.html:83
+msgid "Password Security Tips"
+msgstr "Советы по безопасности пароля"
+
+#: templates/accounts/change_password.html:85
+msgid "Use at least 8 characters"
+msgstr "Используйте не менее 8 символов"
+
+#: templates/accounts/change_password.html:86
+msgid "Mix uppercase and lowercase letters"
+msgstr "Смешивайте прописные и строчные буквы"
+
+#: templates/accounts/change_password.html:87
+msgid "Include numbers and special characters"
+msgstr "Включайте цифры и специальные символы"
+
+#: templates/accounts/change_password.html:88
+msgid "Avoid common words or personal information"
+msgstr "Избегайте общих слов и личной информации."
+
+#: templates/accounts/change_password.html:89
+msgid "Don't reuse passwords from other sites"
+msgstr "Не используйте повторно пароли с других сайтов"
+
+#: templates/accounts/complete_registration.html:5
+#: templates/accounts/complete_registration.html:128
+msgid "Complete Registration"
+msgstr "Завершить регистрацию"
+
+#: templates/accounts/complete_registration.html:16
+msgid "Complete Your Profile"
+msgstr "Заполните свой профиль"
+
+#: templates/accounts/complete_registration.html:17
+msgid "Just a few more details to get started"
+msgstr "Еще несколько деталей, чтобы начать"
+
+#: templates/accounts/complete_registration.html:26
+#: templates/accounts/profile.html:32
+#: templates/accounts/update_profile.html:27
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: templates/accounts/complete_registration.html:40
+#: templates/accounts/update_profile.html:41
+msgid "First Name"
+msgstr "Имя"
+
+#: templates/accounts/complete_registration.html:52
+#: templates/accounts/update_profile.html:53
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: templates/accounts/complete_registration.html:66
+#: templates/accounts/login.html:37
+msgid "Password"
+msgstr "Пароль"
+
+#: templates/accounts/complete_registration.html:82
+msgid "Confirm Password"
+msgstr "Подтвердите пароль"
+
+#: templates/accounts/complete_registration.html:95
+#: templates/accounts/profile.html:53
+#: templates/accounts/update_profile.html:67
+msgid "Phone Number"
+msgstr "Номер телефона"
+
+#: templates/accounts/complete_registration.html:104
+#: templates/accounts/update_profile.html:75
+msgid "Format: +998912345678"
+msgstr "Формат: +998912345678"
+
+#: templates/accounts/complete_registration.html:111
+#: templates/accounts/profile.html:64
+#: templates/accounts/update_profile.html:81
+msgid "Date of Birth"
+msgstr "Дата рождения"
+
+#: templates/accounts/login.html:5 templates/accounts/login.html:48
+#: templates/accounts/signup.html:44 templates/base.html:340
+msgid "Login"
+msgstr "Авторизоваться"
+
+#: templates/accounts/login.html:16
+msgid "Welcome Back!"
+msgstr "Добро пожаловать!"
+
+#: templates/accounts/login.html:17
+msgid "Login to manage your finances"
+msgstr "Войдите, чтобы управлять своими финансами"
+
+#: templates/accounts/login.html:25
+msgid "Username or Email"
+msgstr "Имя пользователя или адрес электронной почты"
+
+#: templates/accounts/login.html:55
+msgid "Don't have an account?"
+msgstr "У вас нет учетной записи?"
+
+#: templates/accounts/login.html:55
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: templates/accounts/login.html:64
+msgid "Encrypted"
+msgstr "Зашифрованный"
+
+#: templates/accounts/login.html:68
+msgid "Secure"
+msgstr "Безопасный"
+
+#: templates/accounts/login.html:72
+msgid "Private"
+msgstr "Частный"
+
+#: templates/accounts/profile.html:5 templates/base.html:324
+msgid "Profile"
+msgstr "Профиль"
+
+#: templates/accounts/profile.html:11
+msgid "My Profile"
+msgstr "Мой профиль"
+
+#: templates/accounts/profile.html:13
+msgid "Manage your account settings"
+msgstr "Управляйте настройками своей учетной записи"
+
+#: templates/accounts/profile.html:23
+msgid "Profile Information"
+msgstr "Информация профиля"
+
+#: templates/accounts/profile.html:25
+msgid "Edit Profile"
+msgstr "Редактировать профиль"
+
+#: templates/accounts/profile.html:37
+msgid "Email"
+msgstr "Электронная почта"
+
+#: templates/accounts/profile.html:42
+msgid "Full Name"
+msgstr "Полное имя"
+
+#: templates/accounts/profile.html:47 templates/accounts/profile.html:58
+#: templates/accounts/profile.html:69
+msgid "Not provided"
+msgstr "Не предусмотрено"
+
+#: templates/accounts/profile.html:75
+#: templates/accounts/update_profile.html:94
+msgid "Default Currency"
+msgstr "Валюта по умолчанию"
+
+#: templates/accounts/profile.html:80 templates/statistics.html:110
+msgid "Member Since"
+msgstr "Участник с"
+
+#: templates/accounts/profile.html:85
+msgid "Account Status"
+msgstr "Статус аккаунта"
+
+#: templates/accounts/profile.html:100
+msgid "Security"
+msgstr "Безопасность"
+
+#: templates/accounts/profile.html:112 templates/cards/detail.html:239
+msgid "Danger Zone"
+msgstr "Опасная зона"
+
+#: templates/accounts/profile.html:115
+msgid ""
+"Once you delete your account, there is no going back. Please be certain."
+msgstr ""
+"Как только вы удалите свою учетную запись, пути назад уже не будет. "
+"Пожалуйста, будьте уверены."
+
+#: templates/accounts/profile.html:117 templates/accounts/profile.html:130
+msgid "Delete Account"
+msgstr "Удалить аккаунт"
+
+#: templates/accounts/profile.html:135
+msgid ""
+"Are you sure you want to delete your account? This action cannot be undone."
+msgstr ""
+"Вы уверены, что хотите удалить свою учетную запись? Это действие невозможно "
+"отменить."
+
+#: templates/accounts/profile.html:136
+msgid ""
+"All your data including cards, transactions, and budgets will be permanently"
+" deleted."
+msgstr ""
+"Все ваши данные, включая карты, транзакции и бюджеты, будут безвозвратно "
+"удалены."
+
+#: templates/accounts/profile.html:141
+msgid "Enter your password to confirm"
+msgstr "Введите свой пароль для подтверждения"
+
+#: templates/accounts/profile.html:149
+msgid "Delete My Account"
+msgstr "Удалить мою учетную запись"
+
+#: templates/accounts/signup.html:5 templates/base.html:345
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+#: templates/accounts/signup.html:16
+msgid "Create Your Account"
+msgstr "Создайте свою учетную запись"
+
+#: templates/accounts/signup.html:17
+msgid "Start tracking your finances today"
+msgstr "Начните отслеживать свои финансы сегодня"
+
+#: templates/accounts/signup.html:25
+msgid "Email Address"
+msgstr "Адрес электронной почты"
+
+#: templates/accounts/signup.html:33
+msgid "We'll send you a verification code"
+msgstr "Мы отправим вам код подтверждения"
+
+#: templates/accounts/signup.html:37
+msgid "Send Verification Code"
+msgstr "Отправить код подтверждения"
+
+#: templates/accounts/signup.html:44
+msgid "Already have an account?"
+msgstr "У вас уже есть аккаунт?"
+
+#: templates/accounts/signup.html:53
+msgid "Secure & Private"
+msgstr "Безопасный и конфиденциальный"
+
+#: templates/accounts/signup.html:57
+msgid "Track Expenses"
+msgstr "Отслеживайте расходы"
+
+#: templates/accounts/signup.html:61
+msgid "Save Money"
+msgstr "Экономьте деньги"
+
+#: templates/accounts/update_profile.html:5
+#: templates/accounts/update_profile.html:11
+msgid "Update Profile"
+msgstr "Обновить профиль"
+
+#: templates/accounts/update_profile.html:13
+msgid "Manage your personal information"
+msgstr "Управляйте своей личной информацией"
+
+#: templates/accounts/update_profile.html:106
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: templates/accounts/verify_code.html:5
+msgid "Verify Email - Finance Tracker"
+msgstr "Подтвердить адрес электронной почты — финансовый трекер"
+
+#: templates/accounts/verify_code.html:16
+msgid "Verify Your Email"
+msgstr "Подтвердите свой адрес электронной почты"
+
+#: templates/accounts/verify_code.html:18
+msgid "We've sent a 4-digit code to"
+msgstr "Мы отправили 4-значный код на"
+
+#: templates/accounts/verify_code.html:28
+msgid "Verification Code"
+msgstr "Проверочный код"
+
+#: templates/accounts/verify_code.html:46
+msgid "Code expires in 2 minutes"
+msgstr "Срок действия кода истекает через 2 минуты."
+
+#: templates/accounts/verify_code.html:51
+msgid "Verify Code"
+msgstr "Проверить код"
+
+#: templates/accounts/verify_code.html:60
+msgid "Resend Code"
+msgstr "Повторно отправить код"
+
+#: templates/accounts/verify_code.html:65
+msgid "Please wait 2 minutes before requesting a new code"
+msgstr "Пожалуйста, подождите 2 минуты, прежде чем запрашивать новый код."
+
+#: templates/accounts/verify_code.html:73
+msgid "Wrong email?"
+msgstr "Неправильный адрес электронной почты?"
+
+#: templates/accounts/verify_code.html:73
+msgid "Start over"
+msgstr "Начать сначала"
+
+#: templates/base.html:325 templates/base.html:382 templates/statistics.html:6
+#: templates/transactions/list.html:149
+msgid "Statistics"
+msgstr "Статистика"
+
+#: templates/base.html:331 templates/base.html:414
+msgid "Logout"
+msgstr "Выход из системы"
+
+#: templates/base.html:370 templates/dashboard.html:6
+msgid "Dashboard"
+msgstr "Панель управления"
+
+#: templates/base.html:373 templates/dashboard.html:49
+#: templates/statistics.html:96 templates/transactions/detail.html:13
+#: templates/transactions/form.html:13 templates/transactions/list.html:6
+#: templates/transactions/list.html:13
+#: templates/transactions/statistics.html:65
+msgid "Transactions"
+msgstr "Транзакции"
+
+#: templates/base.html:376
+msgid "Cards / Wallets"
+msgstr "Карты/кошельки"
+
+#: templates/base.html:379 templates/budgets/detail.html:10
+#: templates/budgets/list.html:5 templates/budgets/list.html:9
+#: templates/budgets/progress.html:11
+#: templates/budgets/spending_history.html:13
+msgid "Budgets"
+msgstr "Бюджеты"
+
+#: templates/base.html:385 templates/transfers/transfer_detail.html:9
+msgid "Transfers"
+msgstr "Трансферы"
+
+#: templates/base.html:393
+msgid "Support Chats"
+msgstr "Чаты поддержки"
+
+#: templates/base.html:407
+msgid "Member since"
+msgstr "Участник с"
+
+#: templates/budgets/active.html:8 templates/budgets/overview.html:29
+#: templates/dashboard.html:61 templates/dashboard.html:151
+#: templates/statistics.html:103
+msgid "Active Budgets"
+msgstr "Активные бюджеты"
+
+#: templates/budgets/active.html:9
+msgid "All Budgets"
+msgstr "Все бюджеты"
+
+#: templates/budgets/active.html:30 templates/budgets/by_period.html:45
+#: templates/budgets/by_period.html:77 templates/budgets/list.html:83
+#: templates/transfers/transfer_list.html:118
+msgid "View"
+msgstr "Вид"
+
+#: templates/budgets/active.html:40 templates/budgets/by_period.html:123
+msgid "No Active Budgets"
+msgstr "Нет активных бюджетов"
+
+#: templates/budgets/active.html:41 templates/budgets/by_category.html:73
+#: templates/budgets/by_period.html:126 templates/budgets/list.html:14
+#: templates/dashboard.html:139
+msgid "Create Budget"
+msgstr "Создать бюджет"
+
+#: templates/budgets/alerts.html:5 templates/budgets/alerts.html:9
+msgid "Budget Alerts"
+msgstr "Оповещения о бюджете"
+
+#: templates/budgets/alerts.html:10
+msgid "Budgets requiring attention"
+msgstr "Бюджеты, требующие внимания"
+
+#: templates/budgets/alerts.html:24
+msgid "View Budget"
+msgstr "Посмотреть бюджет"
+
+#: templates/budgets/alerts.html:33
+msgid "All Clear!"
+msgstr "Все ясно!"
+
+#: templates/budgets/alerts.html:34
+msgid "No budget alerts at the moment. You're doing great!"
+msgstr "На данный момент оповещений о бюджете нет. У тебя все отлично!"
+
+#: templates/budgets/alerts.html:35
+msgid "View All Budgets"
+msgstr "Просмотреть все бюджеты"
+
+#: templates/budgets/by_category.html:6 templates/budgets/by_category.html:12
+msgid "Budgets by Category"
+msgstr "Бюджеты по категориям"
+
+#: templates/budgets/by_category.html:14
+msgid "View budgets organized by spending category"
+msgstr "Просмотр бюджетов, организованных по категориям расходов"
+
+#: templates/budgets/by_category.html:18 templates/budgets/by_period.html:18
+#: templates/transfers/transfer_detail.html:17
+msgid "Back to List"
+msgstr "Вернуться к списку"
+
+#: templates/budgets/by_category.html:56 templates/budgets/overview.html:70
+#: templates/cards/list.html:125 templates/cards/list.html:188
+msgid "View Details"
+msgstr "Посмотреть детали"
+
+#: templates/budgets/by_category.html:70
+msgid "No Budgets Found"
+msgstr "Бюджеты не найдены"
+
+#: templates/budgets/by_category.html:71
+msgid "Create your first budget to get started."
+msgstr "Создайте свой первый бюджет, чтобы начать."
+
+#: templates/budgets/by_period.html:6 templates/budgets/by_period.html:12
+msgid "Budgets by Period"
+msgstr "Бюджеты по периодам"
+
+#: templates/budgets/by_period.html:14
+msgid "View budgets organized by time period"
+msgstr "Просмотр бюджетов, организованных по периоду времени"
+
+#: templates/budgets/by_period.html:27
+msgid "Weekly Budgets"
+msgstr "Еженедельные бюджеты"
+
+#: templates/budgets/by_period.html:59
+msgid "Monthly Budgets"
+msgstr "Ежемесячные бюджеты"
+
+#: templates/budgets/by_period.html:91
+msgid "Yearly Budgets"
+msgstr "Годовые бюджеты"
+
+#: templates/budgets/by_period.html:124
+msgid "Create budgets to track your spending over time."
+msgstr ""
+"Создавайте бюджеты, чтобы отслеживать свои расходы с течением времени."
+
+#: templates/budgets/confirm_delete.html:4
+#: templates/budgets/confirm_delete.html:11 templates/budgets/detail.html:71
+msgid "Delete Budget"
+msgstr "Удалить бюджет"
+
+#: templates/budgets/confirm_delete.html:12
+msgid ""
+"This will permanently delete this budget. This action cannot be undone!"
+msgstr ""
+"Этот бюджет будет удален без возможности восстановления. Это действие "
+"невозможно отменить!"
+
+#: templates/budgets/confirm_delete.html:16 templates/budgets/detail.html:28
+msgid "Budget:"
+msgstr "Бюджет:"
+
+#: templates/budgets/confirm_delete.html:17
+msgid "Period:"
+msgstr "Период:"
+
+#: templates/budgets/confirm_delete.html:18
+msgid "Category:"
+msgstr "Категория:"
+
+#: templates/budgets/confirm_delete.html:24
+msgid "Yes, Delete Budget"
+msgstr "Да, удалить бюджет"
+
+#: templates/budgets/detail.html:15 templates/budgets/list.html:84
+#: templates/categories/list.html:79 templates/transactions/detail.html:21
+msgid "Edit"
+msgstr "Редактировать"
+
+#: templates/budgets/detail.html:24
+msgid "Budget Progress"
+msgstr "Прогресс бюджета"
+
+#: templates/budgets/detail.html:27
+msgid "Spent:"
+msgstr "Потраченный:"
+
+#: templates/budgets/detail.html:37
+msgid "Remaining:"
+msgstr "Оставшийся:"
+
+#: templates/budgets/detail.html:38
+msgid "Over Budget!"
+msgstr "Превышение бюджета!"
+
+#: templates/budgets/detail.html:48
+msgid "Details"
+msgstr "Подробности"
+
+#: templates/budgets/detail.html:51 templates/budgets/form.html:22
+#: templates/transactions/detail.html:50 templates/transactions/form.html:86
+#: templates/transactions/list.html:93 templates/transactions/list.html:172
+msgid "Category"
+msgstr "Категория"
+
+#: templates/budgets/detail.html:52 templates/budgets/form.html:27
+#: templates/budgets/spending_history.html:39
+#: templates/budgets/spending_history.html:61
+msgid "Period"
+msgstr "Период"
+
+#: templates/budgets/detail.html:53 templates/budgets/form.html:40
+#: templates/cards/detail.html:195 templates/cards/form.html:73
+msgid "Currency"
+msgstr "Валюта"
+
+#: templates/budgets/detail.html:54
+msgid "Alert At"
+msgstr "Оповещение в"
+
+#: templates/budgets/detail.html:55 templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:65 templates/cards/detail.html:57
+#: templates/cards/form.html:115 templates/transfers/transfer_detail.html:102
+msgid "Status"
+msgstr "Статус"
+
+#: templates/budgets/detail.html:55 templates/budgets/form.html:57
+#: templates/budgets/list.html:50 templates/budgets/list.html:109
+#: templates/cards/change_status.html:16 templates/cards/detail.html:60
+#: templates/cards/detail.html:225 templates/cards/list.html:85
+#: templates/cards/list.html:175
+msgid "Active"
+msgstr "Активный"
+
+#: templates/budgets/detail.html:55 templates/budgets/list.html:51
+#: templates/budgets/list.html:111 templates/cards/change_status.html:17
+#: templates/cards/confirm_delete.html:92 templates/cards/detail.html:62
+#: templates/cards/detail.html:226 templates/cards/list.html:86
+#: templates/cards/list.html:179
+msgid "Inactive"
+msgstr "Неактивный"
+
+#: templates/budgets/detail.html:62 templates/currency/list.html:51
+#: templates/transactions/list.html:175
+#: templates/transfers/transfer_list.html:87
+msgid "Actions"
+msgstr "Действия"
+
+#: templates/budgets/detail.html:65
+msgid "View Progress"
+msgstr "Посмотреть прогресс"
+
+#: templates/budgets/detail.html:66 templates/budgets/spending_history.html:6
+#: templates/budgets/spending_history.html:15
+#: templates/budgets/spending_history.html:18
+msgid "Spending History"
+msgstr "История расходов"
+
+#: templates/budgets/detail.html:69
+msgid "Deactivate"
+msgstr "Деактивировать"
+
+#: templates/budgets/detail.html:69
+msgid "Activate"
+msgstr "Активировать"
+
+#: templates/budgets/form.html:4 templates/budgets/form.html:10
+#: templates/budgets/form.html:63 templates/budgets/spending_history.html:63
+msgid "Budget"
+msgstr "Бюджет"
+
+#: templates/budgets/form.html:15
+msgid "Budget Name"
+msgstr "Название бюджета"
+
+#: templates/budgets/form.html:35
+msgid "Budget Amount"
+msgstr "Сумма бюджета"
+
+#: templates/budgets/form.html:47 templates/budgets/spending_history.html:43
+msgid "Alert Threshold"
+msgstr "Порог оповещения"
+
+#: templates/budgets/form.html:50
+msgid "Get notified when you reach this percentage of your budget"
+msgstr "Получите уведомление, когда достигнете этого процента вашего бюджета."
+
+#: templates/budgets/form.html:57
+msgid "Track spending against this budget"
+msgstr "Отслеживайте расходы в соответствии с этим бюджетом"
+
+#: templates/budgets/list.html:10
+msgid "Plan and track your spending limits"
+msgstr "Планируйте и отслеживайте лимиты расходов"
+
+#: templates/budgets/list.html:22
+msgid "Overview"
+msgstr "Обзор"
+
+#: templates/budgets/list.html:25
+msgid "Active Only"
+msgstr "Только активный"
+
+#: templates/budgets/list.html:28
+msgid "Alerts"
+msgstr "Оповещения"
+
+#: templates/budgets/list.html:31
+msgid "By Category"
+msgstr "По категориям"
+
+#: templates/budgets/list.html:41
+msgid "All Periods"
+msgstr "Все периоды"
+
+#: templates/budgets/list.html:42
+msgid "Weekly"
+msgstr "Еженедельно"
+
+#: templates/budgets/list.html:43
+msgid "Monthly"
+msgstr "Ежемесячно"
+
+#: templates/budgets/list.html:44
+msgid "Yearly"
+msgstr "Ежегодно"
+
+#: templates/budgets/list.html:49
+msgid "All Status"
+msgstr "Все Статус"
+
+#: templates/budgets/list.html:58 templates/cards/list.html:92
+#: templates/categories/list.html:49 templates/transactions/list.html:135
+#: templates/transfers/transfer_list.html:66
+msgid "Filter"
+msgstr "Фильтр"
+
+#: templates/budgets/list.html:85 templates/budgets/progress.html:13
+#: templates/budgets/progress.html:34
+#: templates/budgets/spending_history.html:64
+msgid "Progress"
+msgstr "Прогресс"
+
+#: templates/budgets/list.html:87 templates/cards/confirm_delete.html:15
+#: templates/categories/list.html:80
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/budgets/list.html:94 templates/budgets/progress.html:28
+#: templates/budgets/spending_history.html:62
+msgid "Spent"
+msgstr "Потраченный"
+
+#: templates/budgets/list.html:103
+#, python-format
+msgid "%% used"
+msgstr "%% использовал"
+
+#: templates/budgets/list.html:103
+msgid "left"
+msgstr "левый"
+
+#: templates/budgets/list.html:124 templates/transactions/list.html:269
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: templates/budgets/list.html:128 templates/transactions/list.html:281
+msgid "Next"
+msgstr "Следующий"
+
+#: templates/budgets/list.html:138
+msgid "No Budgets Yet"
+msgstr "Бюджетов пока нет"
+
+#: templates/budgets/list.html:139
+msgid "Start managing your spending by creating your first budget."
+msgstr "Начните управлять своими расходами, создав свой первый бюджет."
+
+#: templates/budgets/list.html:140
+msgid "Create Your First Budget"
+msgstr "Создайте свой первый бюджет"
+
+#: templates/budgets/overview.html:5 templates/budgets/overview.html:9
+msgid "Budget Overview"
+msgstr "Обзор бюджета"
+
+#: templates/budgets/overview.html:10
+msgid "See all your budgets at a glance"
+msgstr "Просматривайте все свои бюджеты с первого взгляда"
+
+#: templates/budgets/overview.html:13
+msgid "Back"
+msgstr "Назад"
+
+#: templates/budgets/overview.html:20
+msgid "Total Budgeted"
+msgstr "Всего заложено в бюджете"
+
+#: templates/budgets/overview.html:23
+msgid "Total Spent"
+msgstr "Всего потрачено"
+
+#: templates/budgets/overview.html:26 templates/budgets/progress.html:31
+msgid "Remaining"
+msgstr "Оставшийся"
+
+#: templates/budgets/overview.html:29
+#: templates/transactions/statistics.html:67
+msgid "Total"
+msgstr "Общий"
+
+#: templates/budgets/overview.html:36
+msgid "Overall Budget Progress"
+msgstr "Общий прогресс бюджета"
+
+#: templates/budgets/overview.html:44
+msgid "over budget"
+msgstr "сверх бюджета"
+
+#: templates/budgets/overview.html:45
+msgid "at warning"
+msgstr "при предупреждении"
+
+#: templates/budgets/progress.html:16
+msgid "Progress Report"
+msgstr "Отчет о ходе работы"
+
+#: templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:95
+msgid "Over Budget"
+msgstr "Превышение бюджета"
+
+#: templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:97
+msgid "Warning"
+msgstr "Предупреждение"
+
+#: templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:99
+msgid "On Track"
+msgstr "На ходу"
+
+#: templates/budgets/progress.html:24
+#: templates/budgets/spending_history.html:101
+msgid "Good"
+msgstr "Хороший"
+
+#: templates/budgets/progress.html:41
+msgid "Period Timeline"
+msgstr "Хронология периода"
+
+#: templates/budgets/progress.html:47
+msgid "days remaining"
+msgstr "дней осталось"
+
+#: templates/budgets/progress.html:54
+msgid "Spending Analysis"
+msgstr "Анализ расходов"
+
+#: templates/budgets/progress.html:56
+msgid "Average Daily Spending"
+msgstr "Средние ежедневные расходы"
+
+#: templates/budgets/progress.html:57
+msgid "Suggested Daily Limit"
+msgstr "Рекомендуемый дневной лимит"
+
+#: templates/budgets/spending_history.html:19
+msgid " • Past"
+msgstr "• Прошлое"
+
+#: templates/budgets/spending_history.html:19
+msgid "months"
+msgstr "месяцы"
+
+#: templates/budgets/spending_history.html:23
+msgid "3 Months"
+msgstr "3 месяца"
+
+#: templates/budgets/spending_history.html:24
+msgid "6 Months"
+msgstr "6 месяцев"
+
+#: templates/budgets/spending_history.html:25
+msgid "12 Months"
+msgstr "12 месяцев"
+
+#: templates/budgets/spending_history.html:35
+msgid "Current Budget"
+msgstr "Текущий бюджет"
+
+#: templates/budgets/spending_history.html:54
+msgid "Historical Spending"
+msgstr "Исторические расходы"
+
+#: templates/budgets/spending_history.html:117
+msgid "Average Monthly Spending"
+msgstr "Среднемесячные расходы"
+
+#: templates/budgets/spending_history.html:133
+msgid "Times Over Budget"
+msgstr "Время превышает бюджет"
+
+#: templates/budgets/spending_history.html:143
+msgid "Months Tracked"
+msgstr "Отслеживаемые месяцы"
+
+#: templates/budgets/spending_history.html:153
+msgid "No Historical Data"
+msgstr "Нет исторических данных"
+
+#: templates/budgets/spending_history.html:155
+msgid ""
+"No spending history found for this budget category in the selected time "
+"period."
+msgstr ""
+"Для этой категории бюджета за выбранный период времени не найдена история "
+"расходов."
+
+#: templates/budgets/spending_history.html:158
+msgid "Back to Budget"
+msgstr "Вернуться к бюджету"
+
+#: templates/cards/card_types.html:13 templates/cards/list.html:236
+msgid "Card Types"
+msgstr "Типы карт"
+
+#: templates/cards/card_types.html:15
+msgid "Available card types for your wallets"
+msgstr "Доступные типы карт для ваших кошельков"
+
+#: templates/cards/card_types.html:19
+msgid "Back to Cards"
+msgstr "Вернуться к картам"
+
+#: templates/cards/card_types.html:49
+msgid "No Card Types Available"
+msgstr "Нет доступных типов карт"
+
+#: templates/cards/card_types.html:50
+msgid "There are no active card types at the moment."
+msgstr "На данный момент активных типов карт нет."
+
+#: templates/cards/card_types.html:58
+msgid "About Card Types"
+msgstr "О типах карт"
+
+#: templates/cards/card_types.html:59
+msgid "Card types help you categorize your payment methods:"
+msgstr "Типы карт помогают классифицировать способы оплаты:"
+
+#: templates/cards/card_types.html:61
+msgid "International payment cards"
+msgstr "Международные платежные карты"
+
+#: templates/cards/card_types.html:62
+msgid "Local Uzbekistan payment cards"
+msgstr "Местные платежные карты Узбекистана"
+
+#: templates/cards/card_types.html:63
+msgid "Online payment services (PayPal, Click, etc.)"
+msgstr "Сервисы онлайн-платежей (PayPal, Click и т. д.)"
+
+#: templates/cards/card_types.html:64
+msgid "Direct bank account access"
+msgstr "Прямой доступ к банковскому счету"
+
+#: templates/cards/change_status.html:7
+msgid "Change Card Status"
+msgstr "Изменить статус карты"
+
+#: templates/cards/change_status.html:18
+#: templates/cards/confirm_delete.html:93 templates/cards/detail.html:64
+#: templates/cards/detail.html:227 templates/cards/list.html:87
+#: templates/cards/list.html:183
+msgid "Blocked"
+msgstr "Заблокировано"
+
+#: templates/cards/change_status.html:21
+msgid "Update"
+msgstr "Обновлять"
+
+#: templates/cards/confirm_delete.html:6
+#: templates/cards/confirm_delete.html:19 templates/cards/detail.html:244
+#: templates/cards/list.html:146
+msgid "Delete Card"
+msgstr "Удалить карту"
+
+#: templates/cards/confirm_delete.html:13 templates/cards/detail.html:13
+#: templates/cards/form.html:13 templates/cards/list.html:13
+#: templates/cards/update_balance.html:13
+msgid "Cards & Wallets"
+msgstr "Карты и кошельки"
+
+#: templates/cards/confirm_delete.html:32
+msgid "Cannot Delete Card"
+msgstr "Не могу удалить карту"
+
+#: templates/cards/confirm_delete.html:35
+msgid "Go Back"
+msgstr "Возвращаться"
+
+#: templates/cards/confirm_delete.html:42
+msgid "Are you sure?"
+msgstr "Вы уверены?"
+
+#: templates/cards/confirm_delete.html:43
+#: templates/transactions/confirm_delete.html:16
+msgid "This action cannot be undone!"
+msgstr "Это действие невозможно отменить!"
+
+#: templates/cards/confirm_delete.html:49
+msgid "Card to be deleted:"
+msgstr "Карта, которую нужно удалить:"
+
+#: templates/cards/confirm_delete.html:51
+msgid "Name:"
+msgstr "Имя:"
+
+#: templates/cards/confirm_delete.html:54
+msgid "Bank:"
+msgstr "Банк:"
+
+#: templates/cards/confirm_delete.html:57
+msgid "Balance:"
+msgstr "Баланс:"
+
+#: templates/cards/confirm_delete.html:60
+msgid "Last 4:"
+msgstr "Последние 4:"
+
+#: templates/cards/confirm_delete.html:68
+msgid "Warning:"
+msgstr "Предупреждение:"
+
+#: templates/cards/confirm_delete.html:68
+msgid ""
+"Deleting this card will permanently remove it from your account. This action"
+" cannot be reversed."
+msgstr ""
+"Удаление этой карты приведет к ее окончательному удалению из вашей учетной "
+"записи. Это действие невозможно отменить."
+
+#: templates/cards/confirm_delete.html:75
+msgid "Yes, Delete Card"
+msgstr "Да, удалить карту"
+
+#: templates/cards/confirm_delete.html:90
+msgid "Consider these alternatives:"
+msgstr "Рассмотрим эти альтернативы:"
+
+#: templates/cards/confirm_delete.html:92
+msgid "Set the card status to"
+msgstr "Установите статус карты на"
+
+#: templates/cards/confirm_delete.html:92
+msgid "instead of deleting"
+msgstr "вместо удаления"
+
+#: templates/cards/confirm_delete.html:93
+msgid "Mark it as"
+msgstr "Отметить это как"
+
+#: templates/cards/confirm_delete.html:93
+msgid "if it's lost or stolen"
+msgstr "если он потерян или украден"
+
+#: templates/cards/confirm_delete.html:94
+msgid "Keep the card for historical transaction records"
+msgstr "Сохраняйте карту для записей исторических транзакций."
+
+#: templates/cards/detail.html:20 templates/cards/list.html:112
+msgid "Default"
+msgstr "По умолчанию"
+
+#: templates/cards/detail.html:26 templates/cards/list.html:128
+msgid "Edit Card"
+msgstr "Редактировать карту"
+
+#: templates/cards/detail.html:47
+msgid "Card Number"
+msgstr "Номер карты"
+
+#: templates/cards/detail.html:53 templates/cards/list.html:163
+#: templates/cards/update_balance.html:34
+msgid "Current Balance"
+msgstr "Текущий баланс"
+
+#: templates/cards/detail.html:75
+msgid "This Month's Activity"
+msgstr "Активность этого месяца"
+
+#: templates/cards/detail.html:85 templates/categories/list.html:41
+#: templates/categories/list.html:69 templates/statistics.html:127
+#: templates/transactions/detail.html:36 templates/transactions/list.html:87
+#: templates/transactions/statistics.html:38
+msgid "Income"
+msgstr "Доход"
+
+#: templates/cards/detail.html:96 templates/statistics.html:137
+#: templates/transactions/statistics.html:47
+msgid "Expenses"
+msgstr "Затраты"
+
+#: templates/cards/detail.html:109 templates/dashboard.html:77
+msgid "Recent Transactions"
+msgstr "Недавние транзакции"
+
+#: templates/cards/detail.html:110 templates/dashboard.html:78
+msgid "View All"
+msgstr "Посмотреть все"
+
+#: templates/cards/detail.html:145 templates/dashboard.html:115
+msgid "No transactions yet"
+msgstr "Транзакций пока нет"
+
+#: templates/cards/detail.html:157 templates/cards/list.html:227
+#: templates/dashboard.html:128 templates/transactions/detail.html:90
+msgid "Quick Actions"
+msgstr "Быстрые действия"
+
+#: templates/cards/detail.html:162 templates/cards/list.html:131
+#: templates/cards/update_balance.html:15
+#: templates/cards/update_balance.html:19
+#: templates/cards/update_balance.html:119
+msgid "Update Balance"
+msgstr "Обновить баланс"
+
+#: templates/cards/detail.html:165 templates/dashboard.html:116
+#: templates/dashboard.html:133 templates/transactions/list.html:19
+msgid "Add Transaction"
+msgstr "Добавить транзакцию"
+
+#: templates/cards/detail.html:171 templates/cards/list.html:139
+msgid "Set as Default"
+msgstr "Установить по умолчанию"
+
+#: templates/cards/detail.html:182
+msgid "Card Details"
+msgstr "Детали карты"
+
+#: templates/cards/detail.html:186 templates/cards/form.html:33
+msgid "Card Name"
+msgstr "Имя карты"
+
+#: templates/cards/detail.html:189
+msgid "Bank"
+msgstr "Банк"
+
+#: templates/cards/detail.html:192 templates/cards/form.html:61
+msgid "Card Type"
+msgstr "Тип карты"
+
+#: templates/cards/detail.html:198 templates/cards/form.html:100
+msgid "Last 4 Digits"
+msgstr "Последние 4 цифры"
+
+#: templates/cards/detail.html:201 templates/transactions/detail.html:66
+msgid "Created"
+msgstr "Созданный"
+
+#: templates/cards/detail.html:204
+msgid "Default Card"
+msgstr "Карта по умолчанию"
+
+#: templates/cards/detail.html:207
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:870
+msgid "Yes"
+msgstr "Да"
+
+#: templates/cards/detail.html:209
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:871
+msgid "No"
+msgstr "Нет"
+
+#: templates/cards/detail.html:219
+msgid "Change Status"
+msgstr "Изменить статус"
+
+#: templates/cards/detail.html:230
+msgid "Update Status"
+msgstr "Обновить статус"
+
+#: templates/cards/detail.html:242
+msgid "Permanently delete this card"
+msgstr "Удалить эту карту навсегда"
+
+#: templates/cards/form.html:41
+msgid "Give your card a memorable name (e.g., \\"
+msgstr "Дайте вашей карте запоминающееся имя (например, \\"
+
+#: templates/cards/form.html:47
+msgid "Bank Name"
+msgstr "Название банка"
+
+#: templates/cards/form.html:88
+msgid "Initial Balance"
+msgstr "Начальный баланс"
+
+#: templates/cards/form.html:108
+msgid "Last 4 digits of your card number (for identification)"
+msgstr "Последние 4 цифры номера вашей карты (для идентификации)"
+
+#: templates/cards/form.html:146 templates/transactions/form.html:200
+msgid "Tips"
+msgstr "Советы"
+
+#: templates/cards/form.html:148
+msgid "Choose a descriptive name for easy identification"
+msgstr "Выберите описательное имя для легкой идентификации."
+
+#: templates/cards/form.html:149
+msgid "Select the correct currency to avoid conversion issues"
+msgstr "Выберите правильную валюту, чтобы избежать проблем с конвертацией."
+
+#: templates/cards/form.html:150
+msgid "Enter your current balance accurately"
+msgstr "Точно введите свой текущий баланс"
+
+#: templates/cards/form.html:151
+msgid "You can always update the balance later"
+msgstr "Вы всегда можете обновить баланс позже."
+
+#: templates/cards/form.html:152
+msgid "Set status to \\"
+msgstr "Установить статус \\"
+
+#: templates/cards/list.html:15
+msgid "Manage your payment cards and digital wallets"
+msgstr "Управляйте своими платежными картами и цифровыми кошельками"
+
+#: templates/cards/list.html:19
+msgid "Add New Card"
+msgstr "Добавить новую карту"
+
+#: templates/cards/list.html:30 templates/dashboard.html:25
+#: templates/statistics.html:24
+msgid "Total Balance"
+msgstr "Общий баланс"
+
+#: templates/cards/list.html:43 templates/dashboard.html:37
+#: templates/statistics.html:89 templates/transfers/transfer_list.html:41
+msgid "Active Cards"
+msgstr "Активные карты"
+
+#: templates/cards/list.html:45
+msgid "Cards"
+msgstr "Карты"
+
+#: templates/cards/list.html:56
+msgid "Total Cards"
+msgstr "Всего карт"
+
+#: templates/cards/list.html:58
+msgid "All cards"
+msgstr "Все карты"
+
+#: templates/cards/list.html:201
+msgid "No Cards Yet"
+msgstr "Карты пока нет"
+
+#: templates/cards/list.html:204
+msgid "No cards match your filters. Try adjusting your search criteria."
+msgstr ""
+"Ни одна карточка не соответствует вашим фильтрам. Попробуйте настроить "
+"критерии поиска."
+
+#: templates/cards/list.html:206
+msgid ""
+"Start by adding your first payment card or digital wallet to track your "
+"finances."
+msgstr ""
+"Начните с добавления своей первой платежной карты или цифрового кошелька для"
+" отслеживания своих финансов."
+
+#: templates/cards/list.html:211
+msgid "Add Your First Card"
+msgstr "Добавьте свою первую карту"
+
+#: templates/cards/list.html:215 templates/transactions/list.html:309
+msgid "Clear Filters"
+msgstr "Очистить фильтры"
+
+#: templates/cards/list.html:230 templates/currency/list.html:17
+msgid "Convert Currency"
+msgstr "Конвертировать валюту"
+
+#: templates/cards/list.html:233
+msgid "View Currencies"
+msgstr "Просмотр валют"
+
+#: templates/cards/update_balance.html:45
+msgid "Balance Updated!"
+msgstr "Баланс обновлен!"
+
+#: templates/cards/update_balance.html:46
+msgid "Your card balance has been successfully updated."
+msgstr "Баланс вашей карты успешно обновлен."
+
+#: templates/cards/update_balance.html:51
+msgid "Old Balance"
+msgstr "Старый баланс"
+
+#: templates/cards/update_balance.html:57
+#: templates/cards/update_balance.html:93
+msgid "New Balance"
+msgstr "Новый Баланс"
+
+#: templates/cards/update_balance.html:64
+#: templates/transfers/transfer_detail.html:125
+msgid "Difference"
+msgstr "Разница"
+
+#: templates/cards/update_balance.html:70
+msgid "Reason"
+msgstr "Причина"
+
+#: templates/cards/update_balance.html:76
+msgid "View Card"
+msgstr "Посмотреть карту"
+
+#: templates/cards/update_balance.html:79 templates/transactions/list.html:107
+#: templates/transfers/transfer_list.html:56
+msgid "All Cards"
+msgstr "Все карты"
+
+#: templates/cards/update_balance.html:101
+msgid "Enter the new balance for this card"
+msgstr "Введите новый баланс этой карты"
+
+#: templates/cards/update_balance.html:106
+msgid "Reason (Optional)"
+msgstr "Причина (необязательно)"
+
+#: templates/cards/update_balance.html:114
+msgid "Why are you updating the balance?"
+msgstr "Зачем обновляете баланс?"
+
+#: templates/cards/update_balance.html:132
+msgid "Note"
+msgstr "Примечание"
+
+#: templates/cards/update_balance.html:132
+msgid ""
+"This will directly update your card balance. Use the transactions feature to"
+" properly record income or expenses."
+msgstr ""
+"Это приведет к непосредственному обновлению баланса вашей карты. Используйте"
+" функцию транзакций для правильного учета доходов или расходов."
+
+#: templates/categories/list.html:11 templates/transactions/list.html:152
+msgid "Categories"
+msgstr "Категории"
+
+#: templates/categories/list.html:12
+msgid "Organize your transactions"
+msgstr "Организуйте свои транзакции"
+
+#: templates/categories/list.html:16
+msgid "Add Category"
+msgstr "Добавить категорию"
+
+#: templates/categories/list.html:24
+msgid "Total Categories"
+msgstr "Всего категорий"
+
+#: templates/categories/list.html:27
+msgid "Income Categories"
+msgstr "Категории дохода"
+
+#: templates/categories/list.html:30
+msgid "Expense Categories"
+msgstr "Категории расходов"
+
+#: templates/categories/list.html:40 templates/transactions/list.html:86
+msgid "All Types"
+msgstr "Все типы"
+
+#: templates/categories/list.html:42 templates/categories/list.html:69
+#: templates/transactions/detail.html:38 templates/transactions/list.html:88
+msgid "Expense"
+msgstr "Расход"
+
+#: templates/categories/list.html:46
+msgid "Search categories..."
+msgstr "Категории поиска..."
+
+#: templates/categories/list.html:70
+msgid "System"
+msgstr "Система"
+
+#: templates/categories/list.html:70
+msgid "Custom"
+msgstr "Обычай"
+
+#: templates/categories/list.html:93
+msgid "No categories found"
+msgstr "Категории не найдены"
+
+#: templates/currency/convert.html:12 templates/currency/list.html:11
+msgid "Currencies"
+msgstr "Валюты"
+
+#: templates/currency/convert.html:13 templates/currency/convert.html:83
+#: templates/currency/list.html:67
+msgid "Convert"
+msgstr "Конвертировать"
+
+#: templates/currency/convert.html:17
+msgid "Currency Converter"
+msgstr "Конвертер валют"
+
+#: templates/currency/convert.html:19
+msgid "Convert between different currencies"
+msgstr "Конвертируйте между разными валютами"
+
+#: templates/currency/convert.html:33 templates/transactions/detail.html:43
+#: templates/transactions/form.html:59 templates/transactions/list.html:174
+#: templates/transfers/transfer_list.html:85
+msgid "Amount"
+msgstr "Количество"
+
+#: templates/currency/convert.html:46
+#: templates/transfers/transfer_detail.html:116
+msgid "From Currency"
+msgstr "Из валюты"
+
+#: templates/currency/convert.html:59
+msgid "Swap"
+msgstr "Менять"
+
+#: templates/currency/convert.html:66
+#: templates/transfers/transfer_detail.html:119
+msgid "To Currency"
+msgstr "В валюту"
+
+#: templates/currency/convert.html:94
+msgid "Conversion Result"
+msgstr "Результат преобразования"
+
+#: templates/currency/convert.html:100
+#: templates/transfers/transfer_list.html:82
+msgid "From"
+msgstr "От"
+
+#: templates/currency/convert.html:113
+#: templates/transfers/transfer_list.html:84
+msgid "To"
+msgstr "К"
+
+#: templates/currency/convert.html:125
+msgid "Exchange Rate:"
+msgstr "Обменный курс:"
+
+#: templates/currency/convert.html:138
+msgid "Popular Conversions"
+msgstr "Популярные конверсии"
+
+#: templates/currency/list.html:13
+msgid "View all supported currencies"
+msgstr "Просмотреть все поддерживаемые валюты"
+
+#: templates/currency/list.html:33
+msgid "Search by code or name..."
+msgstr "Поиск по коду или имени..."
+
+#: templates/currency/list.html:35 templates/transactions/list.html:127
+msgid "Search"
+msgstr "Поиск"
+
+#: templates/currency/list.html:48
+msgid "Code"
+msgstr "Код"
+
+#: templates/currency/list.html:49
+msgid "Name"
+msgstr "Имя"
+
+#: templates/currency/list.html:50
+msgid "Symbol"
+msgstr "Символ"
+
+#: templates/currency/list.html:80
+msgid "No Currencies Found"
+msgstr "Валюты не найдены"
+
+#: templates/currency/list.html:81
+msgid "Try adjusting your search criteria."
+msgstr "Попробуйте настроить критерии поиска."
+
+#: templates/currency/list.html:83
+msgid "Clear Search"
+msgstr "Очистить поиск"
+
+#: templates/currency/list.html:92
+msgid "About Currencies"
+msgstr "О валютах"
+
+#: templates/currency/list.html:94
+msgid ""
+"These are the currencies supported by our system. You can use them when "
+"creating cards and wallets. "
+msgstr ""
+"Это валюты, поддерживаемые нашей системой. Вы можете использовать их при "
+"создании карт и кошельков."
+
+#: templates/currency/list.html:95
+msgid "Exchange rates are updated regularly to provide accurate conversions."
+msgstr "Курсы валют регулярно обновляются для обеспечения точного обмена."
+
+#: templates/dashboard.html:13
+msgid "Welcome back"
+msgstr "Добро пожаловать"
+
+#: templates/dashboard.html:15
+msgid "Here's your financial overview"
+msgstr "Вот ваш финансовый обзор"
+
+#: templates/dashboard.html:136
+msgid "Add Card"
+msgstr "Добавить карту"
+
+#: templates/dashboard.html:142
+msgid "View Statistics"
+msgstr "Посмотреть статистику"
+
+#: templates/dashboard.html:175
+msgid "No budgets yet"
+msgstr "Бюджетов пока нет"
+
+#: templates/landing/landing.html:7
+msgid "Track Your Money. Control Your Life."
+msgstr "Отслеживайте свои деньги. Контролируйте свою жизнь."
+
+#: templates/landing/landing.html:8
+msgid "Simple. Secure. Smart personal finance tracking."
+msgstr "Простой. Безопасный. Умное отслеживание личных финансов."
+
+#: templates/landing/landing.html:12
+msgid "Get Started"
+msgstr "Начать"
+
+#: templates/statistics.html:12
+msgid "Financial Statistics"
+msgstr "Финансовая статистика"
+
+#: templates/statistics.html:14
+msgid "Your financial overview and insights"
+msgstr "Ваш финансовый обзор и идеи"
+
+#: templates/statistics.html:37
+msgid "Monthly Income"
+msgstr "Ежемесячный доход"
+
+#: templates/statistics.html:50
+msgid "Monthly Expenses"
+msgstr "Ежемесячные расходы"
+
+#: templates/statistics.html:63
+msgid "Net Savings"
+msgstr "Чистая экономия"
+
+#: templates/statistics.html:81
+msgid "Account Overview"
+msgstr "Обзор учетной записи"
+
+#: templates/statistics.html:122 templates/transactions/statistics.html:27
+msgid "This Month"
+msgstr "В этом месяце"
+
+#: templates/statistics.html:152 templates/transactions/list.html:56
+msgid "Net Balance"
+msgstr "Чистый баланс"
+
+#: templates/statistics.html:170
+msgid "Want more detailed insights?"
+msgstr "Хотите более подробную информацию?"
+
+#: templates/statistics.html:173
+msgid "View Charts"
+msgstr "Посмотреть графики"
+
+#: templates/statistics.html:176
+msgid "Export Data"
+msgstr "Экспортировать данные"
+
+#: templates/statistics.html:179
+msgid "Back to Dashboard"
+msgstr "Вернуться к панели управления"
+
+#: templates/support/admin_chat_detail.html:7
+msgid "Chat with"
+msgstr "Чат с"
+
+#: templates/support/admin_chat_detail.html:17
+msgid "Admin"
+msgstr "Админ"
+
+#: templates/support/admin_chat_detail.html:38
+msgid "No messages yet."
+msgstr "Сообщений пока нет."
+
+#: templates/support/admin_chat_detail.html:50
+msgid "Send"
+msgstr "Отправлять"
+
+#: templates/support/admin_chat_list.html:7
+msgid "Admin Support Chats"
+msgstr "Чаты поддержки администратора"
+
+#: templates/support/admin_chat_list.html:22
+msgid "No messages yet"
+msgstr "Сообщений пока нет"
+
+#: templates/support/admin_chat_list.html:35
+msgid "Open"
+msgstr "Открыть"
+
+#: templates/support/admin_chat_list.html:43
+msgid "No support messages yet."
+msgstr "Сообщений поддержки пока нет."
+
+#: templates/support/user_chat.html:4 templates/support/user_chat.html:10
+msgid "Support Chat"
+msgstr "Чат поддержки"
+
+#: templates/support/user_chat.html:11
+msgid "Get help from our support team"
+msgstr "Получите помощь от нашей службы поддержки"
+
+#: templates/support/user_chat.html:19
+msgid "Support Team"
+msgstr "Команда поддержки"
+
+#: templates/support/user_chat.html:30
+msgid "No messages yet. Start a conversation!"
+msgstr "Сообщений пока нет. Начни разговор!"
+
+#: templates/support/user_chat.html:42
+msgid "Send Message"
+msgstr "Отправить сообщение"
+
+#: templates/transactions/confirm_delete.html:15
+msgid "Delete Transaction?"
+msgstr "Удалить транзакцию?"
+
+#: templates/transactions/confirm_delete.html:21
+msgid "Transaction Details:"
+msgstr "Детали транзакции:"
+
+#: templates/transactions/confirm_delete.html:23
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: templates/transactions/confirm_delete.html:25
+msgid "Amount:"
+msgstr "Количество:"
+
+#: templates/transactions/confirm_delete.html:27
+msgid "Date:"
+msgstr "Дата:"
+
+#: templates/transactions/confirm_delete.html:37
+msgid "Yes, Delete"
+msgstr "Да, удалить"
+
+#: templates/transactions/detail.html:33 templates/transactions/form.html:33
+#: templates/transactions/list.html:84
+msgid "Type"
+msgstr "Тип"
+
+#: templates/transactions/detail.html:58 templates/transactions/form.html:74
+msgid "Card/Wallet"
+msgstr "Карта/кошелек"
+
+#: templates/transactions/detail.html:62 templates/transactions/form.html:100
+#: templates/transactions/list.html:170
+#: templates/transfers/transfer_detail.html:96
+#: templates/transfers/transfer_list.html:81
+msgid "Date"
+msgstr "Дата"
+
+#: templates/transactions/detail.html:71 templates/transactions/form.html:113
+#: templates/transfers/transfer_detail.html:78
+msgid "Description"
+msgstr "Описание"
+
+#: templates/transactions/detail.html:77 templates/transactions/form.html:126
+msgid "Location"
+msgstr "Расположение"
+
+#: templates/transactions/detail.html:95
+msgid "Edit Transaction"
+msgstr "Редактировать транзакцию"
+
+#: templates/transactions/detail.html:98
+msgid "Delete Transaction"
+msgstr "Удалить транзакцию"
+
+#: templates/transactions/form.html:47 templates/transactions/list.html:171
+msgid "Title"
+msgstr "Заголовок"
+
+#: templates/transactions/form.html:139 templates/transactions/list.html:155
+msgid "Tags"
+msgstr "Теги"
+
+#: templates/transactions/form.html:148
+msgid "Select tags for this transaction:"
+msgstr "Выберите теги для этой транзакции:"
+
+#: templates/transactions/form.html:153
+msgid "Business"
+msgstr "Бизнес"
+
+#: templates/transactions/form.html:160
+msgid "Personal"
+msgstr "Персональный"
+
+#: templates/transactions/form.html:165
+msgid "Manage tags"
+msgstr "Управление тегами"
+
+#: templates/transactions/form.html:174
+msgid "This is a recurring transaction"
+msgstr "Это повторяющаяся транзакция"
+
+#: templates/transactions/form.html:202 templates/transactions/form.html:203
+msgid "Choose \\"
+msgstr "Выбирать \\"
+
+#: templates/transactions/form.html:204
+msgid "Select the appropriate card/wallet used"
+msgstr "Выберите подходящую используемую карту/кошелек"
+
+#: templates/transactions/form.html:205
+msgid "Pick a category that best describes the transaction"
+msgstr "Выберите категорию, которая лучше всего описывает транзакцию"
+
+#: templates/transactions/form.html:206
+msgid "Add location and description for better tracking"
+msgstr "Добавьте местоположение и описание для лучшего отслеживания."
+
+#: templates/transactions/list.html:15
+msgid "Track your income and expenses"
+msgstr "Отслеживайте свои доходы и расходы"
+
+#: templates/transactions/list.html:30
+msgid "Total Income"
+msgstr "Общий доход"
+
+#: templates/transactions/list.html:43
+msgid "Total Expenses"
+msgstr "Общие расходы"
+
+#: templates/transactions/list.html:69
+msgid "Total Transactions"
+msgstr "Всего транзакций"
+
+#: templates/transactions/list.html:71
+msgid "All time"
+msgstr "Все время"
+
+#: templates/transactions/list.html:95
+msgid "All Categories"
+msgstr "Все категории"
+
+#: templates/transactions/list.html:105 templates/transactions/list.html:173
+msgid "Card"
+msgstr "Карта"
+
+#: templates/transactions/list.html:117
+msgid "Start Date"
+msgstr "Дата начала"
+
+#: templates/transactions/list.html:122
+msgid "End Date"
+msgstr "Дата окончания"
+
+#: templates/transactions/list.html:138
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:528
+msgid "Clear"
+msgstr "Прозрачный"
+
+#: templates/transactions/list.html:251
+msgid "selected"
+msgstr "выбрано"
+
+#: templates/transactions/list.html:253
+msgid "Delete Selected"
+msgstr "Удалить выбранное"
+
+#: templates/transactions/list.html:266
+msgid "First"
+msgstr "Первый"
+
+#: templates/transactions/list.html:284
+msgid "Last"
+msgstr "Последний"
+
+#: templates/transactions/list.html:295
+msgid "No Transactions Yet"
+msgstr "Транзакций пока нет"
+
+#: templates/transactions/list.html:298
+msgid ""
+"No transactions match your filters. Try adjusting your search criteria."
+msgstr ""
+"Ни одна транзакция не соответствует вашим фильтрам. Попробуйте настроить "
+"критерии поиска."
+
+#: templates/transactions/list.html:300
+msgid "Start tracking your finances by adding your first transaction."
+msgstr "Начните отслеживать свои финансы, добавив свою первую транзакцию."
+
+#: templates/transactions/list.html:305
+msgid "Add Your First Transaction"
+msgstr "Добавьте свою первую транзакцию"
+
+#: templates/transactions/statistics.html:11
+msgid "Transaction Statistics"
+msgstr "Статистика транзакций"
+
+#: templates/transactions/statistics.html:12
+msgid "Analyze your financial data"
+msgstr "Анализируйте свои финансовые данные"
+
+#: templates/transactions/statistics.html:16
+msgid "Back to Transactions"
+msgstr "Вернуться к транзакциям"
+
+#: templates/transactions/statistics.html:25
+msgid "Today"
+msgstr "Сегодня"
+
+#: templates/transactions/statistics.html:26
+msgid "This Week"
+msgstr "На этой неделе"
+
+#: templates/transactions/statistics.html:28
+msgid "This Year"
+msgstr "В этом году"
+
+#: templates/transactions/statistics.html:56
+msgid "Net"
+msgstr "Сеть"
+
+#: templates/transactions/statistics.html:79
+msgid "Top Expense Categories"
+msgstr "Основные категории расходов"
+
+#: templates/transactions/statistics.html:94
+msgid "No expense data"
+msgstr "Нет данных о расходах"
+
+#: templates/transactions/statistics.html:102
+msgid "Top Income Categories"
+msgstr "Категории с наибольшим доходом"
+
+#: templates/transactions/statistics.html:117
+msgid "No income data"
+msgstr "Нет данных о доходах"
+
+#: templates/transfers/transfer_create.html:3
+#: templates/transfers/transfer_create.html:9
+msgid "Transfer Between Cards"
+msgstr "Перевод между картами"
+
+#: templates/transfers/transfer_create.html:10
+msgid "Transfer between ANY currencies - USD, EUR, UZS, and more!"
+msgstr ""
+"Перевод между ЛЮБЫМИ валютами - долларами США, евро, сумами и другими!"
+
+#: templates/transfers/transfer_create.html:18
+#: templates/transfers/transfer_create.html:154
+msgid "Multi-Currency Support"
+msgstr "Мультивалютная поддержка"
+
+#: templates/transfers/transfer_create.html:19
+msgid ""
+"Transfer from USD to UZS, EUR to USD, UZS to EUR - any combination! "
+"Automatic conversion at current rates."
+msgstr ""
+"Перевод из USD в UZS, EUR в USD, UZS в EUR - любая комбинация! "
+"Автоматическая конвертация по текущим курсам."
+
+#: templates/transfers/transfer_create.html:31
+msgid "From Card (Any Currency)"
+msgstr "С карты (любая валюта)"
+
+#: templates/transfers/transfer_create.html:47
+msgid "Converting..."
+msgstr "Преобразование..."
+
+#: templates/transfers/transfer_create.html:55
+msgid "To Card (Any Currency)"
+msgstr "На карту (любая валюта)"
+
+#: templates/transfers/transfer_create.html:69
+msgid "Amount to Transfer"
+msgstr "Сумма для перевода"
+
+#: templates/transfers/transfer_create.html:80
+msgid "Multi-Currency Transfer Preview"
+msgstr "Предварительный просмотр мультивалютного перевода"
+
+#: templates/transfers/transfer_create.html:85
+msgid "You Send"
+msgstr "Вы отправляете"
+
+#: templates/transfers/transfer_create.html:94
+msgid "Recipient Gets"
+msgstr "Получатель получает"
+
+#: templates/transfers/transfer_create.html:104
+#: templates/transfers/transfer_detail.html:122
+msgid "Exchange Rate"
+msgstr "Обменный курс"
+
+#: templates/transfers/transfer_create.html:107
+msgid "Conversion"
+msgstr "Конверсия"
+
+#: templates/transfers/transfer_create.html:110
+msgid "New Balances After Transfer"
+msgstr "Новые балансы после перевода"
+
+#: templates/transfers/transfer_create.html:121
+msgid "Description (Optional)"
+msgstr "Описание (необязательно)"
+
+#: templates/transfers/transfer_create.html:139
+msgid "Complete Transfer"
+msgstr "Полная передача"
+
+#: templates/transfers/transfer_create.html:152
+msgid "Transfer Tips"
+msgstr "Советы по переносу"
+
+#: templates/transfers/transfer_create.html:154
+msgid "Transfer between ANY currencies! USD → UZS, EUR → USD, UZS → EUR, etc."
+msgstr ""
+"Перевод между ЛЮБЫМИ валютами! Доллар США → сум, евро → доллар США, сум → "
+"евро и т. д."
+
+#: templates/transfers/transfer_create.html:155
+msgid "Automatic Conversion"
+msgstr "Автоматическое преобразование"
+
+#: templates/transfers/transfer_create.html:155
+msgid "We'll convert at the current exchange rate automatically."
+msgstr "Мы автоматически конвертируем по текущему курсу."
+
+#: templates/transfers/transfer_create.html:156
+msgid "Live Preview"
+msgstr "Живой просмотр"
+
+#: templates/transfers/transfer_create.html:156
+msgid "See exactly how much will be received before confirming."
+msgstr "Прежде чем подтвердить, посмотрите, сколько именно будет получено."
+
+#: templates/transfers/transfer_create.html:157
+msgid "Instant Transfer"
+msgstr "Мгновенный перевод"
+
+#: templates/transfers/transfer_create.html:157
+msgid "Money moves between your cards immediately."
+msgstr "Деньги мгновенно перемещаются между вашими картами."
+
+#: templates/transfers/transfer_create.html:165
+msgid "Supported Currency Transfers"
+msgstr "Поддерживаемые переводы валюты"
+
+#: templates/transfers/transfer_create.html:186
+msgid "and any other currency combination!"
+msgstr "и любая другая комбинация валют!"
+
+#: templates/transfers/transfer_detail.html:10
+msgid "Transfer #"
+msgstr "Передача #"
+
+#: templates/transfers/transfer_detail.html:13
+msgid "Transfer Details"
+msgstr "Детали трансфера"
+
+#: templates/transfers/transfer_detail.html:27
+msgid "Transfer Flow"
+msgstr "Трансферный поток"
+
+#: templates/transfers/transfer_detail.html:33
+msgid "FROM"
+msgstr "ОТ"
+
+#: templates/transfers/transfer_detail.html:38
+msgid "Amount Sent"
+msgstr "Отправленная сумма"
+
+#: templates/transfers/transfer_detail.html:51
+msgid "Rate"
+msgstr "Ставка"
+
+#: templates/transfers/transfer_detail.html:60
+msgid "TO"
+msgstr "К"
+
+#: templates/transfers/transfer_detail.html:65
+msgid "Amount Received"
+msgstr "Полученная сумма"
+
+#: templates/transfers/transfer_detail.html:89
+msgid "Transfer Information"
+msgstr "Информация о переводе"
+
+#: templates/transfers/transfer_detail.html:93
+msgid "Transfer ID"
+msgstr "Идентификатор перевода"
+
+#: templates/transfers/transfer_detail.html:99
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2534
+msgid "Time"
+msgstr "Время"
+
+#: templates/transfers/transfer_detail.html:103
+msgid "Completed"
+msgstr "Завершенный"
+
+#: templates/transfers/transfer_detail.html:112
+msgid "Exchange Details"
+msgstr "Детали обмена"
+
+#: templates/transfers/transfer_list.html:3
+msgid "Transfer History"
+msgstr "История трансферов"
+
+#: templates/transfers/transfer_list.html:7
+msgid "Card Transfers"
+msgstr "Карточные переводы"
+
+#: templates/transfers/transfer_list.html:8
+msgid "History of all your card-to-card transfers"
+msgstr "История всех ваших переводов с карты на карту"
+
+#: templates/transfers/transfer_list.html:12
+msgid "New Transfer"
+msgstr "Новый трансфер"
+
+#: templates/transfers/transfer_list.html:22
+msgid "Total Transfers"
+msgstr "Всего переводов"
+
+#: templates/transfers/transfer_list.html:31
+msgid "Total Amount"
+msgstr "Общая сумма"
+
+#: templates/transfers/transfer_list.html:86
+msgid "Received"
+msgstr "Полученный"
+
+#: templates/transfers/transfer_list.html:131
+msgid "No Transfers Yet"
+msgstr "Трансферов пока нет"
+
+#: templates/transfers/transfer_list.html:132
+msgid "You haven't made any card-to-card transfers yet."
+msgstr "Вы еще не совершали переводов с карты на карту."
+
+#: templates/transfers/transfer_list.html:134
+msgid "Make Your First Transfer"
+msgstr "Сделайте свой первый перевод"
+
+#: venv/lib/python3.13/site-packages/django/contrib/messages/apps.py:16
+msgid "Messages"
+msgstr "Сообщения"
+
+#: venv/lib/python3.13/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr "Карты сайта"
+
+#: venv/lib/python3.13/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr "Статические файлы"
+
+#: venv/lib/python3.13/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr "Синдикация"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:33
+msgid "…"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:35
+msgid "That page number is not an integer"
+msgstr "Этот номер страницы не является целым числом"
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:36
+msgid "That page number is less than 1"
+msgstr "Этот номер страницы меньше 1"
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:37
+msgid "That page contains no results"
+msgstr "На этой странице нет результатов"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr "Введите допустимое значение."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:70
+msgid "Enter a valid domain name."
+msgstr "Введите действительное доменное имя."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:153
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:774
+msgid "Enter a valid URL."
+msgstr "Введите действительный URL-адрес."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:200
+msgid "Enter a valid integer."
+msgstr "Введите допустимое целое число."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:211
+msgid "Enter a valid email address."
+msgstr "Введите действительный адрес электронной почты."
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: venv/lib/python3.13/site-packages/django/core/validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+"Введите действительный «слаг», состоящий из букв, цифр, символов "
+"подчеркивания или дефисов."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
+msgstr ""
+"Введите действительный «слаг», состоящий из букв Юникода, цифр, символов "
+"подчеркивания или дефисов."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:309
+#: venv/lib/python3.13/site-packages/django/core/validators.py:318
+#: venv/lib/python3.13/site-packages/django/core/validators.py:332
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr "Введите действительный адрес %(протокола)s. %(protocol)s"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:311
+msgid "IPv4"
+msgstr "IPv4"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:320
+#: venv/lib/python3.13/site-packages/django/utils/ipv6.py:43
+msgid "IPv6"
+msgstr "IPv6"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:334
+msgid "IPv4 or IPv6"
+msgstr "IPv4 или IPv6"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr "Введите только цифры, разделенные запятыми."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+"Убедитесь, что это значение равно %(limit_value)s (это %(show_value)s)."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr "Убедитесь, что это значение меньше или равно %(limit_value)s."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr "Убедитесь, что это значение больше или равно %(limit_value)s."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr "Убедитесь, что это значение кратно размеру шага %(limit_value)s."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+"Убедитесь, что это значение кратно размеру шага %(limit_value)s, начиная с "
+"%(offset)s, например %(смещение)s, %(valid_value1)s, %(valid_value2)s и "
+"т. д."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:514
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:365
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:404
+msgid "Enter a number."
+msgstr "Введите номер."
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+"Расширение файла «%(расширение)s» не допускается. Разрешенные расширения: "
+"%(allowed_extensions)s. %(extension)s"
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:659
+msgid "Null characters are not allowed."
+msgstr "Нулевые символы не допускаются."
+
+#: venv/lib/python3.13/site-packages/django/db/models/base.py:1633
+#: venv/lib/python3.13/site-packages/django/forms/models.py:932
+msgid "and"
+msgstr "и"
+
+#: venv/lib/python3.13/site-packages/django/db/models/base.py:1635
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr "%(model_name)s с этим %(field_labels)s уже существует."
+
+#: venv/lib/python3.13/site-packages/django/db/models/constraints.py:20
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr "Ограничение «%(name)s» нарушено."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr "Значение %(value)r не является допустимым выбором."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:135
+msgid "This field cannot be null."
+msgstr "Это поле не может быть нулевым."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:136
+msgid "This field cannot be blank."
+msgstr "Это поле не может быть пустым."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr "%(model_name)s с этим %(field_label)s уже существует."
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+"%(field_label)s должно быть уникальным для %(date_field_label)s "
+"%(lookup_type)s."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr "Поле типа: %(field_type)s"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1161
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr "Значение «%(value)s» должно быть либо True, либо False."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr "Значение «%(value)s» должно иметь значение True, False или None."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1164
+msgid "Boolean (Either True or False)"
+msgstr "Логическое значение (истина или ложь)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1214
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr "Строка (до %(max_length)s)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1216
+msgid "String (unlimited)"
+msgstr "Строка (без ограничений)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1325
+msgid "Comma-separated integers"
+msgstr "Целые числа, разделенные запятыми"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1426
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+"Значение «%(value)s» имеет недопустимый формат даты. Он должен быть в "
+"формате ГГГГ-ММ-ДД."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1430
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1565
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+"Значение «%(value)s» имеет правильный формат (ГГГГ-ММ-ДД), но это "
+"недопустимая дата."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1434
+msgid "Date (without time)"
+msgstr "Дата (без времени)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1561
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+"Значение «%(value)s» имеет недопустимый формат. Он должен быть в формате "
+"ГГГГ-ММ-ДД ЧЧ:ММ[:сс[.uuuuuu]][TZ]."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1569
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+msgstr ""
+"Значение «%(value)s» имеет правильный формат (ГГГГ-ММ-ДД "
+"ЧЧ:ММ[:сс[.uuuuuu]][TZ]), но это недопустимая дата/время."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1574
+msgid "Date (with time)"
+msgstr "Дата (со временем)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1701
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr "Значение «%(value)s» должно быть десятичным числом."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1703
+msgid "Decimal number"
+msgstr "Десятичное число"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+"Значение «%(value)s» имеет недопустимый формат. Он должен быть в формате "
+"[DD] [[HH:]MM:]ss[.uuuuuu]."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1868
+msgid "Duration"
+msgstr "Продолжительность"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1920
+msgid "Email address"
+msgstr "Адрес электронной почты"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1945
+msgid "File path"
+msgstr "Путь к файлу"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr "Значение «%(value)s» должно быть числом с плавающей запятой."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2025
+msgid "Floating point number"
+msgstr "Число с плавающей запятой"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr "Значение «%(value)s» должно быть целым числом."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2067
+msgid "Integer"
+msgstr "Целое число"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr "Большое (8-байтовое) целое число"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2180
+msgid "Small integer"
+msgstr "Маленькое целое число"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2188
+msgid "IPv4 address"
+msgstr "IPv4-адрес"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2219
+msgid "IP address"
+msgstr "IP-адрес"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2310
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr "Значение «%(value)s» должно быть равным None, True или False."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr "Логическое значение (истина, ложь или нет)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2364
+msgid "Positive big integer"
+msgstr "Положительное большое целое число"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2379
+msgid "Positive integer"
+msgstr "Положительное целое число"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2394
+msgid "Positive small integer"
+msgstr "Положительное маленькое целое число"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr "Слаг (до %(max_length)s)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2446
+msgid "Text"
+msgstr "Текст"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+"Значение «%(value)s» имеет недопустимый формат. Он должен быть в формате "
+"ЧЧ:ММ[:сс[.уууууу]]."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+"Значение «%(value)s» имеет правильный формат (ЧЧ:ММ[:сс[.uuuuuu]]), но это "
+"недопустимое время."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2642
+msgid "URL"
+msgstr "URL-адрес"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2666
+msgid "Raw binary data"
+msgstr "Необработанные двоичные данные"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr "«%(value)s» не является допустимым UUID."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2733
+msgid "Universally unique identifier"
+msgstr "Универсальный уникальный идентификатор"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/files.py:244
+msgid "File"
+msgstr "Файл"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/files.py:420
+msgid "Image"
+msgstr "Изображение"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/json.py:24
+msgid "A JSON object"
+msgstr "Объект JSON"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/json.py:26
+msgid "Value must be valid JSON."
+msgstr "Значение должно быть действительным JSON."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:978
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+"Экземпляр %(model)s с %(field)s %(value)r не является допустимым выбором."
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:981
+msgid "Foreign Key (type determined by related field)"
+msgstr "Внешний ключ (тип определяется соответствующим полем)"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1275
+msgid "One-to-one relationship"
+msgstr "Отношения один на один"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1332
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr "Отношение %(от)s-%(до)s %(from)s %(to)s"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1334
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr "Отношения %(от)s-%(до)s %(from)s %(to)s"
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1382
+msgid "Many-to-many relationship"
+msgstr "Отношения «многие ко многим»"
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to
+#. the label
+#: venv/lib/python3.13/site-packages/django/forms/boundfield.py:188
+msgid ":?.!"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:92
+msgid "This field is required."
+msgstr "Это поле обязательно к заполнению."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:314
+msgid "Enter a whole number."
+msgstr "Введите целое число."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:485
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1251
+msgid "Enter a valid date."
+msgstr "Введите действительную дату."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:508
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1252
+msgid "Enter a valid time."
+msgstr "Введите допустимое время."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:535
+msgid "Enter a valid date/time."
+msgstr "Введите действительную дату/время."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:569
+msgid "Enter a valid duration."
+msgstr "Введите допустимую продолжительность."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:570
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+"Количество дней должно находиться в диапазоне от {min_days} до {max_days}."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:639
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "Ни один файл не был отправлен. Проверьте тип кодировки в форме."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:640
+msgid "No file was submitted."
+msgstr "Ни один файл не был отправлен."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:641
+msgid "The submitted file is empty."
+msgstr "Отправленный файл пуст."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:643
+#, python-format
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:648
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+"Пожалуйста, либо отправьте файл, либо установите флажок «Очистить», но не "
+"оба варианта."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:716
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+"Загрузите допустимое изображение. Загруженный вами файл либо не является "
+"изображением, либо поврежден."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:872
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:959
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1621
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+"Выберите правильный вариант. %(value)s не является одним из доступных "
+"вариантов."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:961
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1080
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1619
+msgid "Enter a list of values."
+msgstr "Введите список значений."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1081
+msgid "Enter a complete value."
+msgstr "Введите полное значение."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1323
+msgid "Enter a valid UUID."
+msgstr "Введите действительный UUID."
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1353
+msgid "Enter a valid JSON."
+msgstr "Введите действительный JSON."
+
+#. Translators: This is the default suffix added to form field labels
+#: venv/lib/python3.13/site-packages/django/forms/forms.py:97
+msgid ":"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr "(Скрытое поле %(имя)s) %(ошибка)s %(name)s %(error)s"
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+"Данные ManagementForm отсутствуют или были подделаны. Отсутствуют поля: "
+"%(field_names)s. Возможно, вам придется отправить отчет об ошибке, если "
+"проблема не исчезнет."
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:484
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr "Заказ"
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:925
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "Исправьте повторяющиеся данные для %(field)s."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:930
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+"Исправьте повторяющиеся данные для %(field)s, которые должны быть "
+"уникальными."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:937
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+"Исправьте повторяющиеся данные для %(field_name)s, которые должны быть "
+"уникальными для %(lookup)s в %(date_field)s."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:946
+msgid "Please correct the duplicate values below."
+msgstr "Исправьте повторяющиеся значения ниже."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1383
+msgid "The inline value did not match the parent instance."
+msgstr "Встроенное значение не соответствует родительскому экземпляру."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1474
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+"Выберите правильный вариант. Этот выбор не является одним из доступных "
+"вариантов."
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1623
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr "«%(pk)s» не является допустимым значением."
+
+#: venv/lib/python3.13/site-packages/django/forms/utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+"%(datetime)s невозможно интерпретировать в часовом поясе "
+"%(current_timezone)s; оно может быть неоднозначным или может не "
+"существовать."
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:529
+msgid "Currently"
+msgstr "В настоящее время"
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:530
+msgid "Change"
+msgstr "Изменять"
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:869
+msgid "Unknown"
+msgstr "Неизвестный"
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:34
+msgctxt "Task"
+msgid "Ready"
+msgstr "Готовый"
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:36
+msgctxt "Task"
+msgid "Running"
+msgstr "Бег"
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:38
+msgctxt "Task"
+msgid "Failed"
+msgstr "Неуспешный"
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:40
+msgctxt "Task"
+msgid "Successful"
+msgstr "Успешный"
+
+#. Translators: Please do not add spaces around commas.
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:878
+msgid "yes,no,maybe"
+msgstr "да, нет, может быть"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:908
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:925
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:927
+#, python-format
+msgid "%s KB"
+msgstr "%s КБ"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:929
+#, python-format
+msgid "%s MB"
+msgstr "%s МБ"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:931
+#, python-format
+msgid "%s GB"
+msgstr "%s ГБ"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:933
+#, python-format
+msgid "%s TB"
+msgstr "%s ТБ"
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:935
+#, python-format
+msgid "%s PB"
+msgstr "%s ПБ"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:74
+msgid "p.m."
+msgstr "вечера"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:75
+msgid "a.m."
+msgstr "являюсь."
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:80
+msgid "PM"
+msgstr "ПМ"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:81
+msgid "AM"
+msgstr "ЯВЛЯЮСЬ"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:153
+msgid "midnight"
+msgstr "полночь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:155
+msgid "noon"
+msgstr "полдень"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr "Понедельник"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr "Среда"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr "Четверг"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr "Пятница"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr "Суббота"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr "Воскресенье"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr "Пн."
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr "Вт"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr "Обвенчались"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr "Чт"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr "Пт"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr "Суббота"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr "Солнце"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr "январь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr "февраль"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr "Маршировать"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr "апрель"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr "Может"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr "Июнь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr "Июль"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr "Август"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr "Сентябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr "Октябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr "ноябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr "декабрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr "январь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr "февраль"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr "март"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr "апрель"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr "может"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr "июнь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr "июль"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr "август"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr "сентябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr "октябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr "ноябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr "декабрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Ян."
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "фев."
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Маршировать"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "апрель"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Может"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Июнь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Июль"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "август"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Сентябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Октябрь."
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Ноябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "декабрь."
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr "январь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr "февраль"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr "Маршировать"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr "апрель"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr "Может"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr "Июнь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr "Июль"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr "Август"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr "Сентябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr "Октябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr "ноябрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr "декабрь"
+
+#: venv/lib/python3.13/site-packages/django/utils/ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr "Это недействительный IPv6-адрес."
+
+#: venv/lib/python3.13/site-packages/django/utils/text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr "%(усеченный_текст)с… %(truncated_text)s"
+
+#: venv/lib/python3.13/site-packages/django/utils/text.py:288
+msgid "or"
+msgstr "или"
+
+#. Translators: This string is used as a separator between list elements
+#: venv/lib/python3.13/site-packages/django/utils/text.py:307
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:29
+msgid "Forbidden"
+msgstr "Запрещенный"
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr "Проверка CSRF не удалась. Запрос прерван."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+"Вы видите это сообщение, потому что этот сайт HTTPS требует, чтобы ваш веб-"
+"браузер отправил «заголовок Referer», но он не был отправлен. Этот заголовок"
+" необходим из соображений безопасности, чтобы гарантировать, что ваш браузер"
+" не будет захвачен третьими лицами."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+"Если вы настроили свой браузер на отключение заголовков «Referer», включите "
+"их снова, по крайней мере, для этого сайта, или для HTTPS-соединений, или "
+"для запросов «того же происхождения»."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+"Если вы используете тег <meta name=\"referrer\" content=\"no-referrer\"> или"
+" включаете заголовок «Referrer-Policy: no-referrer», удалите их. Защита CSRF"
+" требует, чтобы заголовок «Referer» выполнял строгую проверку ссылки. Если "
+"вас беспокоит конфиденциальность, используйте альтернативы, такие как <a "
+"rel=\"noreferrer\"…> для ссылок на сторонние сайты."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+"Вы видите это сообщение, потому что этому сайту требуется файл cookie CSRF "
+"при отправке форм. Этот файл cookie необходим по соображениям безопасности, "
+"чтобы гарантировать, что ваш браузер не будет взломан третьими лицами."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+"Если вы настроили свой браузер на отключение файлов cookie, включите их "
+"повторно, по крайней мере, для этого сайта или для запросов «того же "
+"происхождения»."
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr "Дополнительную информацию можно получить, указав DEBUG=True."
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr "Год не указан"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:64
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:115
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr "Дата вне диапазона"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr "Месяц не указан"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr "День не указан"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr "Неделя не указана"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:353
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr "Нет доступных %(verbose_name_plural) %(verbose_name_plural)s"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+"Будущее %(verbose_name_plural)s недоступно, поскольку "
+"%(class_name)s.allow_future имеет значение False."
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr "Неверная строка даты «%(datestr)s» в формате «%(format)s»"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "%(verbose_name) не найдено, соответствующее запросу %(verbose_name)s"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+"Страница не является «последней» и не может быть преобразована в целое "
+"число."
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr "Неверная страница (%(page_number)s): %(message)s"
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr "Пустой список и «%(class_name)s.allow_empty» имеет значение False."
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr "Индексы каталогов здесь не разрешены."
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr "«%(путь)s» не существует %(path)s"
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:68
+#: venv/lib/python3.13/site-packages/django/views/templates/directory_index.html:8
+#: venv/lib/python3.13/site-packages/django/views/templates/directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr "Индекс %(каталог)s %(directory)s"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr "Установка прошла успешно! Поздравляем!"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+"Просмотрите <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">примечания к выпуску</a> для Django "
+"%(version)s"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
+msgstr ""
+"Вы видите эту страницу, потому что <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> находится в вашем файле "
+"настроек и вы не настроили никаких URL-адресов."
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:217
+msgid "Django Documentation"
+msgstr "Документация Джанго"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr "Темы, ссылки и т.д. инструкции"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr "Учебное пособие: приложение для опроса"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:227
+msgid "Get started with Django"
+msgstr "Начните работу с Джанго"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:235
+msgid "Django Community"
+msgstr "Джанго-сообщество"
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr "Подключайтесь, получайте помощь или вносите свой вклад"

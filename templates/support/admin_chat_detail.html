@@ -1,0 +1,55 @@
+
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+<div class="container mt-4">
+    <h3>{% trans "Chat with" %} {{ chat_user.username }}</h3>
+
+    <div class="card mt-3">
+        <div class="card-body" style="height: 400px; overflow-y: auto;">
+            
+            {% for msg in chat_messages %}
+                <div class="mb-3">
+
+                    <strong>
+                        {% if msg.is_admin_reply %}
+                            {% trans "Admin" %}
+                        {% else %}
+                            {{ chat_user.username }}
+                        {% endif %}
+                    </strong>
+
+                    <div class="p-2 rounded
+                        {% if msg.is_admin_reply %}
+                            bg-light
+                        {% else %}
+                            bg-primary text-white
+                        {% endif %}
+                    ">
+                        {{ msg.message }}
+                    </div>
+
+                    <small class="text-muted">
+                        {{ msg.created_at }}
+                    </small>
+                </div>
+            {% empty %}
+                <p class="text-muted">{% trans "No messages yet." %}</p>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <form method="post" class="mt-3">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="input-group">
+            {{ form.message }}
+            <button class="btn btn-success">{% trans "Send" %}</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
